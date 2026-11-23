@@ -1,0 +1,126 @@
+{
+  "dataset": {
+    "rows": 306,
+    "dev": 222,
+    "holdout": 84,
+    "violation_rows": 200,
+    "labels": {
+      "ok": 106,
+      "fabricated_number": 32,
+      "number_drift": 45,
+      "fabricated_entity": 29,
+      "do_not_claim": 42,
+      "escalation_absolute": 39,
+      "escalation_causal": 33
+    }
+  },
+  "policy": "conservative",
+  "dev": {
+    "rows": 222,
+    "violation_rows": 143,
+    "classes": {
+      "fabricated_number": {
+        "support": 27,
+        "predicted": 25,
+        "precision": 1.0,
+        "recall": 0.9259
+      },
+      "number_drift": {
+        "support": 36,
+        "predicted": 37,
+        "precision": 0.973,
+        "recall": 1.0
+      },
+      "fabricated_entity": {
+        "support": 16,
+        "predicted": 16,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "do_not_claim": {
+        "support": 24,
+        "predicted": 21,
+        "precision": 1.0,
+        "recall": 0.875
+      },
+      "escalation_absolute": {
+        "support": 29,
+        "predicted": 28,
+        "precision": 1.0,
+        "recall": 0.9655
+      },
+      "escalation_causal": {
+        "support": 26,
+        "predicted": 27,
+        "precision": 0.9259,
+        "recall": 0.9615
+      }
+    },
+    "ok": {
+      "support": 79,
+      "predicted": 84,
+      "precision": 0.9405,
+      "recall": 1.0
+    },
+    "caught_violation_recall": 0.965,
+    "false_alarm_rate": 0.0,
+    "caught": 138,
+    "false_alarms": 0,
+    "caught_percent": 96.5034965034965,
+    "false_alarm_percent": 0.0
+  },
+  "holdout": {
+    "rows": 84,
+    "violation_rows": 57,
+    "classes": {
+      "fabricated_number": {
+        "support": 5,
+        "predicted": 5,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "number_drift": {
+        "support": 9,
+        "predicted": 9,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "fabricated_entity": {
+        "support": 13,
+        "predicted": 13,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "do_not_claim": {
+        "support": 18,
+        "predicted": 12,
+        "precision": 1.0,
+        "recall": 0.6667
+      },
+      "escalation_absolute": {
+        "support": 10,
+        "predicted": 10,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "escalation_causal": {
+        "support": 7,
+        "predicted": 7,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "ok": {
+      "support": 27,
+      "predicted": 32,
+      "precision": 0.8438,
+      "recall": 1.0
+    },
+    "caught_violation_recall": 0.9123,
+    "false_alarm_rate": 0.0,
+    "caught": 52,
+    "false_alarms": 0,
+    "caught_percent": 91.2280701754386,
+    "false_alarm_percent": 0.0
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "jd-resume-tailor fact bank",
+  "description": "A bank of work entries and projects whose bullets, scope notes and optional structured facts are the only things a tailored resume may say. Unknown fields are rejected on purpose: a misspelled scope or bullet_capabilities would otherwise be ignored without a word, and scope carries the DO NOT CLAIM limits.",
+  "type": "object",
+  "required": ["experiences"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "experiences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/experience"
+      }
+    }
+  },
+  "$defs": {
+    "experience": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "enum": ["work", "project"]
+        }
+      },
+      "if": {
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "const": "work"
+          }
+        }
+      },
+      "then": {
+        "$ref": "#/$defs/work"
+      },
+      "else": {
+        "if": {
+          "required": ["type"],
+          "properties": {
+            "type": {
+              "const": "project"
+            }
+          }
+        },
+        "then": {
+          "$ref": "#/$defs/project"
+        }
+      }
+    },
+    "work": {
+      "type": "object",
+      "required": ["id", "type", "title", "company", "bullets"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "type": {"const": "work"},
+        "title": {"$ref": "#/$defs/text"},
+        "company": {"$ref": "#/$defs/text"},
+        "location": {"type": "string"},
+        "date": {"type": "string"},
+        "tech": {
+          "description": "Comma-separated technologies used.",
+          "type": "string"
+        },
+        "bullets": {"$ref": "#/$defs/bullets"},
+        "bullet_capabilities": {"$ref": "#/$defs/bullet_capabilities"},
+        "tags": {"$ref": "#/$defs/tags"},
+        "adaptable": {"$ref": "#/$defs/adaptable"},
+        "description": {"type": "string"},
+        "scope": {"$ref": "#/$defs/scope"},
+        "facts": {"$ref": "#/$defs/facts"}
+      }
+    },
+    "project": {
+      "type": "object",
+      "required": ["id", "type", "title", "has_code", "bullets"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "type": {"const": "project"},
+        "title": {"$ref": "#/$defs/text"},
+        "location": {"type": "string"},
+        "date": {"type": "string"},
+        "tech_stack": {
+          "description": "Comma-separated technologies used.",
+          "type": "string"
+        },
+        "github": {
+          "description": "Link to the public code, if there is any.",
+          "type": "string",
+          "pattern": "^https?://\\S+$",
+          "x-error": "must be an http(s) URL without spaces"
+        },
+        "has_code": {
+          "description": "Whether the code can be shown. Only projects with code are candidates for a resume.",
+          "type": "boolean"
+        },
+        "bullets": {"$ref": "#/$defs/bullets"},
+        "bullet_capabilities": {"$ref": "#/$defs/bullet_capabilities"},
+        "tags": {"$ref": "#/$defs/tags"},
+        "adaptable": {"$ref": "#/$defs/adaptable"},
+        "description": {"type": "string"},
+        "scope": {"$ref": "#/$defs/scope"},
+        "facts": {"$ref": "#/$defs/facts"}
+      }
+    },
+    "id": {
+      "description": "Letters, digits, '_' and '-'. No '#', which separates an entry id from a fact number.",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9_-]*[A-Za-z0-9])?$",
+      "x-error": "must be letters, digits, '_' and '-', starting and ending with a letter or digit"
+    },
+    "text": {
+      "type": "string",
+      "pattern": "\\S",
+      "x-error": "must not be blank"
+    },
+    "bullets": {
+      "description": "The original bullets. Each one is a fact the resume may restate, and the sentence the tool falls back to when a rewrite fails verification. LaTeX escapes are allowed.",
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "bullet_capabilities": {
+      "description": "One short capability label per bullet, in the same order.",
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "adaptable": {
+      "description": "False means the bullets may only be copied verbatim. Defaults to true.",
+      "type": "boolean"
+    },
+    "scope": {
+      "description": "Provenance and limits, in free text. Labelled parts such as 'EVIDENCE:' are allowed. The text after 'DO NOT CLAIM:' (up to the next label) lists what a bullet must not say, one claim per semicolon or sentence. 'Same project as <id>.' marks entries that describe one project.",
+      "type": "string"
+    },
+    "facts": {
+      "description": "Optional structured facts. When present they replace the bullets as what a bullet may cite; without them each bullet is a fact of its own.",
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/fact"}
+    },
+    "fact": {
+      "type": "object",
+      "required": ["id", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Unique across the whole bank. The ids '<entry id>#<n>' and '<entry id>#scope' are what an entry without facts gets, so they are taken.",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.#-]*$",
+          "x-error": "must start with a letter or digit and use only letters, digits, '_', '.', '#' and '-'"
+        },
+        "text": {"$ref": "#/$defs/text"},
+        "numbers": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/number"}
+        }
+      }
+    },
+    "number": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "description": "For example 'ms', '%', 'x', 'req/s', 'users'; an empty string for a bare count.",
+          "type": "string"
+        },
+        "as_measured": {
+          "description": "The number exactly as it was recorded, with its formatting and precision, for example '0.875' or '3,781'. A JSON number cannot keep the trailing zeros or the thousands separator that tell how precise the measurement was.",
+          "type": "string",
+          "pattern": "\\S",
+          "x-error": "must not be blank"
+        }
+      }
+    }
+  }
+}

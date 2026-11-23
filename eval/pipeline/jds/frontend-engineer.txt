@@ -1,0 +1,23 @@
+Senior Frontend Engineer, Design Systems
+Larkspur Studio (an invented company, written for this evaluation)
+
+About the role
+Larkspur makes collaborative whiteboard software used by classrooms and design teams. Our interface is the product, and we want an engineer who cares about how it feels at 60 frames per second and at 200 percent zoom.
+
+What you will do
+- Build and maintain our component library in React and TypeScript, used by six product teams.
+- Own rendering performance for canvas-heavy views with thousands of objects, including profiling and budgets in CI.
+- Lead accessibility work: keyboard navigation, screen reader support and WCAG audits.
+- Design the client state and real-time synchronisation layer with WebSocket connections and optimistic updates.
+- Write visual regression, end-to-end and unit tests, and keep the suite fast.
+- Mentor engineers on frontend architecture in design reviews.
+
+What we look for
+- Five or more years building production web interfaces with React and TypeScript.
+- Deep knowledge of browser performance, the rendering pipeline and CSS.
+- Experience shipping a design system or shared component library.
+- Experience with Next.js, GraphQL and a bundler such as Webpack or Vite.
+
+Nice to have
+- WebGL or canvas experience.
+- Experience with Storybook and design tokens.

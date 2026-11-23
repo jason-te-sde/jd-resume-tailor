@@ -1,0 +1,242 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: No CJK text, no AI attribution
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_REF: ${{ github.base_ref }}
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+        run: |
+          # The commit messages to check are the ones this run brings. A pull request brings
+          # everything since its base. A push brings everything since the commit the branch
+          # pointed at before it. A new branch has an all-zero `before`, and after a force push
+          # the old tip may not be in the clone: both fall back to the commits that are not on
+          # main, or to the whole history when this is main itself.
+          zeros="0000000000000000000000000000000000000000"
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            range="origin/${BASE_REF}..HEAD"
+          elif [ -n "$BEFORE" ] && [ "$BEFORE" != "$zeros" ] \
+              && git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            range="${BEFORE}..${SHA}"
+          elif git rev-parse --verify --quiet origin/main >/dev/null \
+              && [ "$(git rev-parse origin/main)" != "$SHA" ]; then
+            range="origin/main..${SHA}"
+          else
+            range="${SHA}"
+          fi
+          echo "checking commits in ${range}"
+          python3 scripts/hygiene.py --range "$range"
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # `uv run` re-resolves the interpreter from .python-version and would silently replace
+      # an environment synced for another Python. Pinning UV_PYTHON keeps sync and run aligned.
+      UV_PYTHON: "3.12"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.12.19"
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --group dev --python 3.12 --locked
+      - name: Ruff check
+        run: uv run ruff check .
+      - name: Ruff format
+        run: uv run ruff format --check .
+      - name: Type check
+        run: uv run mypy
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.12", "3.13"]
+    env:
+      UV_PYTHON: ${{ matrix.python }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.12.19"
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --group dev --python ${{ matrix.python }} --locked
+      - name: Test
+        run: uv run pytest --junitxml=reports-ci/junit.xml
+      - name: README quickstart
+        run: uv run tailor bank check examples/alex-rivera/bank.json
+      - name: Keep the evidence of a failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-evidence-py${{ matrix.python }}
+          path: |
+            .pytest_cache
+            reports-ci/junit.xml
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 7
+
+  verifier-eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      UV_PYTHON: "3.12"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.12.19"
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --group dev --python 3.12 --locked
+      - name: The verifier holds its holdout numbers
+        # Recomputes the holdout and fails if a metric is more than 0.02 below
+        # eval/verifier/results.json (or the false-alarm rate more than 0.02 above it).
+        run: uv run tailor eval verifier --check
+
+  pipeline-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      UV_PYTHON: "3.12"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.12.19"
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --group dev --python 3.12 --locked
+      - name: Replay the recorded local-model run of `tailor plan`
+        # No network and no model: every call is answered from examples/alex-rivera/cassettes,
+        # and the result must equal the committed plan.
+        run: uv run pytest tests/test_plan_replay.py
+      - name: The committed pipeline results are what their runs score
+        # No model: recomputes the scores, the halves and the citation counts from the runs.
+        run: uv run tailor eval pipeline --check
+      - name: Every other scored file is what its committed inputs give
+        # No model: the judge's scores from its recorded verdicts, the judge-runs summary, both
+        # blind samples redrawn from their seeds, and the residual and first-rewrite scores from
+        # their labels.
+        run: |
+          uv run tailor eval judge --check
+          uv run tailor eval judge-runs --check
+          uv run tailor eval sample --check
+          uv run tailor eval first-sample --check
+          uv run tailor eval residual --check
+          uv run tailor eval first-rewrites --check
+      - name: Replay a committed pipeline run from its cassettes
+        # No network and no model: run 22 of the evaluation is rebuilt from
+        # eval/pipeline/cassettes and must equal the committed record and its scores.
+        run: uv run tailor eval pipeline --replay --jd ios-engineer --replay-seed 1
+      - name: Every figure in the READMEs' measured sections is a value of the files they name
+        # The top-level README and every eval/**/README.md.
+        run: uv run python scripts/readme_numbers.py
+
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      UV_PYTHON: "3.12"
+    steps:
+      - uses: actions/checkout@v7
+      - name: Cache the TeX packages
+        uses: actions/cache@v6
+        with:
+          path: ~/apt-debs
+          key: tex-${{ runner.os }}-v1
+      - name: Install TeX and poppler
+        # The smallest set that builds the template: pdflatex with the LaTeX base, the extra
+        # packages (fullpage, titlesec, enumitem), Latin Modern (the lmodern package, which
+        # --no-install-recommends does not pull in), and pdftotext for the layout
+        # checks. The downloaded .deb files are cached; apt still runs the install scripts that
+        # put pdflatex on the path.
+        run: |
+          mkdir -p "$HOME/apt-debs/partial"
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends -o Dir::Cache::archives="$HOME/apt-debs" \
+            texlive-latex-base texlive-latex-extra texlive-fonts-recommended lmodern poppler-utils
+          sudo chown -R "$USER" "$HOME/apt-debs"
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.12.19"
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --group dev --python 3.12 --locked
+      - name: The tests that compile a PDF
+        # TAILOR_REQUIRE_TEX makes a missing TeX an error instead of a skip.
+        env:
+          TAILOR_REQUIRE_TEX: "1"
+        run: |
+          pdflatex --version | head -1
+          pdftotext -v 2>&1 | head -1
+          uv run pytest -m requires_tex -rs
+      - name: Replay the recorded run into a PDF
+        # No model and no network: the plan comes from examples/alex-rivera/cassettes.
+        env:
+          TAILOR_CASSETTES: replay
+          TAILOR_CASSETTE_DIR: examples/alex-rivera/cassettes
+          TAILOR_PROVIDER: openai
+          TAILOR_MODEL: qwen3:8b
+        run: |
+          uv run tailor run --jd examples/alex-rivera/jds/backend-engineer.txt \
+            --bank examples/alex-rivera/bank.json --profile examples/alex-rivera/profile.json \
+            --out render-out
+          pdfinfo render-out/resume.pdf | tee /dev/stderr | grep -E '^Pages:\s+1$'
+      - name: Keep the resume
+        uses: actions/upload-artifact@v7
+        with:
+          name: resume
+          path: render-out
+          if-no-files-found: error
+          retention-days: 14
+
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.12.19"
+          enable-cache: true
+      - name: Build the wheel
+        run: uv build --wheel --out-dir dist
+      - name: The wheel ships the bank format and the technology vocabulary
+        run: |
+          unzip -l dist/*.whl | grep -F "tailor/bank/bank.schema.json"
+          unzip -l dist/*.whl | grep -F "tailor/verify/technologies.txt"
+          unzip -l dist/*.whl | grep -F "tailor/render/template.tex"
+      - name: Install into a clean environment and run the README command
+        run: |
+          # Outside the checkout, so nothing can come from the source tree by accident.
+          uv venv --python 3.12 "$RUNNER_TEMP/venv"
+          uv pip install --python "$RUNNER_TEMP/venv/bin/python" dist/*.whl
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/venv/bin/tailor" bank check "$GITHUB_WORKSPACE/examples/alex-rivera/bank.json"

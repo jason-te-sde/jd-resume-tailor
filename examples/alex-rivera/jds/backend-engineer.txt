@@ -1,0 +1,19 @@
+Backend Engineer, Shipment Tracking
+Harbor & Pine Logistics (an invented company, written for this example)
+
+About the role
+Harbor & Pine moves freight for regional retailers, and the tracking API is the part our customers see. We are looking for a backend engineer to keep it fast and correct.
+
+What you will do
+- Build and operate Go services behind the shipment-tracking API, backed by PostgreSQL and Kafka.
+- Find and fix latency problems, using load tests and dashboards to show the change.
+- Design event-driven pipelines that keep tracking data consistent across services.
+- Carry the pager for the services you own and improve their alerts and runbooks.
+
+What we look for
+- Experience writing production services in Go or a similar language.
+- Solid SQL and an understanding of indexing and caching.
+- Comfort with Docker, CI pipelines and infrastructure as code.
+
+Nice to have
+- Experience with Redis, gRPC or Terraform.

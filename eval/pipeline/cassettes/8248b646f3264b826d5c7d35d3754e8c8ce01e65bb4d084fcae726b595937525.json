@@ -1,0 +1,80 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You tailor resume bullets to a job posting without changing what is true. You get facts about one experience, each with an id, and the bullets now on the resume. Rewrite each bullet for the posting and cite the facts it rests on.\n\nRules. A verifier checks them, and a bullet that breaks one is thrown away and replaced by the original, so do not push against them:\n1. No new numbers. Every number must come from a fact you cite; do not add, combine or compute.\n2. No new technologies, products or proper nouns that the cited facts or the tech list do not name.\n3. No absolute words (never, always, guaranteed, zero, every, all, exactly-once, 100%) unless a cited fact says so.\n4. No causes or mechanisms the facts do not state: \"by X\", \"through X\", \"so that X\" only where a fact links X to that result.\n5. Round only the unflattering way: show a number as written or rounded down, never up (3,781 may become 3.7K+, never 3.8K+).\n6. Use the posting's words only where they describe this work accurately.\nAlso: respect the \"must not claim\" list, keep each bullet to one sentence, start it with a past-tense verb, and put every fact you used in sources.\nReturn exactly as many bullets as you are asked for, in the order given.",
+        "role": "system"
+      },
+      {
+        "content": "Posting: Applied AI Engineer, Agents at Fernhollow Systems\nResponsibilities:\n- Design and build agents that call tools, query databases and escalate to people when they should.\n- Build evaluation harnesses for agent behaviour: labelled scenarios, regression suites and failure analysis.\n- Run open-weight models locally and in the cloud, and choose models by measured quality and cost.\n- Add guardrails that stop the agent from stating things its sources do not support.\n- Instrument the system for latency, tool-call errors and token cost.\n- Write the tests and tooling that let the team change a prompt with confidence.\nRequirements:\n- Strong Python and experience shipping a system built on language models.\n- A habit of measuring: you can show an evaluation and say what it does not show.\n- Experience with a vector database or retrieval-augmented generation.\n- Experience with LangChain or a similar orchestration framework.\nKeywords:\n- language model agent\n- tool-using\n- evaluation harnesses\n- open-weight models\n- vector database\n- retrieval-augmented generation\n- LangChain\n- guardrails\n- instrumentation\n- latency\n- tool-call errors\n- token cost\n- prompt\n- tests\n- tooling\n\nExperience: Dispatch Desk: a tool-using claim-triage agent\nTech list: Python, Ollama, SQLite, pytest, Docker\nFacts you may cite:\n[dispatch-desk#1] Built a tool-using agent in Python that triages freight-damage claims with an 8B open-weights model served locally by Ollama and one retrieval tool over a SQLite table of 3,200 past claims.\n[dispatch-desk#2] Passed 35 of 40 hand-written claim scenarios (0.875), against 22 of 40 (0.55) for the same model without the retrieval tool.\n[dispatch-desk#3] Recorded every model call and tool call in a SQLite trace, so that a failing scenario replays offline in under 2 s.\n[dispatch-desk#4] Wrote 58 pytest cases, 6 of them replaying recorded traces, and ran them in CI in 4 minutes.\n[dispatch-desk#scope] ORIGIN: personal project, built to learn how tool calling fails. EVIDENCE: eval/results.json (40 scenarios written by the author, one run at temperature 0 with seed 9; a second run gave 34 of 40, 0.85); the agent called the retrieval tool in 37 of the 40 scenarios and no other model tool (the date parser and the currency formatter are plain functions that the model cannot call); the 3,200 past claims are synthetic; the replay time is the median of 20 replays on one laptop; CI time is from the last 10 runs.\nMust not claim:\n- a production model, a deployment or real users (it runs on one laptop and nothing was deployed)\n- a multi-tool agent or 'three tools' (the retrieval tool is the only tool the model can call)\n- 0.875 as a stable figure (a single run; a second run gave 0.85)\n- accuracy on real claims (the claims are synthetic and the scenarios were written by the author)\n- any comparison with other models (one 8B model only)\n\nBullets to rewrite (return exactly 4; bullet k is the rewrite of k):\n1. Built a tool-using agent in Python that triages freight-damage claims with an 8B open-weights model served locally by Ollama and one retrieval tool over a SQLite table of 3,200 past claims.\n2. Passed 35 of 40 hand-written claim scenarios (0.875), against 22 of 40 (0.55) for the same model without the retrieval tool.\n3. Recorded every model call and tool call in a SQLite trace, so that a failing scenario replays offline in under 2 s.\n4. Wrote 58 pytest cases, 6 of them replaying recorded traces, and ran them in CI in 4 minutes.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "bullets": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sources": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "sources"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bullets"
+      ],
+      "type": "object"
+    },
+    "seed": 1
+  },
+  "response": {
+    "bullets": [
+      {
+        "sources": [
+          "dispatch-desk#1"
+        ],
+        "text": "Built a tool-using agent in Python for freight-damage claim triage, integrating an 8B open-weight model served via Ollama and a single retrieval tool over a SQLite database of 3,200 synthetic claims (dispatch-desk#1)."
+      },
+      {
+        "sources": [
+          "dispatch-desk#2"
+        ],
+        "text": "Demonstrated improved scenario performance with 35 of 40 hand-written claims (0.875) using a retrieval tool, compared to 22 of 40 (0.55) without it, in a single evaluation run (dispatch-desk#2)."
+      },
+      {
+        "sources": [
+          "dispatch-desk#3"
+        ],
+        "text": "Captured all model and tool calls in a SQLite trace, enabling offline replay of failing scenarios within 2 seconds (dispatch-desk#3)."
+      },
+      {
+        "sources": [
+          "dispatch-desk#4"
+        ],
+        "text": "Developed 58 pytest cases with 6 replaying recorded traces, executing CI tests in 4 minutes (dispatch-desk#4)."
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 1649,
+    "output_tokens": 265
+  }
+}

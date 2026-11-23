@@ -1,0 +1,22 @@
+{
+  "name": "Sam O'Neil & Partners",
+  "email": "sam_o@example.com",
+  "phone": "(555) 555-0100",
+  "linkedin": "https://example.com/in/sam_o",
+  "github": "https://example.com/code/sam",
+  "location": "Springfield, ST",
+  "education": [
+    {
+      "school": "Eastvale State University",
+      "location": "Eastvale, ST",
+      "degree": "B.S. in Computer Science",
+      "gpa": "3.6/4.0",
+      "date": "Sep. 2019 -- May 2023"
+    }
+  ],
+  "skills_bank": {
+    "programming_languages": ["Python", "Go", "C++"],
+    "databases": ["Kafka", "Redis (cache)", "SQL"],
+    "ml_tools": ["MLflow"]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You read a job posting and extract its structure. Rules:\n- Copy or lightly shorten the posting's own wording; add nothing it does not say.\n- responsibilities: what the person will do, one short item each, in the posting's order.\n- requirements: what the posting says is required; nice_to_have: what it calls preferred or a plus.\n- keywords: the technologies, methods and domain terms the posting names, each as written.\n- title and company: as written in the posting; an empty string when it does not say.\n- Leave out benefits, salary, location, and equal-opportunity text.",
+        "role": "system"
+      },
+      {
+        "content": "Job posting:\n\nBackend Engineer, Shipment Tracking\nHarbor & Pine Logistics (an invented company, written for this example)\n\nAbout the role\nHarbor & Pine moves freight for regional retailers, and the tracking API is the part our customers see. We are looking for a backend engineer to keep it fast and correct.\n\nWhat you will do\n- Build and operate Go services behind the shipment-tracking API, backed by PostgreSQL and Kafka.\n- Find and fix latency problems, using load tests and dashboards to show the change.\n- Design event-driven pipelines that keep tracking data consistent across services.\n- Carry the pager for the services you own and improve their alerts and runbooks.\n\nWhat we look for\n- Experience writing production services in Go or a similar language.\n- Solid SQL and an understanding of indexing and caching.\n- Comfort with Docker, CI pipelines and infrastructure as code.\n\nNice to have\n- Experience with Redis, gRPC or Terraform.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "nice_to_have": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "requirements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "responsibilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "company",
+        "responsibilities",
+        "requirements",
+        "nice_to_have",
+        "keywords"
+      ],
+      "type": "object"
+    }
+  },
+  "response": {
+    "company": "Harbor & Pine Logistics",
+    "keywords": [
+      "Go",
+      "PostgreSQL",
+      "Kafka",
+      "shipment-tracking API",
+      "load tests",
+      "dashboards",
+      "event-driven pipelines",
+      "tracking data",
+      "services",
+      "SQL",
+      "indexing",
+      "caching",
+      "Docker",
+      "CI pipelines",
+      "infrastructure as code",
+      "Redis",
+      "gRPC",
+      "Terraform",
+      "tracking API"
+    ],
+    "nice_to_have": [
+      "Experience with Redis, gRPC or Terraform."
+    ],
+    "requirements": [
+      "Experience writing production services in Go or a similar language.",
+      "Solid SQL and an understanding of indexing and caching.",
+      "Comfort with Docker, CI pipelines and infrastructure as code."
+    ],
+    "responsibilities": [
+      "Build and operate Go services behind the shipment-tracking API, backed by PostgreSQL and Kafka.",
+      "Find and fix latency problems, using load tests and dashboards to show the change.",
+      "Design event-driven pipelines that keep tracking data consistent across services.",
+      "Carry the pager for the services you own and improve their alerts and runbooks."
+    ],
+    "title": "Backend Engineer, Shipment Tracking"
+  },
+  "usage": {
+    "input_tokens": 2561,
+    "output_tokens": 256
+  }
+}

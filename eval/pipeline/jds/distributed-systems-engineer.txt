@@ -1,0 +1,16 @@
+Distributed Systems Engineer
+Quillfeather Systems (an invented company, written for this example)
+
+What you will do
+- Implement and test consensus, replication and storage components in Rust or Go.
+- Write simulators and property tests that find failures before production does.
+- Benchmark systems under load, find the bottleneck and document the evidence.
+- Design recovery paths so that a node crash does not lose acknowledged writes.
+
+What we look for
+- Strong systems programming in Rust, Go or C++.
+- Understanding of consensus protocols, write-ahead logs and crash recovery.
+- A habit of measuring: you report medians, percentiles and the conditions of each run.
+
+Nice to have
+- Experience with Redis internals or embedded key-value stores.

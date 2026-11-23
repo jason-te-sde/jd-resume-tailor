@@ -1,0 +1,22 @@
+iOS Engineer
+Tamarind Fitness (an invented company, written for this evaluation)
+
+About the role
+Tamarind builds a workout and recovery app for runners and cyclists. Our iOS app is where users spend their day, and we are hiring an engineer to make it faster, more reliable and a pleasure to use.
+
+What you will do
+- Build new features in Swift and SwiftUI for our iPhone and Apple Watch apps.
+- Integrate HealthKit, Core Location and Bluetooth sensors, and handle background execution correctly.
+- Improve launch time, memory use and battery impact using Instruments.
+- Work with designers on animations and accessibility with VoiceOver and Dynamic Type.
+- Write unit and UI tests and keep the release pipeline healthy with Xcode Cloud.
+- Ship every two weeks through TestFlight and the App Store.
+
+What we look for
+- Three or more years building iOS apps in Swift, with at least one app in the App Store.
+- Experience with SwiftUI, Combine or Swift concurrency, and Core Data.
+- An eye for detail on animation and interaction.
+
+Nice to have
+- Experience with Apple Watch or widgets.
+- Some Kotlin or Android experience.

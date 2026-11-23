@@ -1,0 +1,24 @@
+Staff Backend Engineer, Platform Architecture
+Ironbark Payments (an invented company, written for this evaluation)
+
+About the role
+Ironbark processes card and bank payments for subscription businesses. We have grown from one service to forty, and we need a staff engineer to set technical direction across teams, not only to write code.
+
+What you will do
+- Set the architecture for our payment-processing platform and drive decisions across eight teams.
+- Lead multi-quarter migrations from a monolith to services, including data ownership and rollout plans.
+- Define reliability and consistency standards for money movement: idempotency, reconciliation and exactly-once effects.
+- Write and review design documents, and unblock senior engineers who disagree.
+- Mentor and grow senior engineers, and partner with directors on roadmap and hiring.
+- Represent engineering in conversations with auditors and enterprise customers.
+
+What we look for
+- Ten or more years of backend engineering, with five or more years at staff level or equivalent scope.
+- A record of leading technical work across several teams and delivering it in production.
+- Deep experience with distributed transactions, queues and relational databases at scale.
+- Experience with PCI compliance and regulated environments.
+- Experience with Java or Kotlin in a large codebase.
+
+Nice to have
+- Experience designing event sourcing or ledger systems.
+- Experience running an on-call rotation for a payments system.

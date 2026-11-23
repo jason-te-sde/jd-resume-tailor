@@ -1,0 +1,103 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You read a job posting and extract its structure. Rules:\n- Copy or lightly shorten the posting's own wording; add nothing it does not say.\n- responsibilities: what the person will do, one short item each, in the posting's order.\n- requirements: what the posting says is required; nice_to_have: what it calls preferred or a plus.\n- keywords: the technologies, methods and domain terms the posting names, each as written.\n- title and company: as written in the posting; an empty string when it does not say.\n- Leave out benefits, salary, location, and equal-opportunity text.",
+        "role": "system"
+      },
+      {
+        "content": "Job posting:\n\nSite Reliability Engineer\nBasalt Wharf Cloud (an invented company, written for this evaluation)\n\nAbout the role\nBasalt Wharf runs a hosted scheduling platform for clinics, and it has to be up when a front desk opens at 7 a.m. We are growing the reliability team and are looking for an engineer who is happy to be paged and happier to make the page unnecessary.\n\nWhat you will do\n- Own the availability targets for our core services: define service level objectives, track error budgets and decide with product teams when to slow down.\n- Run and improve the Kubernetes clusters that host our services, including upgrades, capacity planning and autoscaling.\n- Manage infrastructure as code with Terraform, and review changes from other teams for safety.\n- Build monitoring and alerting with Prometheus and Grafana that points at causes instead of symptoms.\n- Lead incident response, write blameless postmortems and follow the action items through.\n- Automate toil in Python or Go and push the on-call load down quarter by quarter.\n\nWhat we look for\n- Three or more years running production services on a major cloud, preferably AWS.\n- Hands-on experience with Kubernetes, Linux and networking fundamentals.\n- A record of reducing alert noise or incident counts that you can describe with numbers.\n- Clear written communication: runbooks, postmortems and design notes.\n\nNice to have\n- Experience with service meshes, chaos testing or progressive delivery.\n- Familiarity with PostgreSQL operations and backup and restore drills.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "nice_to_have": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "requirements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "responsibilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "company",
+        "responsibilities",
+        "requirements",
+        "nice_to_have",
+        "keywords"
+      ],
+      "type": "object"
+    },
+    "seed": 2
+  },
+  "response": {
+    "company": "Basalt Wharf Cloud",
+    "keywords": [
+      "Kubernetes",
+      "Terraform",
+      "Prometheus",
+      "Grafana",
+      "Python",
+      "Go",
+      "Linux",
+      "Networking",
+      "AWS",
+      "PostgreSQL",
+      "Service meshes",
+      "Chaos testing",
+      "Progressive delivery",
+      "Backup and restore drills"
+    ],
+    "nice_to_have": [
+      "Experience with service meshes, chaos testing or progressive delivery.",
+      "Familiarity with PostgreSQL operations and backup and restore drills."
+    ],
+    "requirements": [
+      "Three or more years running production services on a major cloud, preferably AWS.",
+      "Hands-on experience with Kubernetes, Linux and networking fundamentals.",
+      "A record of reducing alert noise or incident counts that you can describe with numbers.",
+      "Clear written communication: runbooks, postmortems and design notes."
+    ],
+    "responsibilities": [
+      "Own the availability targets for our core services: define service level objectives, track error budgets and decide with product teams when to slow down.",
+      "Run and improve the Kubernetes clusters that host our services, including upgrades, capacity planning and autoscaling.",
+      "Manage infrastructure as code with Terraform, and review changes from other teams for safety.",
+      "Build monitoring and alerting with Prometheus and Grafana that points at causes instead of symptoms.",
+      "Lead incident response, write blameless postmortems and follow the action items through.",
+      "Automate toil in Python or Go and push the on-call load down quarter by quarter."
+    ],
+    "title": "Site Reliability Engineer"
+  },
+  "usage": {
+    "input_tokens": 1348,
+    "output_tokens": 334
+  }
+}

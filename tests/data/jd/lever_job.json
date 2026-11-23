@@ -1,0 +1,17 @@
+{
+  "id": "0a1b2c3d-1111-2222-3333-444455556666",
+  "text": "Platform Engineer",
+  "descriptionPlain": "Contoso Robotics builds fleet software.\nYou will run the platform team's services.",
+  "lists": [
+    {
+      "text": "What you will do",
+      "content": "<li>Build deployment tooling</li><li>Improve service reliability</li>"
+    },
+    {
+      "text": "Requirements",
+      "content": "<li>Experience with Kubernetes</li>"
+    }
+  ],
+  "additionalPlain": "We are an equal opportunity employer.",
+  "hostedUrl": "https://example.com/y"
+}

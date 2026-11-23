@@ -1,0 +1,4107 @@
+{
+  "version": 1,
+  "meta": {
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "ollama_version": "0.23.4",
+    "machine": {
+      "platform": "macOS-27.2.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "cpu": "Apple M2",
+      "memory_gb": 16,
+      "python": "3.12.14"
+    },
+    "seed_applied": true,
+    "temperature": "provider default",
+    "started_at": "2026-11-23T02:35:08Z",
+    "judge_seed": 0,
+    "usage": {
+      "calls": 329,
+      "replayed_calls": 0,
+      "input_tokens": 441298,
+      "output_tokens": 29943
+    },
+    "commit": "e1a5156424700853541781a50adca1c8ecd9fc11",
+    "dirty": false
+  },
+  "summary": {
+    "bullets": 442,
+    "flagged": 40,
+    "errors": 0,
+    "flagged_by_class": {
+      "fabricated_number": 2,
+      "number_drift": 12,
+      "fabricated_entity": 8,
+      "do_not_claim": 16,
+      "escalation_absolute": 0,
+      "escalation_causal": 4
+    },
+    "flagged_by_outcome": {
+      "first_pass": 24,
+      "after_retry": 10,
+      "fallback": 6
+    }
+  },
+  "bullets": [
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately attributes latency reduction to query pattern optimization and Redis cache implementation, aligns with staging measurements, and avoids prohibited claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly cites the 9,200 events/s throughput from staging load tests, uses valid tech (Kafka), and avoids prohibited claims like production usage or 'exactly-once' processing."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 23 alerts/runbooks, 31→9 pages, and the temporal scope 'two quarters' are all stated in the facts without embellishment or forbidden claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully reorders and rewords the fact about removing up to 5 hours of data staleness by replacing the cron job, without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured time reduction (74 to 29 minutes) from the EVIDENCE (medians of 30 Airflow runs), without fabrication, unallowed claims, or escalation."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 40.6% reduction measured as the median over 8 weeks, with no fabricated numbers, entities, or escalations."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "tidekv",
+      "outcome": "after_retry",
+      "judge": [
+        "fabricated_entity"
+      ],
+      "reason": "The bullet adds 'embedded key-value store' as an entity not explicitly stated in the facts, which is a fabricated_entity."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "tidekv",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately states the compaction time reduction (91s → 29.5s) and the method (merging 4 tables) without fabricating numbers, entities, or claims beyond the facts. It avoids absolute terms and causal attributions not explicitly tied to the results."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 10,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 48 million GTFS-realtime positions monthly, dbt for modeling, and Parquet storage. It avoids prohibited claims and does not distort numbers or entities."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 11,
+      "entry": "transit-lake",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, rewording the achievement without adding numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it specifies staging load tests (aligning with the Scope note that 138 ms is from staging), uses exact numbers from the facts, and attributes the latency reduction to the described optimizations without claiming production metrics or forbidden terms."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that 9,200 events/s was achieved in staging load tests on a 6-partition topic, with no fabricated numbers, entities, or claims beyond the evidence."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 14 services, 38→11 minute deploy time reduction, and uses only valid tech (Terraform/GitHub Actions). It avoids must-not-claim terms and doesn't misuse absolute claims or causal attributions."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 23 Prometheus alerts/runbooks were implemented, pages per on-call week decreased from 31 to 9, and these numbers are directly sourced from the pager export and CI history in the facts."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rewords the facts without claiming prohibited metrics (e.g., time savings), fabricating numbers, or using escalation language."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it states the exact load time reduction (74 to 29 minutes) without embellishment, avoids must-not-claim terms, and doesn't introduce fabricated entities or absolute claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the stated 41,000 checks/s figure from the facts without exaggeration, fabrication, or prohibited claims. It correctly attributes the result to the described technologies and avoids absolute claims or causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that Redis and Lua were used for atomic token bucket updates via a single script, without embellishment or prohibited claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the 120 ms recovery time for 8,000 records from the facts without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the throughput increase (18,000 writes/s) and flush reduction (140) without fabricating numbers, entities, or claims, and avoids prohibited assertions like production use or multi-writer throughput."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately attributes the 138 ms p99 latency reduction to staging load tests, matches the factual numbers, and avoids prohibited claims like production metrics or ownership. It correctly reorders facts without distortion."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately rewords the fact about the Kafka consumer's deduplication and throughput in staging tests without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 23 Prometheus alerts/runbooks were added, and pages per week fell from 31 to 9 over two quarters without misrepresenting numbers or adding unsupported claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 'removing up to 5 hours of data staleness daily' without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it states the exact time reduction (74→29 minutes) without fabricated numbers, avoids prohibited claims, and correctly attributes the improvement to the described technical approach."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 8,000 records and 120 ms are explicitly stated in the facts, and no prohibited claims are made."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet faithfully restates the fact about 200 crash-injection runs with no acknowledged write loss, without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the compaction time reduction (91s → 29.5s), the speed-up (3.08x), and the method (merging 4 tables instead of 2) without fabricating numbers, entities, or claims, or using absolute terms/causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it cites 41,000 checks/s (from the fact) and the p99 latency of 2.1 ms at 20,000 checks/s (also from the fact). No numbers are misrepresented, no claims are prohibited, and no absolute or causal language is used."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately describes the implementation using Redis and a Lua script for atomic token bucket updates, with no unsupported claims or escalations."
+    },
+    {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet states '2% accuracy' which is more favorable than the test's actual maximum deviation of 1.4% (from test/accuracy.rs), constituting number_drift."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured time reduction (74 to 29 minutes) from the EVIDENCE (medians of 30 Airflow runs), without fabrication, unallowed claims, or escalation."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the 41 tests and 9 schema changes caught, references test-failure logs, and avoids prohibited claims like time savings or ownership."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured 40.6% reduction in latency as stated in the facts, without fabricated numbers, prohibited claims, or escalation language."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it directly reflects the fact about leading a 4-person team and reducing data staleness by up to 5 hours/day, with no fabricated claims or violations."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a production p99 latency, but the scope notes explicitly state it is a staging load test result, violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 9,200 events/s metric in staging load tests without fabricating numbers, entities, or claims, and avoids absolute terms or causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "transit-lake",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited terms."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "transit-lake",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the 41-minute to 6-minute reduction, the laptop context, and the partitioning method without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 37 dbt tests, 2% threshold, and Airflow failure triggers without fabricating numbers, entities, or claims prohibited by scope notes."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 10,
+      "entry": "transit-lake",
+      "outcome": "after_retry",
+      "judge": [
+        "fabricated_number"
+      ],
+      "reason": "The bullet claims 'under 10 minutes' for rebuild time, but the facts only mention 'median of 5 runs' without specifying time, making the time claim a fabricated number."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 11,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 12,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful: it rewords the fact about automating report generation with Airflow/dbt without claiming measured time savings, real-time reporting, or team ownership, and uses no absolute terms or unproven causal links."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured time reduction (74 to 29 minutes) from the EVIDENCE (medians of 30 Airflow runs), without fabrication, unallowed claims, or escalation."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful: it accurately reflects the facts without fabrication, number drift, or prohibited claims, and avoids absolute/escalation language."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 40.6% reduction measured as the median over 8 weeks, with no fabricated numbers, entities, or escalations."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it directly reflects the fact about leading a 4-person team and reducing data staleness by up to 5 hours/day, with no fabricated claims or violations."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the staging load test results (412 ms → 138 ms) without claiming production metrics, absolute terms, or fabricated entities; it aligns with the facts and scope notes."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact about 9,200 events/s on a 6-partition topic in staging load tests without fabricating numbers, entities, or claims, and without using absolute terms or causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "transit-lake",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, rephrasing the stated achievements without embellishment, prohibited claims, or unverified assertions."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "transit-lake",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, rewording the achievement without adding numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "transit-lake",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording the exact numbers and mechanisms described."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "transit-lake",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about the 2 million-row sample and omits speculative claims about rebuild time, which is not quantified in the facts."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the fact about using Redis and Lua for atomic token bucket updates without adding numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet pairs the 41,000 checks/s rate with the 2.1 ms p99 latency, but the facts state the 2.1 ms p99 was achieved at 20,000 checks/s (not 41,000). This misattributes the latency metric to a higher rate, inflating its favorability."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately states the 12 dbt models and Airflow DAG without fabricating numbers, entities, or claims. It avoids prohibited statements and doesn't introduce absolute or causal claims beyond the facts."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the stated facts (74→29 minutes, 310 GB table, Snowflake) without inflating numbers, claiming prohibited metrics, or using absolute/escalation terms. It rewords the fact without distortion."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 41 tests caught 9 schema changes before dashboards, with no fabricated numbers, entities, or disallowed claims."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the 40.6% median reduction over 8 weeks of scheduled runs as stated in the facts, without fabricating numbers, entities, or claims, nor using absolute language or causal mechanisms."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it directly reflects the fact about leading a 4-person team and reducing data staleness by up to 5 hours/day, with no fabricated claims or violations."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately describes the action taken (replacing fan-out with batching and adding Redis) without claiming numbers, entities, or causal links not supported by facts."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 9,200 events/s figure from staging load tests without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "transit-lake",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, using exact numbers and correct tech terms without prohibited claims or absolute language."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "transit-lake",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, rewording the achievement without adding numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that 37 dbt tests and a freshness check were added, with no fabricated numbers, entities, or escalations. The phrasing 'triggers Airflow failures' is a rewording of 'fails the Airflow run' and remains faithful."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "transit-lake",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 2 million rows and 10-minute rebuild time without fabricating numbers, entities, or claims. 'Make target' is part of the fact, not a fabricated entity."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it states the exact time reduction (74→29 minutes) without fabricated numbers, avoids prohibited claims, and correctly attributes the improvement to the described technical approach."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited statements."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a production p99 latency, but the scope notes explicitly state it is a staging load test result, violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful; it accurately reflects the facts about the idempotent Kafka consumer, deduplication by event ID, and staging load test metrics without inflating numbers, fabricating entities, or claiming prohibited outcomes."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 8,000 records and 120 ms are directly stated in the evidence, and 'crash recovery' aligns with the scope note about the crash test. No violations occur."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts with reworded phrasing (e.g., 'Boosted' vs 'Raised') but no violations: numbers match exactly, no fabricated entities, and causal links align with the fact's attribution to the write buffer."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately restates the factual compaction time reduction (91s → 29.5s, 3.08x speed-up) and cause (merging 4 tables instead of 2) without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that 2,000 randomized reads returned consistent values between leader and follower, without fabricating numbers, entities, or claims beyond the scope notes."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "gridlock-bench",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "gridlock-bench",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: Redis CPU reached 99% at 41,000 checks/s with throughput plateauing, without fabricating numbers, entities, or making prohibited claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 10,
+      "entry": "gridlock-bench",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about publishing CSVs/scripts and enabling README regeneration via Make, without adding claims, numbers, entities, or absolute terms."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 11,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 10,000 seeds, 0 violations, 5 invariants, and no prohibited claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 12,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about median failover time and does not introduce fabricated claims, numbers, or causal mechanisms beyond the scope notes and tech list."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 13,
+      "entry": "raftlet",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured time reduction (74 to 29 minutes) from the EVIDENCE (medians of 30 Airflow runs), without fabrication, unallowed claims, or escalation."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 40.6% reduction measured as the median over 8 weeks, with no fabricated numbers, entities, or escalations."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a p99 latency result without specifying it is from a staging load test (not production), violating the 'must not claim' restriction on production p99 metrics."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about sustaining 9,200 events/s on a 6-partition Kafka topic with an idempotent consumer, without fabricating numbers, entities, or claims, or using absolute/escalation terms."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 8,000 records and 120 ms are explicitly stated in the facts, and no prohibited claims are made."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that 'no acknowledged write lost' across 200 crash-injection runs, with validation via post-recovery in-memory model comparisons, without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the facts without fabricating numbers, entities, or claims, and does not use absolute terms or unproven causality."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately restates the fact's numbers and causal mechanism without embellishment, drift, or forbidden claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "gridlock-bench",
+      "outcome": "first_pass",
+      "judge": [
+        "fabricated_entity"
+      ],
+      "reason": "The bullet mentions 'storage engine' as a benchmarked component, which is not listed in the tech list or explicitly stated in the facts, constituting a fabricated_entity."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "gridlock-bench",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "gridlock-bench",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the fact about regenerating README metrics via Make targets without introducing claims, numbers, or absolute terms prohibited by the context."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it accurately reflects the implemented features (leader election, log replication, snapshots) and contextualizes the simulation without overstating claims or fabricating entities/numbers."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet is faithful; it rewords the fact about 10,000 seeds and 0 safety violations without fabricating entities, numbers, or claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 13,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet rewords the fact about maintaining seeds as regression tests without adding false claims, numbers, or entities; it aligns with the scope notes and tech list."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, using exact numbers (74→29 minutes) and the correct method (partitioning by date) without claiming prohibited metrics or absolute terms."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the stated 40.6% median reduction without embellishment, estimate inflation, or prohibited claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it specifies staging load tests for the 138 ms p99 latency, uses correct technologies (Redis, batched query), and avoids prohibited claims (no production p99, no ownership, no cost savings)."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, using exact numbers (9,200 events/s) and context (staging load tests) provided."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately rephrases the fact's key components (log-structured design, crash recovery metrics) without introducing fabricated entities, numbers, or claims beyond the evidence."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: numbers (7,200→18,000, 910→140) and causal link (write buffer size change) are verbatim from the evidence, with no embellishment or prohibited claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately restates the fact's numbers and causal mechanism without embellishment, drift, or forbidden claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet faithfully describes the rate limiter's design using Redis and Lua without fabricating numbers, entities, or claims, and aligns with the facts provided."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful; it accurately reflects the facts without distortion, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it describes the fallback mechanism and validation method without fabricating numbers, entities, or claims, and avoids prohibited statements."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it rewords the facts without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited statements like production readiness or linearizable reads."
+    },
+    {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 13,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately rewords the fact about identifying 3 bugs and retaining seeds as regression tests without adding unverified claims or misrepresenting numbers/entities."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a production p99 latency, but the scope notes explicitly state it is a staging load test result, violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful; it accurately reflects the facts about the idempotent Kafka consumer, deduplication by event ID, and staging load test metrics without inflating numbers, fabricating entities, or claiming prohibited outcomes."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured median time reduction (74 to 29 minutes) from the facts, with no fabricated numbers, entities, or prohibited claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [
+        "fabricated_entity"
+      ],
+      "reason": "The bullet mentions 'message loss' as a tested scenario, which is not explicitly stated in the facts or scope notes, constituting a fabricated_entity."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it specifies 'simulated ms' (aligning with the scope note about simulated time), avoids prohibited claims (e.g., production readiness), and uses exact numbers without drift or fabricated entities."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, exaggeration, or prohibited claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "gridlock-bench",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "gridlock-bench",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and does not use absolute terms or causal mechanisms not supported by the evidence."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 10,
+      "entry": "gridlock-bench",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the published capability without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 11,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 12,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: numbers (7,200→18,000, 910→140) and causal link (write buffer size change) are verbatim from the evidence, with no embellishment or prohibited claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 13,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful: it accurately reflects the 200 crash-injection runs and post-recovery validation without fabricating numbers, entities, or claims beyond the facts."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 14,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately rewords the fact about 2,000 randomized reads being consistent between follower and leader, without fabricating numbers, entities, or claims beyond the scope notes."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the staging context, exact numbers, and causal relationship from the facts without violating any constraints."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 9,200 events/s in staging load tests with deduplication by event ID, without fabricating numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it uses the exact load time numbers (74 to 29 minutes) from the evidence, avoids claimed time savings (the 6-hour estimate is not stated), and correctly attributes the reduction to partitioning without using absolute terms or unproven causality."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rephrases the fact about using Redis scripting for atomic token bucket updates via a single Lua script without fabricating claims, exaggerating numbers, or introducing unsupported causal mechanisms."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 41,000 checks/s is the maximum handled rate, and p99 of 2.1 ms is explicitly stated at 20,000 checks/s. No numbers are fabricated, no claims are prohibited, and no escalation terms are used."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately describes the fallback mechanism and validation method without fabricating numbers, entities, or claims. 'Simulated Redis crashes' is a reasonable paraphrase of 'killing Redis 50 times' and does not violate any constraints."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rephrases the facts without fabricating numbers, entities, or claims, and avoids prohibited statements."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "raftlet",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rewords the facts without claiming forbidden terms, numbers, or causal mechanisms."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it rewords the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the median 312 simulated ms (not wall-clock) across 200 simulated crashes in a 5-node cluster, without fabricating numbers, entities, or claims, and without using absolute terms or causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about finding 3 bugs, including the stale-term vote issue, and rephrases 'kept its seed as a regression test' as 'kept each failing seed as a regression test' without introducing unverified claims, numbers, or forbidden terms."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, drift, or violations of claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 13,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the fact that no acknowledged writes were lost across 200 crash-injection tests, validated by post-recovery in-memory model comparisons."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 14,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the throughput increase (7,200→18,000), buffer size change (4 MB→64 MB), and flush reduction (910→140) without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 15,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately restates the fact's numbers and causal mechanism without embellishment, drift, or forbidden claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it specifies 'staging p99 latency' for the 138 ms result (aligned with scope notes), uses only tech list entities (Redis), and avoids must-not-claim terms. The causal link between the changes and latency reduction is supported by the facts."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 9,200 events/s throughput on a 6-partition topic in staging load tests without fabrication, drift, or unsupported claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [
+        "escalation_causal"
+      ],
+      "reason": "The bullet claims 'identifying performance bottlenecks' as part of the cause, which is not tied to the result in the facts."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 8,000 records and 120 ms are exact values from the recovery test, 'node crash resilience' aligns with the crash test context, and no prohibited claims are made."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the 200 crash-injection tests and in-memory model validation from the facts without embellishment, prohibited claims, or unsupported escalation."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts with reworded phrasing (e.g., 'Boosted' vs 'Raised') but no violations: numbers match exactly, no fabricated entities, and causal links align with the fact's attribution to the write buffer."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "tidekv",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately restates the fact's numbers and causal mechanism without embellishment, drift, or forbidden claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "raftlet",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it rewords the facts without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the median 312 simulated ms (not wall-clock) across 200 simulated crashes in a 5-node cluster, without fabricating numbers, entities, or claims, and without using absolute terms or causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about finding 3 bugs, including the stale-term vote issue, and rephrases 'kept its seed as a regression test' as 'kept each failing seed as a regression test' without introducing unverified claims, numbers, or forbidden terms."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 41,000 checks/s (saturation rate) and p99 latency of 2.1 ms at 20,000 checks/s, without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 13,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful; it rewords the fact about simulating 50 Redis outages during testing without adding prohibited claims or fabricating numbers/entities."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 14,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the fact without adding numbers, entities, claims, or absolute/causal language."
+    },
+    {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 15,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately describes the use of Redis and Lua scripts to achieve a single atomic step for check-and-update operations, aligning with the facts without embellishment or prohibited claims."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it specifies the latency reduction occurred in staging tests (aligning with scope notes), uses exact numbers from the facts, and correctly attributes the improvement to the described technical changes without claiming prohibited metrics or absolute guarantees."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully restates the fact about 9,200 events/s in staging load tests without fabricating numbers, entities, or claims, and avoids absolute terms or causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it states the exact time reduction (74→29 minutes) without fabricated numbers, avoids prohibited claims, and correctly attributes the improvement to the described technical approach."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 8,000 records and 120 ms are explicitly stated in the facts, and no prohibited claims are made."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately rewords the facts without adding numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 35/40 (87.5%) and 22/40 (55%) are exact values from the data, and the comparison is limited to the same model's performance with/without the retrieval tool (not other models or production claims)."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a production p99 latency, but the fact explicitly states it is from a staging load test (must not claim)."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about sustaining throughput in staging load tests without claiming specific numbers, absolute guarantees, or prohibited terms."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful; it reuses the exact number and terms from the facts without fabricating, drifting, or claiming prohibited metrics."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the factual numbers (74→29 minutes) and causal mechanism (partitioning by date) without fabrications, exaggerations, or prohibited claims."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "dispatch-desk",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rewords the 35/40 success rate and 6/58 pytest cases from the facts without embellishment or prohibited claims."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rewords the fact about Redis + Lua enabling atomic check-and-update operations without embellishment, prohibited claims, or unverified causal/absolute language."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet incorrectly associates the p99 latency of 2.1 ms (which occurs at 20,000 checks/s) with the 41,000 checks/s throughput, misrepresenting the relationship between throughput and latency."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately states the staging load test context and numbers without violating any constraints."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact without embellishment, rephrasing the exact 9,200 events/s figure and 6-partition topic detail from the staging load test without distortion."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured time reduction (74 to 29 minutes) from the EVIDENCE (medians of 30 Airflow runs), without fabrication, unallowed claims, or escalation."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 8,000 records and 120 ms are explicitly stated in the facts, and no prohibited claims are made."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the compaction time reduction (91s → 29.5s), the speed-up (3.08x), and the method (merging 4 tables instead of 2) without fabricating numbers, entities, or claims, or using absolute terms/causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully describes the rate limiter's design using Redis and Lua without fabricating numbers, entities, or claims, and aligns with the facts provided."
+    },
+    {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful: it accurately reflects the 41,000 checks/s throughput and correctly associates the 2.1 ms p99 latency with the 20,000 checks/s metric from the facts, without claiming prohibited aspects like production use or latency-bounded rates."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 14 services, 38→11 minute deploy time reduction, and uses only entities from the tech list. It avoids must-not-claim terms and doesn't fabricate numbers or causal claims beyond the stated results."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it directly reflects the fact about leading a 4-person team and reducing data staleness by up to 5 hours/day, with no fabricated claims or violations."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts (74→29 minutes, partitioning, Snowflake/SQL) without claiming prohibited metrics (e.g., '6 hours saved') or overstating results. It avoids absolute claims and causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 9 schema changes were caught via 41 tests, with no fabricated numbers, entities, or claims, and no absolute/escalation language."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 4,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet rewords the fact about Redis and Lua scripting for atomic token bucket management without introducing unverified claims, numbers, or causal mechanisms."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 5,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims '41,000 checks/s' as a achieved rate without qualifying it as a latency-bounded rate, violating the 'must not claim' restriction that explicitly prohibits stating 41,000 checks/s as a latency-bounded rate."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 6,
+      "entry": "dispatch-desk",
+      "outcome": "after_retry",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet presents 0.875 as a stable figure (35/40) but the facts state it's from a single run with a second run at 0.85, violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 7,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the fact about recording model/tool calls for offline replay, and the 'under 2 s' claim aligns with the scope note's mention of median replay time (without conflicting numbers)."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful; it accurately reflects the fact about removing up to 5 hours of data staleness without fabricating numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it specifies the staging context for the 138 ms p99 latency, uses exact numbers from the facts, and attributes the latency reduction to the described technical changes without claiming prohibited metrics or causal relationships beyond what's evidenced."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, using exact numbers (74→29 minutes) and the correct method (partitioning by date) without claiming prohibited metrics or absolute terms."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 4,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 5,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet presents 0.875 as a stable figure from a single run, but the facts state this is not stable (a second run gave 0.85), violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful; it rewords the facts without adding claims, numbers, or causal mechanisms not supported by the evidence."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the stated fact about handling 41,000 checks/s with a p99 of 2.1 ms at 20,000 checks/s, without distortion, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the author led a team (implied by '4-person effort') and removed up to 5 hours of data staleness, with no embellishments or prohibited claims."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it specifies the staging context for the 138 ms p99, attributes the latency reduction to batching and Redis caching, and avoids prohibited claims."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful: it rewords the facts without claiming prohibited terms (no time savings metrics, 'real-time', or ownership), avoids absolute claims, and uses only listed technologies."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the factual numbers (74→29 minutes) and causal mechanism (partitioning by date) without fabrications, exaggerations, or prohibited claims."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 5,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 'per-process rate limits' matches the fallback limits, '50 kills' is directly from the test, and no prohibited claims or unsupported assertions are made."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately describes the rate limiter's Redis + Lua design without claiming production use, team leadership, or forbidden comparisons, and aligns with the tech list."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 7,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, using exact numbers (8B, 3,200) and only technologies from the tech list."
+    },
+    {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 8,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids absolute or causal language not supported by the evidence."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "tidewell-coop",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and does not use absolute language or assert causal relationships beyond what is stated."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "tidewell-coop",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids escalation language. It rewords the facts faithfully."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "tidewell-coop",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids escalation words or prohibited statements."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts, specifying the staging load test origin of the 138 ms p99 and avoiding prohibited claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact (9,200 events/s on 6-partition topic in staging load tests) and avoids must-not-claim items, with no fabricated numbers, entities, or escalation claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the 340ms→45ms performance improvement, uses valid tech stack items from the list, and avoids prohibited claims. The numbers are exact and match the facts without drift or fabrication."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully restates the facts about keyboard navigation, ARIA labels, Lighthouse score, and axe violations without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, reordering the claims about test counts and CI time without adding unverified assertions."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 58 fps benchmark and tech stack without fabricating numbers, entities, or claims, nor does it use absolute language or causal claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 1,
+      "index": 10,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "tidewell-coop",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: the 61% to 74% increase and 4,800 sessions are explicitly stated, and it avoids prohibited claims like clinical impact or significance beyond the dashboard."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "tidewell-coop",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricated numbers, causal claims, or prohibited assertions."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "tidewell-coop",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited statements."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts, specifying staging environments and the exact numbers from the facts without violating any constraints or using prohibited claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about sustaining 9,200 events/s on a 6-partition topic in staging load tests without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful, rephrasing the fact's 58 fps/1,200 points/Chrome 2021 laptop specifications without adding claims or altering numbers."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it states the exact numbers (340 ms → 45 ms) and technologies (SVG → canvas) without fabrication, exaggeration, or forbidden claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and does not use absolute terms or unsupported causal links."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, drift, or escalation, rewording the CI time and test counts as stated."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, number drift, or prohibited claims. It reorders and shortens the facts faithfully."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 35/40 (0.875) and 22/40 (0.55) are directly stated, no prohibited claims are made, and no absolute or causal claims beyond the retrieval tool's use are included."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "tidewell-coop",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids escalation words or prohibited statements."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "tidewell-coop",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "tidewell-coop",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful, accurately reflecting the facts without fabrication, exaggeration, or prohibited claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a production p99 latency result, but the fact explicitly states it is from a staging load test (not production), violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 9,200 events/s throughput on a 6-partition topic in staging load tests without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully restates the fact's numbers (1,200 points, 58 fps) and context (Chrome 2021 laptop), without inflating, omitting, or adding claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "pulse-dashboard",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, reordering, or violation of constraints."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately restates the fact about reducing draw time from 340 ms to 45 ms without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "dispatch-desk",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet rewords the fact's 'replaying recorded traces' as 'replay recorded model interactions', which is a contextual rephrasing rather than a fabricated entity. All numbers and claims align with the facts, and no prohibited claims are made."
+    },
+    {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately references 40 scenarios (fact) and the retrieval tool (tech/context), avoids prohibited claims, and does not misuse numbers or causal statements."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts, specifying the staging context for the 138 ms p99 and correctly attributing the latency reduction to the technical changes without overstating claims."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately rewords the fact about sustaining 9,200 events/s on a 6-partition topic in staging load tests without fabricating numbers, entities, or claims, and without using absolute terms or causal mechanisms not stated in the facts."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured time reduction (74 to 29 minutes) from the EVIDENCE (medians of 30 Airflow runs), without fabrication, unallowed claims, or escalation."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet presents 0.875 as a stable accuracy figure, but the facts explicitly state this value comes from a single run (not a stable figure) and a second run yielded 0.85, constituting number drift."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet faithfully describes the rate limiter's design using Redis and Lua without fabricating numbers, entities, or claims, and aligns with the facts provided."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet incorrectly associates the p99 latency of 2.1 ms (which was measured at 20,000 checks/s) with the higher throughput of 41,000 checks/s, implying a favorable performance metric at the higher rate that the facts explicitly state is the saturation point with a p99 of 14 ms."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly cites the 412 ms → 138 ms reduction as a staging test result (not production), uses valid tech (Redis), and avoids forbidden claims."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, accurately reflecting the idempotent Kafka consumer, deduplication by event ID, 9,200 events/s throughput, and staging load test context without violating any constraints."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured time reduction (74 to 29 minutes) from the EVIDENCE (medians of 30 Airflow runs), without fabrication, unallowed claims, or escalation."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "dispatch-desk",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about implementing a retrieval tool over synthetic claims without fabricating numbers, entities, or claims, nor using escalation language."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately describes the use of Lua scripting in Redis for atomic updates, which is explicitly supported by the facts and scope notes. No prohibited claims or unsupported escalations are present."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that at 20,000 checks/s, p99 latency was 2.1 ms, and the 41,000 checks/s rate is correctly stated without fabrication or misrepresentation."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "tidewell-coop",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited statements."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "tidewell-coop",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids escalation words or prohibited statements."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts, using numbers and methods from the provided evidence without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact about 9,200 events/s on a 6-partition topic in staging, and does not overstate, fabricate, or introduce prohibited claims."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "pulse-dashboard",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: Lighthouse score 96 and 0 axe violations on 5 main views, with no fabricated claims or number drift."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "pulse-dashboard",
+      "outcome": "first_pass",
+      "judge": [
+        "escalation_causal"
+      ],
+      "reason": "The bullet implies the tests 'running in CI in 3.5 minutes' directly 'maintain release pipeline health,' a causal link not stated in the facts."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "dispatch-desk",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 35/40 (0.875) is directly stated, no prohibited claims are made, and no absolute/escalation terms are used."
+    },
+    {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "dispatch-desk",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet rephrases facts without fabricating numbers, entities, or claims, and avoids escalation terms."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a production p99 latency, but the scope notes explicitly state it is a staging load test result, violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, fabrication, or violations of constraints."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 40.6% reduction measured as the median over 8 weeks, with no fabricated numbers, entities, or escalations."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the fact about recording model/tool calls for offline replay, and the 'under 2 s' claim aligns with the scope note's mention of median replay time (without conflicting numbers)."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 58 pytest cases, 6 replaying traces, and 4-minute CI time. No numbers are fabricated or misrepresented, and no prohibited claims are made."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet reports macro-F1 0.87 as achieved, but the facts state this was a single run with seed 7 (mean 0.86 across 3 seeds), constituting number drift by presenting a single-run result as stable."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully restates the facts about using a per-class confusion matrix to identify low F1 categories and relabeling tickets, with no violations."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited statements."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it states the exact time reduction (74→29 minutes) without fabricated numbers, avoids prohibited claims, and correctly attributes the improvement to the described technical approach."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately rewords the facts without fabricating numbers, claims, or entities; it avoids prohibited claims like time savings or real-time reporting."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly cites the 412 ms → 138 ms reduction (staging-only), the methods (batched query + Redis cache), and attributes it to staging load test results without claiming production metrics or forbidden claims."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact about implementing 23 Prometheus alerts and runbooks using pager export data, with no unverified claims or distortions."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 58 pytest cases, 6 replaying traces, and 4-minute CI time. No numbers are fabricated or misrepresented, and no prohibited claims are made."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the fact about recording model/tool calls for offline replay, and the 'under 2 s' claim aligns with the scope note's mention of median replay time (without conflicting numbers)."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it cites the exact macro-F1 score (0.87) from one run (seed 7) and the baseline (0.71), without overstating, fabricating, or introducing unproven claims. All numbers and entities are grounded in the provided evidence."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it mentions 3 categories below 0.75 F1 (matching the confusion matrix claim) and 420 tickets relabeled (exact figure from the fact), with no fabricated numbers, prohibited claims, or unsupported causal links."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it rewords the facts without adding unsupported claims or altering numerical details."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the facts without fabricating numbers, entities, or claims, and avoids prohibited statements like 'state-of-the-art' or 'deployment by a team'."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 13,
+      "entry": "transit-lake",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about 37 dbt tests and the 2% trip ID threshold without adding claims, numbers, or causal links not explicitly stated in the evidence."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 14,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions. It reorders and shortens the facts without distortion."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 15,
+      "entry": "transit-lake",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, rewording the achievement without adding numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the staging latency numbers (412 ms → 138 ms) and methods (batched query + Redis cache) from the facts, without overstating, fabricating, or claiming prohibited aspects."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that 14 services were migrated and median deploy time was reduced to 11 minutes, without fabricating numbers, entities, or claims, and without using absolute terms or unproven causality."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, accurately stating the 12 dbt models and Airflow DAG built without claiming prohibited metrics, entities, or causal mechanisms."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the factual numbers (74→29 minutes) and causal mechanism (partitioning by date) without fabrications, exaggerations, or prohibited claims."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the fact that 41 tests caught 9 schema changes before dashboard impact, using synonymous verbs ('identified' for 'caught') and no prohibited claims."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "tidewell-coop",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and does not use absolute terms or unsupported causal links."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "tidewell-coop",
+      "outcome": "after_retry",
+      "judge": [
+        "fabricated_number"
+      ],
+      "reason": "The bullet states 80% line coverage, which is not mentioned in the facts (the fact states 81%), making it a fabricated number."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "tidewell-coop",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids escalation words or prohibited statements."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully restates the facts about the 8B model, Ollama, SQLite table, and synthetic claims without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: the 35/40 and 22/40 numbers are directly stated, 'scenarios authored by the applicant' aligns with the author's own scenarios, and no prohibited claims or escalations are present."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "dispatch-desk",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment: it states SQLite tracing and 2s replay time exactly as documented, avoids prohibited claims, and doesn't introduce absolute terms or unfounded causal mechanisms."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [
+        "fabricated_entity"
+      ],
+      "reason": "The bullet mentions 'SQLite traces' which is a specific technology not stated in the facts (only 'recorded traces' are mentioned), constituting a fabricated_entity."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 13,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "escalation_causal"
+      ],
+      "reason": "The bullet claims the rate limiter 'supports system guardrails and latency metrics required for agent behavior evaluation' without factual basis in the provided scope notes or tech list, introducing a causal relationship not tied to the stated project goals (learning Redis scripting) or test results (accuracy, failure tests)."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 14,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet claims a p99 latency of 2.1 ms at 41,000 checks/s, but the fact states this p99 occurs at 20,000 checks/s (with 14 ms p99 at 41,000 checks/s). The bullet falsely associates the better p99 with the higher rate, committing number_drift."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 15,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 2% deviation, 8 processes, Redis instance, and 10-minute test at 500 requests/s without fabricating numbers, entities, or claims, nor using absolute terms or causal mechanisms not stated in the facts."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 16,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 50 Redis kill tests validated the fallback, and per-process limits are explicitly stated without violating must-not-claim restrictions."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 17,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the macro-F1 score (0.87) and baseline (0.71) without inflating numbers, fabricating entities, or making prohibited claims."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 18,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, number drift, or prohibited claims."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 19,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful; it reorders and shortens the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 20,
+      "entry": "ticket-triage",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, rewording the claim about 3 categories below 0.75 F1 and relabeling 420 tickets without adding unverified numbers, entities, or claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a production p99 latency, but the scope notes explicitly state it is a staging load test result, violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully restates the fact about sustaining 9,200 events/s on a 6-partition topic during staging load tests without fabricating numbers, entities, or claims, or using absolute/escalation language."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately states the actions taken (12 dbt models, Airflow DAG) without claiming time savings, real-time reporting, or other prohibited terms."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about partitioning a 310 GB table without claiming time savings, using absolute terms, or fabricating entities/numbers."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet presents 0.87 as a stable achievement without noting it is from a single seed run (contravening the 'do_not_claim' restriction on 0.87 as a stable figure)."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the fact about reducing latency via ONNX Runtime and batching without fabricating numbers, entities, or claims, nor using absolute terms or unproven causality."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects facts: 310 MB Docker image, 18% held-out tickets routed below 0.6 threshold, and FastAPI/Docker usage. No numbers are altered, no forbidden claims are made, and no unsupported causal relationships are asserted."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it mentions the confusion matrix, 3 categories below 0.75 F1, and relabeling 420 tickets without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 10,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 11,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 12,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the fact about recording model/tool calls for offline replay, and the 'under 2 s' claim aligns with the scope note's mention of median replay time (without conflicting numbers)."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 13,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the facts without adding numbers, entities, claims, or escalations not supported by the evidence."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 14,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 15,
+      "entry": "transit-lake",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, rewording the achievement without adding numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it uses the exact numbers (74→29 minutes) and correctly attributes the reduction to partitioning, without claiming unverified metrics (e.g., '6 hours saved') or forbidden terms."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, number drift, or prohibited claims, and does not use absolute terms or causal mechanisms not supported by the evidence."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful: it accurately describes the method (using median over 8 weeks) without claiming specific numbers, absolute guarantees, or prohibited claims like measured time savings."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "Bullet accurately reflects stated facts about staging latency reduction without violating constraints or fabricating claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 14 services, 38→11 minute median time, and uses Terraform/GitHub Actions (tech list). No numbers are altered, no forbidden claims are made, and no absolute/escalation language is used."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions like deployment or state-of-the-art claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it states the exact latency reduction (41 ms → 9 ms), the methods used (ONNX Runtime, batching), and the measurement context (4-core laptop), without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 310 MB Docker image, 18% of held-out tickets scoring below 0.6 routed to humans, and uses only permitted technologies without prohibited claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 58 pytest cases (including 6 replaying traces), 4-minute CI execution time, and Docker usage. All numbers and entities align with the provided evidence."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "dispatch-desk",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it mentions Python, Ollama, SQLite, and 3,200 synthetic claims without fabricating numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 13,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the stated fact about handling 41,000 checks/s with a p99 of 2.1 ms at 20,000 checks/s, without distortion, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 14,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet faithfully describes the rate limiter's design using Redis and Lua without fabricating numbers, entities, or claims, and aligns with the facts provided."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 15,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact without embellishment, rewording, or false claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet claims 138 ms as a production p99 latency, but the scope notes explicitly state it is a staging load test result, violating the 'must not claim' restriction."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 14 services, 38→11 minute deploy time reduction, and uses only entities from the tech list. It avoids must-not-claim terms and doesn't fabricate numbers or causal claims beyond the stated results."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the measured time reduction (74 to 29 minutes) from the EVIDENCE (medians of 30 Airflow runs), without fabrication, unallowed claims, or escalation."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, fabrication, or violations of constraints."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 40.6% reduction measured as the median over 8 weeks, with no fabricated numbers, entities, or escalations."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited statements."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the fact about reducing latency via ONNX Runtime and batching without fabricating numbers, entities, or claims, nor using absolute terms or unproven causality."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "ticket-triage",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects facts: 310 MB Docker image, 18% held-out tickets below 0.6, FastAPI, and no prohibited claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "ticket-triage",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it mentions 3 categories below 0.75 F1 and 420 relabeled tickets without fabricating numbers, claims, or entities, and avoids prohibited assertions like deployment or state-of-the-art claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions like production deployment or 'big data' scale."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "transit-lake",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact about the 2 million-row sample and omits speculative claims about rebuild time, which is not quantified in the facts."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 13,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet falsely pairs the p99 latency of 2.1 ms (achieved at 20,000 checks/s) with the 41,000 checks/s rate, which is actually the saturation point with a p99 of 14 ms (as per the facts), creating a number drift."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 14,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, accurately describing the fallback mechanism and testing process without embellishment or prohibited claims."
+    },
+    {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 15,
+      "entry": "gridlock",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately describes the Redis/Lua implementation for atomic token bucket updates without fabricating numbers, entities, or claims, nor does it use absolute terms or unsupported causal mechanisms."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: the numbers (38->11 minutes) and entities (Terraform/GitHub Actions) are verifiable, no prohibited claims are made, and the causal link between migration and deploy time reduction is supported by the facts."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 23 alerts, 31→9 page reduction, and Prometheus usage are all directly stated in the facts. Causal attribution to the implementation is supported by the fact's temporal correlation and scope notes."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it directly reflects the fact about leading a 4-person team and reducing data staleness by up to 5 hours/day, with no fabricated claims or violations."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly attributes the latency reduction to query pattern optimization and Redis caching, specifies the staging environment, and avoids forbidden claims like production metrics or ownership."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it avoids claiming measured time savings, does not mention forbidden terms, and accurately reflects the use of Airflow/dbt to automate reporting without overstating results."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the factual numbers (74→29 minutes) and causal mechanism (partitioning by date) without fabrications, exaggerations, or prohibited claims."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet faithfully describes the rate limiter's design using Redis and Lua without fabricating numbers, entities, or claims, and aligns with the facts provided."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "gridlock",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the stated fact about handling 41,000 checks/s with a p99 of 2.1 ms at 20,000 checks/s, without distortion, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 14 services, 38→11 minute deploy time reduction, and uses Terraform/GitHub Actions (tech list). No numbers are drifted, no prohibited claims are made, and no absolute/cause words are used."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rewords the fact about removing up to 5 hours of data staleness without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly attributes the 138 ms p99 latency to the staging load test and avoids prohibited claims."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 40.6% reduction measured as the median over 8 weeks, with no fabricated numbers, entities, or escalations."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the fact without adding numbers, entities, or claims prohibited by the scope notes or must-not-claim list."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 8,000 records and 120 ms are explicitly stated in the facts, and no prohibited claims are made."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that 2,000 randomized reads returned consistent values between leader and follower, without fabricating numbers, entities, or claims beyond the scope notes."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 37 dbt tests, 2% threshold, and Airflow failure trigger, with no claims about production, real-time, or 'big data' scale."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "transit-lake",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, rewording without adding numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the facts without fabricating numbers, entities, or claims, nor does it use absolute language or causal mechanisms not supported by the evidence."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it mentions Redis, Lua scripting, and atomic updates for token buckets without fabricating entities, numbers, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 13,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet associates a p99 latency of 2.1 ms with 41,000 checks/s, but the fact states this p99 was measured at 20,000 checks/s, creating a number drift."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rewords the fact about migrating 14 services and reducing median deploy times from 38 to 11 minutes without violating any categories."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully rephrases the fact about reducing data staleness without fabricating numbers, entities, or claims, and avoids absolute terms or causal assertions not supported by the facts."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it specifies staging latency reduction, avoids prohibited claims, and correctly attributes the latency improvement to the described changes without absolute claims or fabricated entities."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions like time savings or ownership."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully describes the action taken (partitioning a 310 GB table to load only changed partitions) without claiming prohibited metrics, using absolute terms, or fabricating entities/numbers. It rewords the fact without distortion."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it reorders and rewords the facts without adding numbers, entities, claims, or causal mechanisms not explicitly stated."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "dispatch-desk",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, rewording, or violations of the must-not-claim list."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately describes the rate limiter's atomic Redis+Lua design without claiming production use, distribution, or unsupported metrics."
+    },
+    {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 41,000 checks/s is stated as the handled rate, and 2.1 ms p99 at 20,000 checks/s is directly cited. No numbers are distorted, no prohibited claims are made, and no unsupported escalations are present."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful: it directly reflects the fact about leading a 4-person team and reducing data staleness by up to 5 hours/day, with no fabricated claims or violations."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful; it accurately reflects the facts about the idempotent Kafka consumer, deduplication by event ID, and staging load test metrics without inflating numbers, fabricating entities, or claiming prohibited outcomes."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 14 services, 38→11 minute deploy time reduction, and uses only entities from the tech list. It avoids must-not-claim terms and doesn't fabricate numbers or causal claims beyond the stated results."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it states the exact time reduction (74→29 minutes) without fabricated numbers, avoids prohibited claims, and correctly attributes the improvement to the described technical approach."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts, using 'about 6 analyst-hours' as an estimate (not a measured value) and correctly attributes the time savings to the automated process without claiming ownership or causality beyond the stated facts."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 41 tests and 9 schema changes are stated verbatim, no forbidden claims are made, and no unproven escalation terms are used."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [
+        "fabricated_entity"
+      ],
+      "reason": "The bullet mentions 'payment-processing systems' as a use case, which is not in the tech list or facts and implies production use (a must-not-claim), constituting a fabricated_entity."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: the 6 GB dataset, 91 s → 29.5 s compaction time, and 3.08x speed-up are all explicitly stated in the facts. No fabricated numbers, entities, or claims are present; the methods and results align with the evidence."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 10,
+      "entry": "tidekv",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet faithfully restates the fact about 200 crash-injection runs with no acknowledged write loss, without embellishment, fabrication, or prohibited claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 11,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately describes the technology (Rust, Redis, Lua) and atomic updates without claiming unverified attributes like 'distributed' (which is not explicitly stated in facts) or forbidden claims. All terms align with the facts or context."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 12,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 41,000 checks/s and 2.1 ms p99 at 20,000 checks/s, with no fabricated claims, number drift, or escalation terms."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 13,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment: it correctly states the 2% deviation, 8 processes, Redis instance, and 500 requests/s test conditions without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 14,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: '50 simulated Redis failures' matches the 50 kills in the test script, and 'per-process limits' aligns with the fallback's design. No violations occur."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 15,
+      "entry": "raftlet",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful: it rewords the facts about implementing Raft in Rust and validating 10,000 seeds with 0 violations, without fabricating numbers, entities, or claims prohibited by the scope notes."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 16,
+      "entry": "raftlet",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet faithfully restates the fact about 312 simulated milliseconds over 200 crashes in a 5-node cluster without fabricating numbers, entities, or claims, and without using absolute terms or causal mechanisms not supported by the facts."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 17,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [
+        "fabricated_entity",
+        "escalation_causal"
+      ],
+      "reason": "fabricated_entity: 'partitions' and 'message loss' are not explicitly mentioned in the facts. escalation_causal: The bullet links 0 safety violations to 'ensuring system reliability', which is not directly stated in the facts."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's numbers (9,200 events/s on 6-partition topic) and context (staging load tests), without fabrications, exaggerations, or prohibited claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet is faithful; it rephrases the fact about removing up to 5 hours of data staleness without adding claims, fabricating numbers, or misrepresenting causality/escalation."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, directly quoting the stated results without embellishment, fabrication, or unsupported claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts, specifying the staging context for the 138 ms p99 latency and using exact numbers without fabrication, drift, or prohibited claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts without embellishment, fabrication, or violations of constraints."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "marlow-intern",
+      "outcome": "fallback",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact that the 6 analyst-hours saved is an estimate from a survey, not a measured value, and does not claim measured time savings, real-time reporting, or dollar savings."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "fabricated_entity"
+      ],
+      "reason": "The bullet mentions 'distributed' and 'payment-processing platform' which are not stated in the facts or tech list, constituting fabricated_entities."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet pairs 41,000 checks/s (saturation point with p99=14 ms) with a p99 of 2.1 ms at 20,000 checks/s, which is a number_drift by associating the lower latency (2.1 ms) with the higher rate (41k) instead of the correct pairing (2.1 ms at 20k)."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 2% deviation, 8 processes, Redis sharing, and 500 requests/s test conditions without embellishment or prohibited claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 9,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful to the facts, reusing exact numbers (8,000 records, 120 ms) and components without fabricating claims or using prohibited terms."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet faithfully rewords the facts without fabricating numbers, entities, or claims, and does not use absolute terms or unproven causality."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately restates the fact's numbers and causal mechanism without embellishment, drift, or forbidden claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the fact's 9,200 events/s on a 6-partition topic during staging load tests without fabricating numbers, entities, or prohibited claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: leading a 4-person team and reducing data staleness to up to 5 hours daily, with no fabricated claims or escalations."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet presents 138 ms as a production p99 latency metric, but the fact explicitly states it is a staging load test result (not production), constituting number_drift."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it uses exact numbers (41 tests, 9 changes) without fabrication or drift, avoids prohibited claims, and does not introduce unproven causal mechanisms or absolute terms."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "marlow-intern",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful; it rewords the facts without claiming time savings, real-time reporting, or ownership, and uses only technologies from the tech list."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "do_not_claim"
+      ],
+      "reason": "The bullet implies production use on payment-processing systems, violating the 'must not claim' restriction against production use or real users."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet is faithful: it accurately reflects the 50 Redis kills in load testing (number_drift), avoids must-not-claim terms (do_not_claim), and correctly describes the per-process fallback without absolute claims (escalation_absolute)."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "gridlock",
+      "outcome": "first_pass",
+      "judge": [
+        "number_drift"
+      ],
+      "reason": "The bullet claims a p99 latency of 2.1 ms at 41,000 checks/s, but the fact states this p99 (2.1 ms) was achieved at 20,000 checks/s (the lower throughput point). The bullet incorrectly associates the lower-latency metric with the higher throughput, creating a misleading 'number_drift'."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately rewords the facts about Raft implementation and simulator support without fabricating numbers, entities, or claims."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "raftlet",
+      "outcome": "first_pass",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: 10,000 seeds, 0 violations, and 5 invariants checked. It avoids forbidden claims and doesn't fabricate entities/numbers."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "raftlet",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately rewords the fact about retaining failing seeds as regression tests without adding claims, numbers, or entities not supported by the facts."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "tidekv",
+      "outcome": "first_pass",
+      "judge": [
+        "fabricated_entity",
+        "do_not_claim"
+      ],
+      "reason": "The bullet fabricates the 'payment-processing platform' entity (not in facts/tech list) and implies production use (violating 'must not claim') despite being a personal project."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "tidekv",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately reflects the facts: it correctly states the exact numbers (4 MB → 64 MB, 910 → 140 flushes, 7,200 → 18,000 writes/s) and avoids any unsupported claims or absolute terms."
+    },
+    {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 13,
+      "entry": "tidekv",
+      "outcome": "after_retry",
+      "judge": [],
+      "reason": "The bullet accurately restates the fact's numbers and causal mechanism without embellishment, drift, or forbidden claims."
+    }
+  ]
+}

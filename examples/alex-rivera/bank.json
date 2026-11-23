@@ -1,0 +1,494 @@
+{
+  "experiences": [
+    {
+      "id": "lantern-swe",
+      "type": "work",
+      "title": "Software Engineer",
+      "company": "Lantern Freight Systems",
+      "location": "Remote",
+      "date": "Jul. 2023 -- Present",
+      "tech": "Go, PostgreSQL, Kafka, Redis, gRPC, Terraform, GitHub Actions, Prometheus, Grafana, AWS (ECS, RDS)",
+      "bullets": [
+        "Cut p99 latency of the shipment-tracking API from 412 ms to 138 ms by replacing a per-request fan-out of 7 queries with one batched query and adding a Redis read-through cache.",
+        "Built an idempotent Kafka consumer for carrier status events that deduplicates by event id and sustained 9,200 events/s on a 6-partition topic in staging load tests.",
+        "Moved 14 services from hand-written deploy scripts to one shared Terraform and GitHub Actions pipeline, cutting median deploy time from 38 $\\rightarrow$ 11 minutes.",
+        "Added 23 Prometheus alerts and runbooks for the dispatch service; pages per on-call week fell from 31 to 9 over two quarters.",
+        "Led a 4-person effort to replace the nightly billing-export cron job with an event-driven job, removing up to 5 hours of data staleness each day."
+      ],
+      "bullet_capabilities": [
+        "latency optimization",
+        "event-driven systems",
+        "CI/CD and infrastructure as code",
+        "observability and on-call",
+        "technical leadership"
+      ],
+      "tags": [
+        "backend",
+        "go",
+        "postgresql",
+        "kafka",
+        "redis",
+        "terraform",
+        "ci-cd",
+        "observability",
+        "latency",
+        "event-driven",
+        "leadership"
+      ],
+      "adaptable": true,
+      "description": "Backend engineer on the shipment-tracking and dispatch platform of a freight-software company.",
+      "scope": "ORIGIN: written from my own deploy notes, dashboards and pager export. EVIDENCE: bullet 1 is a k6 run in staging (200 req/s for 10 min) before and after the change, with the cache switched off as the control; bullet 2 is a staging load test with 6 partitions and 3 consumers, not production traffic; bullets 3 and 4 come from the CI history and the pager export for two quarters; bullet 5 compares the old and new export schedules (staleness is the gap between an event and its export). DO NOT CLAIM: ownership of the tracking platform (a team of 6 owned it; the author owned the API and the cache layer); 'exactly-once' processing (the consumer is at-least-once with deduplication by event id); 138 ms as a production p99 (it is a staging load test); any cost savings (no cost data was collected); 'zero downtime' deploys (the pipeline does rolling deploys, and one deploy in the period caused 4 minutes of elevated errors)."
+    },
+    {
+      "id": "marlow-intern",
+      "type": "work",
+      "title": "Data Engineering Intern",
+      "company": "Marlow Data Works",
+      "location": "Remote",
+      "date": "Jun. 2022 -- Aug. 2022",
+      "tech": "Python, Airflow, dbt, SQL, Snowflake, Docker",
+      "bullets": [
+        "Built 12 dbt models and an Airflow DAG that replaced a manual weekly spreadsheet report, saving about 6 analyst-hours a week.",
+        "Cut the nightly warehouse load from 74 to 29 minutes by partitioning a 310 GB fact table by date and loading only the changed partitions.",
+        "Added 41 data-quality tests (not null, uniqueness, referential integrity) that caught 9 upstream schema changes before they reached dashboards.",
+        "Reduced the time from a source-table change to a refreshed dashboard by 40.6%, measured as the median over 8 weeks of scheduled runs.",
+        "Ended with 28.3% fewer failed Airflow runs over the same 8 weeks after adding retries with backoff and the data-quality tests."
+      ],
+      "bullet_capabilities": [
+        "data pipelines",
+        "performance tuning",
+        "data quality",
+        "performance tuning",
+        "reliability"
+      ],
+      "tags": [
+        "data",
+        "python",
+        "airflow",
+        "dbt",
+        "sql",
+        "etl",
+        "data-quality",
+        "performance"
+      ],
+      "adaptable": true,
+      "description": "Summer data-engineering internship on the reporting warehouse of an analytics consultancy.",
+      "scope": "EVIDENCE: load times are the median of 30 Airflow runs before and after the change; the 9 caught changes come from the test-failure log over 8 weeks; the 6 hours is the two analysts' own estimate from a one-question survey. DO NOT CLAIM: measured time savings (the 6 hours a week is an estimate, not a measurement); 'real-time' reporting (the reports stayed daily); any dollar savings; ownership of the warehouse (the intern worked in one team's models)."
+    },
+    {
+      "id": "tidewell-coop",
+      "type": "work",
+      "title": "Frontend Developer (Co-op)",
+      "company": "Tidewell Health Tech",
+      "location": "Remote",
+      "date": "Jan. 2021 -- Jun. 2021",
+      "tech": "React, TypeScript, Jest, Cypress, REST, Lighthouse",
+      "bullets": [
+        "Rebuilt the patient-intake form in React and TypeScript; form completion rose from 61\\% to 74\\% in a 3-week A/B test over 4,800 sessions.",
+        "Cut the intake bundle from 612 KB to 238 KB by code-splitting and replacing a charting library, improving median load time on a throttled 4G profile from 5.1 s to 2.4 s.",
+        "Wrote 86 Jest unit tests and 14 Cypress end-to-end tests for the intake flow, raising line coverage of the module from 23\\% to 81\\%."
+      ],
+      "bullet_capabilities": [
+        "frontend development",
+        "web performance",
+        "testing"
+      ],
+      "tags": [
+        "frontend",
+        "react",
+        "typescript",
+        "performance",
+        "testing",
+        "ab-testing"
+      ],
+      "adaptable": true,
+      "description": "Six-month co-op on the patient-facing web app of a health-technology company.",
+      "scope": "EVIDENCE: A/B results are from the team's experiment dashboard (control 2,410 sessions, variant 2,390, 3 weeks); bundle sizes are from the build output; load times are Lighthouse runs on a throttled 4G profile, median of 5. DO NOT CLAIM: clinical or patient-outcome impact (only form completion was measured); 'HIPAA compliance' (the form stored nothing itself, and another team owned the compliance review); significance beyond what the dashboard reported (p = 0.03, with no correction for multiple tests)."
+    },
+    {
+      "id": "gridlock",
+      "type": "project",
+      "title": "Gridlock: a distributed rate limiter in Rust and Redis",
+      "date": "2025",
+      "tech_stack": "Rust, Redis, Lua, Tokio, Docker, GitHub Actions",
+      "github": "https://example.com/code/gridlock",
+      "has_code": true,
+      "bullets": [
+        "Built a rate limiter in Rust that keeps token buckets in Redis and updates them with one Lua script, so a check and its update are a single atomic step.",
+        "Handled 41,000 checks/s on one 4-vCPU VM against a single Redis instance, with a p99 of 2.1 ms at 20,000 checks/s.",
+        "Kept the admitted rate within 2\\% of the configured limit across 8 limiter processes sharing one Redis, in a 10-minute test at 500 requests/s.",
+        "Added a local fallback that degrades to per-process limits when Redis is unreachable, and checked it by killing Redis 50 times during a load test.",
+        "Shipped the limiter as a library and an HTTP sidecar with 76 tests and a CI pipeline that runs them against Redis 7.2 and 7.4."
+      ],
+      "bullet_capabilities": [
+        "atomic operations",
+        "performance benchmarking",
+        "accuracy testing",
+        "failure handling",
+        "packaging and CI"
+      ],
+      "tags": [
+        "rust",
+        "redis",
+        "lua",
+        "rate-limiting",
+        "distributed-systems",
+        "backend",
+        "benchmarking",
+        "fault-tolerance",
+        "ci"
+      ],
+      "adaptable": true,
+      "description": "A rate-limiting library and HTTP sidecar whose limits hold across several processes.",
+      "scope": "ORIGIN: personal project, started to learn Redis scripting. EVIDENCE: bench/results-2025-04.csv (one 4-vCPU, 16 GB VM; Redis 7.4 on the same host; 8 client processes; 5-minute runs; median of 3); the accuracy test is test/accuracy.rs (largest deviation seen: 1.4\\%); the failure test is scripts/kill\\_redis.sh (50 kills, every run returned to Redis-backed limits within 10 s). DO NOT CLAIM: production use or real users (it has only run on test machines); strict global limits while Redis is down (the fallback limits are per process, so 8 processes admit up to 8x the configured rate); Redis Cluster support (single instance only); 41,000 checks/s as a latency-bounded rate (it is the saturation point, where p99 was 14 ms); any comparison with other rate limiters (none was run)."
+    },
+    {
+      "id": "gridlock-bench",
+      "type": "project",
+      "title": "Gridlock benchmark harness",
+      "date": "2025",
+      "tech_stack": "Rust, Redis, Make, gnuplot",
+      "github": "https://example.com/code/gridlock",
+      "has_code": true,
+      "bullets": [
+        "Wrote a benchmark harness in Rust that sweeps request rates from 1,000 to 50,000 checks/s and records p50, p99 and p99.9 latency at each rate.",
+        "Showed that throughput levels off near 41,000 checks/s as the single Redis thread saturates: Redis used 38\\% of a core at 20,000 checks/s and 99\\% at 41,000.",
+        "Published the raw CSVs and plotting scripts so that every number in the README can be regenerated with one make target."
+      ],
+      "bullet_capabilities": [
+        "performance benchmarking",
+        "bottleneck analysis",
+        "reproducibility"
+      ],
+      "tags": [
+        "benchmarking",
+        "rust",
+        "redis",
+        "latency",
+        "reproducibility"
+      ],
+      "adaptable": true,
+      "description": "The benchmarking side of the Gridlock repository.",
+      "scope": "Same project as gridlock: the benchmark side of the same repository. EVIDENCE: Redis CPU from redis-cli INFO samples taken every second during the 5-minute runs. DO NOT CLAIM: that Redis is the only bottleneck (client CPU was at 71\\% at the plateau); results on any hardware other than the one 4-vCPU VM."
+    },
+    {
+      "id": "raftlet",
+      "type": "project",
+      "title": "Raftlet: a teaching Raft implementation with a deterministic simulator",
+      "date": "2024",
+      "tech_stack": "Rust, Tokio, Protocol Buffers, proptest",
+      "github": "https://example.com/code/raftlet",
+      "has_code": true,
+      "bullets": [
+        "Implemented leader election, log replication and snapshots from the Raft paper in Rust, with a deterministic simulator that controls the clock, the network and crashes.",
+        "Ran 10,000 randomized simulator seeds covering leader crashes, partitions and message loss with 0 safety violations across 5 invariants checked after every step.",
+        "Found 3 bugs with the simulator, including a stale-term vote that let a deposed leader commit an entry, and kept each failing seed as a regression test.",
+        "Recovered a 5-node cluster to a new leader in a median of 312 simulated ms across 200 simulated leader crashes."
+      ],
+      "bullet_capabilities": [
+        "consensus protocols",
+        "simulation testing",
+        "debugging distributed systems",
+        "failure recovery"
+      ],
+      "tags": [
+        "rust",
+        "raft",
+        "consensus",
+        "distributed-systems",
+        "simulation",
+        "property-testing",
+        "fault-tolerance"
+      ],
+      "adaptable": true,
+      "description": "A Raft implementation written to learn the protocol, tested in a simulator rather than on real machines.",
+      "facts": [
+        {
+          "id": "raftlet-features",
+          "text": "Implements leader election, log replication and snapshots from the Raft paper in Rust; membership changes are not implemented"
+        },
+        {
+          "id": "raftlet-simulator",
+          "text": "Deterministic simulator that controls the clock, the network and crashes; 10,000 randomized seeds ran with 0 safety violations across 5 invariants checked after every step",
+          "numbers": [
+            {
+              "value": 10000,
+              "unit": "seeds",
+              "as_measured": "10,000"
+            },
+            {
+              "value": 0,
+              "unit": "violations"
+            },
+            {
+              "value": 5,
+              "unit": "invariants"
+            }
+          ]
+        },
+        {
+          "id": "raftlet-bugs",
+          "text": "Found 3 bugs with the simulator, including a stale-term vote that let a deposed leader commit an entry; each fix kept its seed as a regression test",
+          "numbers": [
+            {
+              "value": 3,
+              "unit": "bugs"
+            }
+          ]
+        },
+        {
+          "id": "raftlet-failover",
+          "text": "Median failover of 312 simulated ms over 200 simulated leader crashes in a 5-node cluster",
+          "numbers": [
+            {
+              "value": 312,
+              "unit": "ms",
+              "as_measured": "312"
+            },
+            {
+              "value": 200,
+              "unit": "crashes"
+            },
+            {
+              "value": 5,
+              "unit": "nodes"
+            }
+          ]
+        }
+      ],
+      "scope": "ORIGIN: personal project, built while working through the Raft paper. EVIDENCE: sim/results.json from \\texttt{make sim SEEDS=10000}; the 312 ms is simulated time, taken over 200 crashes of a 5-node cluster in the simulator. DO NOT CLAIM: production readiness or fault tolerance of real deployments (it runs only inside the simulator and a 5-process local demo); 'linearizable' reads (only leader reads without a read index exist, and they are not linearizable under partitions); membership changes (not implemented); 'Jepsen-tested' (no external test harness was used); failover times in wall-clock milliseconds (312 is simulated time)."
+    },
+    {
+      "id": "transit-lake",
+      "type": "project",
+      "title": "Transit Lake: a batch pipeline over public transit feeds",
+      "date": "2024",
+      "tech_stack": "Python, DuckDB, dbt, Parquet, Airflow, GitHub Actions",
+      "github": "https://example.com/code/transit-lake",
+      "has_code": true,
+      "bullets": [
+        "Built a batch pipeline that ingests 48 million GTFS-realtime vehicle positions a month into partitioned Parquet files and models them with dbt on DuckDB.",
+        "Loaded one month of data in 6 minutes on a laptop by partitioning by service date and skipping unchanged partitions, down from 41 minutes for a full rebuild.",
+        "Added 37 dbt tests and a freshness check that fails the Airflow run when more than 2\\% of positions are missing a trip id.",
+        "Published a reproducible sample of 2 million rows and a make target that rebuilds every table and chart in under 10 minutes."
+      ],
+      "bullet_capabilities": [
+        "batch data pipelines",
+        "incremental loading",
+        "data quality",
+        "reproducibility"
+      ],
+      "tags": [
+        "data",
+        "python",
+        "duckdb",
+        "dbt",
+        "parquet",
+        "airflow",
+        "etl",
+        "data-quality",
+        "geospatial"
+      ],
+      "adaptable": true,
+      "description": "An open-data pipeline from a transit agency's vehicle feed to analysis-ready tables.",
+      "scope": "DO NOT CLAIM: streaming or 'real-time' processing (batch, one load per day); a production deployment (it runs on one laptop and in CI). EVIDENCE: Airflow run logs on one laptop (8 cores, 16 GB, NVMe), median of 5 runs; volumes from the ingest counters. The agency feed is public; the repository ships only the 2-million-row sample. DO NOT CLAIM: 'big data' scale (48 million rows a month fits on one machine); data-quality improvements for the agency (the tests check only the pipeline's own inputs)."
+    },
+    {
+      "id": "tidekv",
+      "type": "project",
+      "title": "Tidekv: an embedded key-value store in Go",
+      "date": "2025",
+      "tech_stack": "Go, Make, pprof, GitHub Actions",
+      "github": "https://example.com/code/tidekv",
+      "has_code": true,
+      "bullets": [
+        "Built an embedded key-value store in Go with a write-ahead log, an in-memory memtable and sorted tables on disk, and recovered the memtable from a log of 8,000 records in 120 ms.",
+        "Raised single-threaded write throughput from 7,200 to 18,000 writes/s by enlarging the write buffer from 4 MB to 64 MB, which cut flushes from 910 to 140.",
+        "Cut the compaction of a 6 GB data set from 91 s to 29.5 s, a 3.08x speed-up, by merging 4 tables at a time instead of 2.",
+        "Lost no acknowledged write across 200 seeded crash-injection runs, each checked against an in-memory model after recovery.",
+        "Added a read-only follower that tails the write-ahead log; 2,000 randomized reads returned the same values on the follower and the leader."
+      ],
+      "bullet_capabilities": [
+        "storage engines",
+        "write performance",
+        "compaction tuning",
+        "crash recovery testing",
+        "replication"
+      ],
+      "tags": [
+        "go",
+        "storage",
+        "lsm",
+        "databases",
+        "benchmarking",
+        "recovery",
+        "fault-tolerance",
+        "replication"
+      ],
+      "adaptable": true,
+      "description": "A small log-structured key-value store written to learn how storage engines recover from crashes.",
+      "scope": "ORIGIN: personal project, written to learn how storage engines recover from crashes. EVIDENCE: bench/results-2025-06.csv (one 8-core laptop with NVMe; one writer goroutine; median of 5 runs; the throughput gain is attributed to the larger write buffer by the flush counts, 910 down to 140); the recovery test replays a log of exactly 8,000 records; the 6 GB compaction input is synthetic; the crash test is test/crash\\_test.go (200 seeds, no acknowledged write lost, the model compared after every recovery); the follower test is test/follower\\_test.go (2,000 randomized reads). DO NOT CLAIM: production use or real users (it has only run on one laptop and in CI); multi-writer throughput (only one writer goroutine was benchmarked, and the gain came from the write buffer); durability guarantees beyond the 200 tested crashes (power-loss behaviour of the disk was not tested); read scaling or follower throughput (the follower's speed was never measured); any comparison with other storage engines (none was run)."
+    },
+    {
+      "id": "ticket-triage",
+      "type": "project",
+      "title": "Ticket Triage: a support-ticket classifier",
+      "date": "2025",
+      "tech_stack": "Python, PyTorch, Hugging Face Transformers, ONNX Runtime, FastAPI, Docker",
+      "github": "https://example.com/code/ticket-triage",
+      "has_code": true,
+      "bullets": [
+        "Fine-tuned a distilled transformer on 38,000 public support tickets to route them into 12 categories, reaching macro-F1 0.87 on a 4,000-ticket held-out set against 0.71 for a TF-IDF and logistic-regression baseline.",
+        "Cut CPU inference latency from 41 ms to 9 ms per ticket by exporting to ONNX Runtime and batching, measured on a 4-core laptop.",
+        "Served the model with FastAPI in a 310 MB Docker image and added a confidence threshold that sends the 18\\% of held-out tickets scoring below 0.6 to a human queue.",
+        "Wrote an evaluation report with a per-class confusion matrix that showed 3 categories below 0.75 F1 and led to relabelling 420 ambiguous tickets."
+      ],
+      "bullet_capabilities": [
+        "model fine-tuning",
+        "inference optimization",
+        "model serving",
+        "error analysis"
+      ],
+      "tags": [
+        "ml",
+        "nlp",
+        "pytorch",
+        "transformers",
+        "onnx",
+        "fastapi",
+        "classification",
+        "evaluation"
+      ],
+      "adaptable": true,
+      "description": "A text classifier and serving stack built on a public support-ticket dataset.",
+      "scope": "ORIGIN: personal project on a public dataset of English support tickets. EVIDENCE: eval/report.md (macro-F1 0.87 is one run with seed 7; the mean of 3 seeds was 0.86); latency is the median of 1,000 tickets on a 4-core laptop CPU, batch size 1 before and 16 after; the 18\\% routed to humans is measured on the held-out set only. DO NOT CLAIM: state-of-the-art accuracy (no comparison with other published models); deployment or use by a real support team (offline evaluation only); 0.87 as a stable figure (single seed); accuracy on tickets from other companies or languages (one English source); that the model 'understands' tickets."
+    },
+    {
+      "id": "dispatch-desk",
+      "type": "project",
+      "title": "Dispatch Desk: a tool-using claim-triage agent",
+      "date": "2025",
+      "tech_stack": "Python, Ollama, SQLite, pytest, Docker",
+      "github": "https://example.com/code/dispatch-desk",
+      "has_code": true,
+      "bullets": [
+        "Built a tool-using agent in Python that triages freight-damage claims with an 8B open-weights model served locally by Ollama and one retrieval tool over a SQLite table of 3,200 past claims.",
+        "Passed 35 of 40 hand-written claim scenarios (0.875), against 22 of 40 (0.55) for the same model without the retrieval tool.",
+        "Recorded every model call and tool call in a SQLite trace, so that a failing scenario replays offline in under 2 s.",
+        "Wrote 58 pytest cases, 6 of them replaying recorded traces, and ran them in CI in 4 minutes."
+      ],
+      "bullet_capabilities": [
+        "LLM agents",
+        "agent evaluation",
+        "debuggability",
+        "testing"
+      ],
+      "tags": [
+        "python",
+        "llm",
+        "agents",
+        "tool-use",
+        "evaluation",
+        "testing",
+        "ollama"
+      ],
+      "adaptable": true,
+      "description": "A claim-triage agent that runs on a local open-weights model, built to learn how tool calling fails.",
+      "scope": "ORIGIN: personal project, built to learn how tool calling fails. EVIDENCE: eval/results.json (40 scenarios written by the author, one run at temperature 0 with seed 9; a second run gave 34 of 40, 0.85); the agent called the retrieval tool in 37 of the 40 scenarios and no other model tool (the date parser and the currency formatter are plain functions that the model cannot call); the 3,200 past claims are synthetic; the replay time is the median of 20 replays on one laptop; CI time is from the last 10 runs. DO NOT CLAIM: a production model, a deployment or real users (it runs on one laptop and nothing was deployed); a multi-tool agent or 'three tools' (the retrieval tool is the only tool the model can call); 0.875 as a stable figure (a single run; a second run gave 0.85); accuracy on real claims (the claims are synthetic and the scenarios were written by the author); any comparison with other models (one 8B model only)."
+    },
+    {
+      "id": "pulse-dashboard",
+      "type": "project",
+      "title": "Pulse: a service-health dashboard in React and TypeScript",
+      "date": "2023",
+      "tech_stack": "React, TypeScript, D3, WebSocket, Vite, Vitest, Playwright",
+      "github": "https://example.com/code/pulse-dashboard",
+      "has_code": true,
+      "bullets": [
+        "Built a service-health dashboard in React and TypeScript that streams updates over WebSocket and redraws charts of 1,200 points at 58 fps or better in Chrome on a 2021 laptop.",
+        "Moved chart rendering from SVG to canvas, cutting the time to draw a 24-hour view from 340 ms to 45 ms.",
+        "Added keyboard navigation and ARIA labels; Lighthouse scored accessibility 96 and axe reported 0 violations on the 5 main views.",
+        "Covered the main flows with 42 Vitest tests and 9 Playwright end-to-end tests that run in CI in 3.5 minutes."
+      ],
+      "bullet_capabilities": [
+        "real-time frontend",
+        "rendering performance",
+        "accessibility",
+        "frontend testing"
+      ],
+      "tags": [
+        "frontend",
+        "react",
+        "typescript",
+        "d3",
+        "websocket",
+        "accessibility",
+        "performance",
+        "testing"
+      ],
+      "adaptable": true,
+      "description": "A dashboard that draws live service metrics, fed by a data simulator in the demo.",
+      "scope": "ORIGIN: personal project, built as a portfolio piece. EVIDENCE: frame rates from the Chrome performance panel over 60 s runs (minimum 58 fps); draw times are the median of 20 runs; Lighthouse and axe were run on the 5 main views; CI time is from the last 10 runs. DO NOT CLAIM: real users or a production deployment (the demo is fed by a simulator); 'real-time' faster than the simulator's 1-second update interval; WCAG conformance (an automated audit does not prove it); support for browsers other than Chrome and Firefox (only those two were tested)."
+    },
+    {
+      "id": "shelf-forecast",
+      "type": "project",
+      "title": "Shelf Forecast: weekly demand forecasting for a regional grocer",
+      "date": "2022",
+      "tech_stack": "Python, scikit-learn, LightGBM, pandas, MLflow",
+      "has_code": false,
+      "bullets": [
+        "Built a weekly demand forecast for 1,850 SKUs with LightGBM on calendar, price and promotion features, cutting weighted MAPE from 27.4\\% to 19.8\\% against a last-week baseline on a 12-week holdout.",
+        "Tracked 64 experiments in MLflow and chose the model on a rolling-origin backtest instead of a random split, so that future promotions could not leak into training.",
+        "Wrote the backtest harness so that one code path scored the baseline and every candidate model.",
+        "Presented the results to the grocer's category managers, who piloted the forecast in 3 stores."
+      ],
+      "bullet_capabilities": [
+        "demand forecasting",
+        "experiment tracking and validation",
+        "evaluation tooling",
+        "stakeholder communication"
+      ],
+      "tags": [
+        "ml",
+        "forecasting",
+        "lightgbm",
+        "mlflow",
+        "time-series",
+        "evaluation"
+      ],
+      "adaptable": true,
+      "description": "A university capstone with a regional grocery chain; the data is under NDA, so the code is private.",
+      "scope": "ORIGIN: university capstone with a regional grocer; the data belongs to the grocer and is under NDA, so the code is private (has\\_code is false). EVIDENCE: the results table in the final report (12-week holdout, 1,850 SKUs, WMAPE 19.8\\% against 27.4\\% for the last-week baseline); the 3-store pilot over \\textasciitilde{}6 weeks was reported to the team by the grocer, not measured by it. DO NOT CLAIM: revenue or waste reduction (never measured); a production deployment beyond the 3-store pilot; accuracy on SKUs outside the 1,850 modelled; ownership of the whole capstone (a team of 4; the author wrote the feature pipeline and the backtest harness)."
+    },
+    {
+      "id": "dock-scheduler",
+      "type": "project",
+      "title": "Dock Scheduler: a dock-door appointment service prototype",
+      "date": "2024",
+      "tech_stack": "Go, PostgreSQL, gRPC, React",
+      "has_code": false,
+      "bullets": [
+        "Prototyped a dock-door appointment service in 36 hours with a team of 3, using a Go gRPC backend and a React scheduling view.",
+        "Enforced no double-booking with a PostgreSQL exclusion constraint on door and time range; 200 concurrent attempts to book one slot produced exactly 1 booking in a local test.",
+        "Placed second among 11 teams at the company hackathon."
+      ],
+      "bullet_capabilities": [
+        "rapid prototyping",
+        "concurrency control",
+        "teamwork"
+      ],
+      "tags": [
+        "backend",
+        "go",
+        "postgresql",
+        "concurrency",
+        "react",
+        "hackathon"
+      ],
+      "adaptable": false,
+      "description": "A hackathon prototype whose code belongs to the employer, so it cannot be shown.",
+      "scope": "ORIGIN: employer's internal hackathon; the code stays in the employer's private repository (has\\_code is false). Bullets are kept verbatim: the claims are narrow and easy to overstate. EVIDENCE: the concurrency result is from a local test script run 20 times, with the same outcome each time; the placing is from the hackathon's results page. DO NOT CLAIM: adoption or use by the employer (it stayed a prototype); 'distributed' locking (the guarantee comes from one PostgreSQL instance); a design for multiple warehouses or time zones (single site, one time zone)."
+    }
+  ]
+}

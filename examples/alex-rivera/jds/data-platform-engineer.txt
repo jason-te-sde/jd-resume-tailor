@@ -1,0 +1,16 @@
+Data Platform Engineer
+Cobalt Meadow Analytics (an invented company, written for this example)
+
+What you will do
+- Build batch data pipelines in Python and SQL that load, test and publish analytics tables.
+- Model data with dbt and schedule it with Airflow.
+- Keep the warehouse fast and the data trustworthy: add tests, track freshness and fix failures.
+- Work with analysts to replace manual reports with automated ones.
+
+What we look for
+- Experience with Python, SQL and a columnar warehouse such as Snowflake or DuckDB.
+- Experience with dbt and a workflow scheduler.
+- Care about data quality and the ability to explain a pipeline to non-engineers.
+
+Nice to have
+- Parquet, Docker and CI experience.

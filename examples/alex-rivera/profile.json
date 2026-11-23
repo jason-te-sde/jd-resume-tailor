@@ -1,0 +1,41 @@
+{
+  "name": "Alex Rivera",
+  "email": "alex.rivera@example.com",
+  "phone": "(555) 555-0142",
+  "linkedin": "https://example.com/in/alex-rivera",
+  "github": "https://example.com/code/alex-rivera",
+  "website": "https://example.com/alex",
+  "location": "Springfield, ST",
+  "education": [
+    {
+      "school": "Eastvale State University",
+      "location": "Eastvale, ST",
+      "degree": "B.S. in Computer Science",
+      "gpa": "3.6/4.0",
+      "date": "Sep. 2019 -- May 2023",
+      "coursework": [
+        "Distributed Systems",
+        "Database Internals",
+        "Machine Learning",
+        "Computer Networks",
+        "Algorithms"
+      ],
+      "notes": "Invented for this example."
+    }
+  ],
+  "skills_bank": {
+    "programming_languages": ["Go", "Rust", "Python", "TypeScript", "SQL", "Java"],
+    "frameworks_libraries": ["React", "FastAPI", "PyTorch", "Tokio", "dbt", "D3"],
+    "devops_cloud": ["Docker", "Terraform", "GitHub Actions", "AWS (ECS, RDS)", "Prometheus", "Grafana"],
+    "databases": ["PostgreSQL", "Redis", "DuckDB", "Snowflake", "Kafka"],
+    "developer_tools": ["Git", "Make", "k6", "Playwright", "MLflow", "Airflow"]
+  },
+  "activities": [
+    {
+      "role": "Volunteer Mentor",
+      "org": "Eastvale Code Club",
+      "detail": "Ran a weekly beginner Python session for 12 high-school students in one spring term."
+    }
+  ],
+  "awards": []
+}

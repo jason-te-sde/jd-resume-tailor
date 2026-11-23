@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jd-resume-tailor"
+dynamic = ["version"]
+description = "Tailors a one-page resume to a job description from a bank of facts, and refuses any bullet the bank does not support."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.11.0",
+    "httpx>=0.28.1",
+    "jsonschema>=4.21",
+    "openai>=3.57.0",
+]
+
+[project.scripts]
+tailor = "tailor.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "hypothesis",
+    "ruff",
+    "mypy",
+    "types-jsonschema",
+]
+
+[tool.hatch.version]
+path = "src/tailor/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tailor"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF", "D", "T20", "N", "PT"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
+"scripts/**" = ["T20"]
+"src/tailor/cli.py" = ["T20"]
+"src/tailor/evals/commands.py" = ["T20"]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests", "scripts"]
+mypy_path = "scripts"
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]
+addopts = "-ra --strict-markers"
+markers = [
+    "requires_tex: needs pdflatex and poppler's pdftotext; skipped when either is missing",
+]
+filterwarnings = ["error"]

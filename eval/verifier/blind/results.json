@@ -1,0 +1,119 @@
+{
+  "rows": 86,
+  "judgement_calls": {
+    "listed": 14,
+    "rows_in_the_set": 13
+  },
+  "first_run": {
+    "evaluated_at_commit": "492a3fa",
+    "note": "written without access to the verifier; evaluated once; not used for tuning",
+    "scores": {
+      "rows": 86,
+      "violation_rows": 59,
+      "classes": {
+        "fabricated_number": {
+          "support": 12,
+          "predicted": 17,
+          "precision": 0.5882,
+          "recall": 0.8333
+        },
+        "number_drift": {
+          "support": 9,
+          "predicted": 9,
+          "precision": 0.8889,
+          "recall": 0.8889
+        },
+        "fabricated_entity": {
+          "support": 10,
+          "predicted": 10,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "do_not_claim": {
+          "support": 16,
+          "predicted": 5,
+          "precision": 1.0,
+          "recall": 0.3125
+        },
+        "escalation_absolute": {
+          "support": 13,
+          "predicted": 14,
+          "precision": 0.7857,
+          "recall": 0.8462
+        },
+        "escalation_causal": {
+          "support": 11,
+          "predicted": 14,
+          "precision": 0.5,
+          "recall": 0.6364
+        }
+      },
+      "ok": {
+        "support": 27,
+        "predicted": 28,
+        "precision": 0.6786,
+        "recall": 0.7037
+      },
+      "caught_violation_recall": 0.8475,
+      "false_alarm_rate": 0.2963
+    }
+  },
+  "rescored": {
+    "evaluated_at_commit": "bfc57d9",
+    "note": "re-scored, not re-labelled, after the fixes of an independent review; not used for tuning",
+    "scores": {
+      "rows": 86,
+      "violation_rows": 59,
+      "classes": {
+        "fabricated_number": {
+          "support": 12,
+          "predicted": 21,
+          "precision": 0.4762,
+          "recall": 0.8333
+        },
+        "number_drift": {
+          "support": 9,
+          "predicted": 9,
+          "precision": 0.8889,
+          "recall": 0.8889
+        },
+        "fabricated_entity": {
+          "support": 10,
+          "predicted": 10,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "do_not_claim": {
+          "support": 16,
+          "predicted": 5,
+          "precision": 1.0,
+          "recall": 0.3125
+        },
+        "escalation_absolute": {
+          "support": 13,
+          "predicted": 15,
+          "precision": 0.7333,
+          "recall": 0.8462
+        },
+        "escalation_causal": {
+          "support": 11,
+          "predicted": 14,
+          "precision": 0.5,
+          "recall": 0.6364
+        }
+      },
+      "ok": {
+        "support": 27,
+        "predicted": 24,
+        "precision": 0.6667,
+        "recall": 0.5926
+      },
+      "caught_violation_recall": 0.8644,
+      "false_alarm_rate": 0.4074,
+      "caught": 51,
+      "false_alarms": 11,
+      "caught_percent": 86.44067796610169,
+      "false_alarm_percent": 40.74074074074074
+    }
+  }
+}

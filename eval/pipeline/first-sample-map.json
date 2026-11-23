@@ -1,0 +1,370 @@
+{
+  "seed": 20261122,
+  "size": 60,
+  "frame": 441,
+  "rewritten": 442,
+  "structural": 1,
+  "sampled": 60,
+  "rows": {
+    "f-001": {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "ticket-triage"
+    },
+    "f-002": {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "dispatch-desk"
+    },
+    "f-003": {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "raftlet"
+    },
+    "f-004": {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "marlow-intern"
+    },
+    "f-005": {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe"
+    },
+    "f-006": {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "dispatch-desk"
+    },
+    "f-007": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 20,
+      "entry": "ticket-triage"
+    },
+    "f-008": {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "gridlock"
+    },
+    "f-009": {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "tidekv"
+    },
+    "f-010": {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "marlow-intern"
+    },
+    "f-011": {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern"
+    },
+    "f-012": {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 13,
+      "entry": "gridlock"
+    },
+    "f-013": {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "tidekv"
+    },
+    "f-014": {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 13,
+      "entry": "raftlet"
+    },
+    "f-015": {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "tidewell-coop"
+    },
+    "f-016": {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe"
+    },
+    "f-017": {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "lantern-swe"
+    },
+    "f-018": {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "gridlock"
+    },
+    "f-019": {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe"
+    },
+    "f-020": {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "ticket-triage"
+    },
+    "f-021": {
+      "jd": "embedded-firmware-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "gridlock"
+    },
+    "f-022": {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "tidekv"
+    },
+    "f-023": {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 1,
+      "entry": "lantern-swe"
+    },
+    "f-024": {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe"
+    },
+    "f-025": {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern"
+    },
+    "f-026": {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "ticket-triage"
+    },
+    "f-027": {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "transit-lake"
+    },
+    "f-028": {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 14,
+      "entry": "gridlock"
+    },
+    "f-029": {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "lantern-swe"
+    },
+    "f-030": {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "pulse-dashboard"
+    },
+    "f-031": {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 13,
+      "entry": "tidekv"
+    },
+    "f-032": {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe"
+    },
+    "f-033": {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "transit-lake"
+    },
+    "f-034": {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 5,
+      "entry": "dispatch-desk"
+    },
+    "f-035": {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 13,
+      "entry": "gridlock"
+    },
+    "f-036": {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "pulse-dashboard"
+    },
+    "f-037": {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe"
+    },
+    "f-038": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 14,
+      "entry": "gridlock"
+    },
+    "f-039": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "dispatch-desk"
+    },
+    "f-040": {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "raftlet"
+    },
+    "f-041": {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "dispatch-desk"
+    },
+    "f-042": {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "ticket-triage"
+    },
+    "f-043": {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "lantern-swe"
+    },
+    "f-044": {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "raftlet"
+    },
+    "f-045": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern"
+    },
+    "f-046": {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "gridlock"
+    },
+    "f-047": {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "raftlet"
+    },
+    "f-048": {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "tidekv"
+    },
+    "f-049": {
+      "jd": "site-reliability-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "marlow-intern"
+    },
+    "f-050": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 15,
+      "entry": "gridlock"
+    },
+    "f-051": {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern"
+    },
+    "f-052": {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern"
+    },
+    "f-053": {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "tidekv"
+    },
+    "f-054": {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern"
+    },
+    "f-055": {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "pulse-dashboard"
+    },
+    "f-056": {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "dispatch-desk"
+    },
+    "f-057": {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "tidewell-coop"
+    },
+    "f-058": {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "tidekv"
+    },
+    "f-059": {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "tidekv"
+    },
+    "f-060": {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "tidekv"
+    }
+  }
+}

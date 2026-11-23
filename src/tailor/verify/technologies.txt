@@ -1,0 +1,344 @@
+# Technologies, tools, services and standards a resume bullet might name.
+#
+# One technology per line: the canonical name, then its aliases, separated by "|". Two names on
+# the same line are the same thing to the entity check ("Postgres" in a bullet is supported by
+# "PostgreSQL" in a source). A line that starts with "=" is matched case-sensitively, which keeps
+# a name that is also an ordinary word ("Go", "Spark", "Flask") from matching the word.
+#
+# The list is deliberately finite. A name that is not here is still caught when it is CamelCase or
+# ALLCAPS, or a capitalised word that appears in no source; this list adds the lower-case and plain
+# capitalised names that those rules cannot tell from prose ("kubernetes", "Kafka").
+
+# Languages
+Python | CPython
+Java | JVM
+JavaScript | JS | ECMAScript
+TypeScript
+=Go | Golang
+Rust
+C++ | cpp
+C#
+Kotlin
+=Swift
+Scala
+=Ruby
+PHP
+Perl
+Haskell
+Elixir
+Erlang
+Clojure
+=Dart
+Lua | LuaJIT
+Bash
+Zig
+OCaml
+SQL | PL/pgSQL
+MATLAB
+=Julia
+Objective-C
+Groovy
+Solidity
+WebAssembly | Wasm
+COBOL
+Fortran
+
+# Web, frontend and mobile
+React | React.js | ReactJS
+React Native
+Angular | AngularJS
+Vue | Vue.js | VueJS
+Svelte | SvelteKit
+Next.js | NextJS
+Nuxt
+jQuery
+Redux
+Tailwind | Tailwind CSS
+Bootstrap
+Webpack
+Vite
+Rollup
+esbuild
+Babel
+Storybook
+D3 | D3.js
+Three.js
+Chart.js
+Electron
+Flutter
+Android
+iOS
+Chrome | Chromium
+Firefox
+=Safari
+WebSocket | WebSockets
+WebRTC
+GraphQL
+=REST | RESTful
+gRPC
+tRPC
+OpenAPI | Swagger
+Protocol Buffers | Protobuf
+Thrift
+Node.js | NodeJS
+Deno
+Express.js | ExpressJS
+
+# Backend frameworks and libraries
+Django
+=Flask
+FastAPI
+Spring Boot
+Hibernate
+Rails | Ruby on Rails
+Laravel
+ASP.NET
+.NET | dotnet
+Actix
+Axum
+Tokio
+Celery
+Sidekiq
+Netty
+Tomcat
+Jetty
+Nginx
+HAProxy
+Traefik
+Envoy
+Istio
+
+# Databases, caches and search
+PostgreSQL | Postgres
+MySQL
+MariaDB
+SQLite
+MongoDB | Mongo
+Redis
+Redis Cluster
+Redis Sentinel
+Redis Streams
+Memcached
+Cassandra
+ScyllaDB
+DynamoDB
+Elasticsearch
+OpenSearch
+Neo4j
+CockroachDB
+TiDB
+Snowflake
+BigQuery
+Redshift
+ClickHouse
+DuckDB
+Databricks
+SQL Server | MSSQL
+Aurora
+InfluxDB
+TimescaleDB
+Pinecone
+Weaviate
+Milvus
+Qdrant
+pgvector
+FAISS
+etcd
+ZooKeeper
+RocksDB
+LevelDB
+
+# Messaging, streaming and data engineering
+Kafka | Apache Kafka
+Kafka Streams
+RabbitMQ
+SQS
+SNS
+Kinesis
+=Pulsar
+=NATS
+Flink | Apache Flink
+=Spark | Apache Spark | PySpark
+Spark Streaming
+Airflow | Apache Airflow
+Dagster
+Prefect
+dbt
+Fivetran
+Hadoop
+=Hive
+=Presto
+Trino
+Parquet
+Avro
+Delta Lake
+=Iceberg
+Pandas
+NumPy
+SciPy
+Polars
+
+# Cloud and infrastructure
+AWS | Amazon Web Services
+EC2
+S3
+ECS
+EKS
+Fargate
+AWS Lambda
+=Lambda
+RDS
+CloudFront
+CloudWatch
+GCP | Google Cloud
+Azure
+Kubernetes | k8s
+Docker
+Docker Compose
+Helm
+Terraform
+Pulumi
+Ansible
+=Chef
+=Puppet
+Vagrant
+Nomad
+=Consul
+HashiCorp Vault
+=Vault
+OpenShift
+Heroku
+Netlify
+Vercel
+Cloudflare
+Linux
+Unix
+systemd
+eBPF
+CMake
+Bazel
+Gradle
+Maven
+npm
+pnpm
+Cargo
+Poetry
+pip
+
+# CI/CD and source control
+GitHub Actions
+GitLab CI
+Jenkins
+CircleCI
+Travis CI
+Buildkite
+Argo CD | ArgoCD
+Git
+GitHub
+GitLab
+Bitbucket
+
+# Observability
+Prometheus
+Grafana
+Datadog
+New Relic
+Splunk
+Sentry
+OpenTelemetry | OTel
+Jaeger
+Zipkin
+=Loki
+Kibana
+Logstash
+PagerDuty
+Honeycomb
+
+# Testing
+Jest
+Vitest
+Mocha
+Cypress
+Playwright
+Selenium
+Puppeteer
+pytest
+JUnit
+TestNG
+proptest
+Testcontainers
+k6
+Locust
+JMeter
+Gatling
+Lighthouse
+axe | axe-core
+Postman
+WireMock
+
+# Machine learning and AI
+PyTorch
+TensorFlow
+Keras
+JAX
+scikit-learn | sklearn
+Matplotlib
+Seaborn
+XGBoost
+LightGBM
+CatBoost
+MLflow
+Weights & Biases | wandb
+Kubeflow
+Hugging Face | HuggingFace
+Transformers
+ONNX | ONNX Runtime
+TensorRT
+CUDA
+OpenCV
+spaCy
+NLTK
+LangChain
+LlamaIndex
+OpenAI
+ChatGPT
+GPT-4
+Claude
+Gemini
+Llama
+Mistral
+BERT | DistilBERT
+vLLM
+Ollama
+Optuna
+Jupyter
+Streamlit
+Gradio
+
+# Tools, products and standards
+Jira
+Confluence
+=Slack
+Figma
+Tableau
+Looker
+Power BI | PowerBI
+Metabase
+=Superset
+Stripe
+Twilio
+Auth0
+Okta
+OAuth | OAuth2
+JWT
+SAML
+FFmpeg
+gnuplot
+ARIA
+HIPAA
+GDPR
+SOC 2 | SOC2
+PCI DSS
+Raft
+Paxos
+Jepsen

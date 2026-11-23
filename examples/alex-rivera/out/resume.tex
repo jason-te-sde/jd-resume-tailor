@@ -1,0 +1,167 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+%
+% Layout macros and structure are Jake Gutierrez's resume template, used under the MIT License:
+%
+%   Copyright (c) Jake Gutierrez
+%
+%   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+%   and associated documentation files (the "Software"), to deal in the Software without
+%   restriction, including without limitation the rights to use, copy, modify, merge, publish,
+%   distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+%   Software is furnished to do so, subject to the following conditions:
+%
+%   The above copyright notice and this permission notice shall be included in all copies or
+%   substantial portions of the Software.
+%
+%   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+%   BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+%   NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+%   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%
+% Changes for jd-resume-tailor: the body is generated. The renderer fills the placeholders, which
+% are names between double at-signs, with text it has already escaped, so this file holds layout
+% only. A region fenced by BEGIN and END marker comments is dropped when its section is empty.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\ifdefined\pdfgentounicode\input{glyphtounicode}\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\ifdefined\pdfgentounicode\pdfgentounicode=1\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\codelink}[1]{\href{#1}{\underline{code}}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Alex Rivera} \\ \vspace{1pt}
+    \small Springfield, ST $|$ (555) 555-0142 $|$ \href{mailto:alex.rivera@example.com}{alex.rivera@example.com} $|$ \href{https://example.com/in/alex-rivera}{example.com/in/alex-rivera} $|$ \href{https://example.com/code/alex-rivera}{example.com/code/alex-rivera} $|$ \href{https://example.com/alex}{example.com/alex}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading{Eastvale State University}{Eastvale, ST}{B.S. in Computer Science, GPA: 3.6/4.0}{Sep. 2019 -- May 2023}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading{Lantern Freight Systems}{Remote}{Software Engineer}{Jul. 2023 -- Present}
+      \resumeItemListStart
+        \resumeItem{Reduced the p99 latency of the shipment-tracking API in staging load tests from 412 ms to 138 ms by replacing a per-request fan-out of 7 queries with a single batched query and implementing a Redis read-through cache.}
+        \resumeItem{Designed an idempotent Kafka consumer for carrier status events that deduplicates by event ID, achieving 9,200 events/s throughput in staging load tests on a 6-partition topic.}
+        \resumeItem{Added 23 Prometheus alerts and runbooks for the dispatch service; pages per on-call week fell from 31 to 9 over two quarters.}
+        \resumeItem{Led a team to replace the nightly billing-export cron job with an event-driven pipeline, removing up to 5 hours of data staleness daily between events and exports.}
+      \resumeItemListEnd
+    \resumeSubheading{Marlow Data Works}{Remote}{Data Engineering Intern}{Jun. 2022 -- Aug. 2022}
+      \resumeItemListStart
+        \resumeItem{Designed event-driven data pipelines using Airflow and dbt to automate report generation, replacing manual processes and ensuring data consistency for tracking dashboards.}
+        \resumeItem{Reduced the nightly warehouse load time from 74 to 29 minutes by partitioning a 310 GB fact table and loading only the changed partitions.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+    \resumeProjectHeading{\textbf{Dispatch Desk} $|$ \emph{Python, Ollama, SQLite, pytest, Docker} \codelink{https://example.com/code/dispatch-desk}}{2025}
+      \resumeItemListStart
+        \resumeItem{Developed a Python-based tool that triages freight-damage claims using an Ollama model served locally and a retrieval tool querying a SQLite table of past claims.}
+        \resumeItem{Achieved 35 successful passes out of 40 hand-written scenarios with a retrieval tool, compared to 22 of 40 without it, using pytest cases and CI pipeline runs.}
+      \resumeItemListEnd
+    \resumeProjectHeading{\textbf{Gridlock} $|$ \emph{Rust, Redis, Lua, Tokio, Docker, GitHub Actions} \codelink{https://example.com/code/gridlock}}{2025}
+      \resumeItemListStart
+        \resumeItem{Built a rate limiter in Rust that uses Redis and a Lua script to perform a single atomic step for checking and updating token buckets.}
+        \resumeItem{Achieved 41,000 checks per second on a 4-vCPU VM with a p99 latency of 2.1 ms at 20,000 checks/s, using a single Redis instance.}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Go, SQL, Rust, Python, TypeScript, Java} \\
+     \textbf{Frameworks and Libraries}{: React, FastAPI, PyTorch, Tokio, dbt, D3} \\
+     \textbf{DevOps and Cloud}{: Docker, Terraform, GitHub Actions, AWS (ECS, RDS), Prometheus, Grafana} \\
+     \textbf{Databases and Messaging}{: PostgreSQL, Redis, Kafka, DuckDB, Snowflake} \\
+     \textbf{Developer Tools}{: Git, Make, k6, Playwright, MLflow, Airflow}
+    }}
+ \end{itemize}
+
+\end{document}

@@ -1,0 +1,80 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You tailor resume bullets to a job posting without changing what is true. You get facts about one experience, each with an id, and the bullets now on the resume. Rewrite each bullet for the posting and cite the facts it rests on.\n\nRules. A verifier checks them, and a bullet that breaks one is thrown away and replaced by the original, so do not push against them:\n1. No new numbers. Every number must come from a fact you cite; do not add, combine or compute.\n2. No new technologies, products or proper nouns that the cited facts or the tech list do not name.\n3. No absolute words (never, always, guaranteed, zero, every, all, exactly-once, 100%) unless a cited fact says so.\n4. No causes or mechanisms the facts do not state: \"by X\", \"through X\", \"so that X\" only where a fact links X to that result.\n5. Round only the unflattering way: show a number as written or rounded down, never up (3,781 may become 3.7K+, never 3.8K+).\n6. Use the posting's words only where they describe this work accurately.\nAlso: respect the \"must not claim\" list, keep each bullet to one sentence, start it with a past-tense verb, and put every fact you used in sources.\nReturn exactly as many bullets as you are asked for, in the order given.",
+        "role": "system"
+      },
+      {
+        "content": "Posting: Staff Backend Engineer, Platform Architecture at Ironbark Payments\nResponsibilities:\n- Set the architecture for our payment-processing platform and drive decisions across eight teams.\n- Lead multi-quarter migrations from a monolith to services, including data ownership and rollout plans.\n- Define reliability and consistency standards for money movement: idempotency, reconciliation and exactly-once effects.\n- Write and review design documents, and unblock senior engineers who disagree.\n- Mentor and grow senior engineers, and partner with directors on roadmap and hiring.\n- Represent engineering in conversations with auditors and enterprise customers.\nRequirements:\n- Ten or more years of backend engineering, with five or more years at staff level or equivalent scope.\n- A record of leading technical work across several teams and delivering it in production.\n- Deep experience with distributed transactions, queues and relational databases at scale.\n- Experience with PCI compliance and regulated environments.\n- Experience with Java or Kotlin in a large codebase.\nKeywords:\n- payment-processing platform\n- monolith to services\n- data ownership\n- rollout plans\n- idempotency\n- reconciliation\n- exactly-once effects\n- design documents\n- on-call rotation\n- backend engineering\n- staff level\n- distributed transactions\n- queues\n- relational databases\n- PCI compliance\n- regulated environments\n- Java\n- Kotlin\n- large codebase\n- event sourcing\n- ledger systems\n\nExperience: Gridlock: a distributed rate limiter in Rust and Redis\nTech list: Rust, Redis, Lua, Tokio, Docker, GitHub Actions\nFacts you may cite:\n[gridlock#1] Built a rate limiter in Rust that keeps token buckets in Redis and updates them with one Lua script, so a check and its update are a single atomic step.\n[gridlock#2] Handled 41,000 checks/s on one 4-vCPU VM against a single Redis instance, with a p99 of 2.1 ms at 20,000 checks/s.\n[gridlock#3] Kept the admitted rate within 2% of the configured limit across 8 limiter processes sharing one Redis, in a 10-minute test at 500 requests/s.\n[gridlock#4] Added a local fallback that degrades to per-process limits when Redis is unreachable, and checked it by killing Redis 50 times during a load test.\n[gridlock#5] Shipped the limiter as a library and an HTTP sidecar with 76 tests and a CI pipeline that runs them against Redis 7.2 and 7.4.\n[gridlock#scope] ORIGIN: personal project, started to learn Redis scripting. EVIDENCE: bench/results-2025-04.csv (one 4-vCPU, 16 GB VM; Redis 7.4 on the same host; 8 client processes; 5-minute runs; median of 3); the accuracy test is test/accuracy.rs (largest deviation seen: 1.4%); the failure test is scripts/kill_redis.sh (50 kills, every run returned to Redis-backed limits within 10 s).\nMust not claim:\n- production use or real users (it has only run on test machines)\n- strict global limits while Redis is down (the fallback limits are per process, so 8 processes admit up to 8x the configured rate)\n- Redis Cluster support (single instance only)\n- 41,000 checks/s as a latency-bounded rate (it is the saturation point, where p99 was 14 ms)\n- any comparison with other rate limiters (none was run)\n\nBullets to rewrite (return exactly 4; bullet k is the rewrite of k):\n1. Built a rate limiter in Rust that keeps token buckets in Redis and updates them with one Lua script, so a check and its update are a single atomic step.\n2. Handled 41,000 checks/s on one 4-vCPU VM against a single Redis instance, with a p99 of 2.1 ms at 20,000 checks/s.\n3. Kept the admitted rate within 2% of the configured limit across 8 limiter processes sharing one Redis, in a 10-minute test at 500 requests/s.\n4. Added a local fallback that degrades to per-process limits when Redis is unreachable, and checked it by killing Redis 50 times during a load test.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "bullets": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sources": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "sources"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bullets"
+      ],
+      "type": "object"
+    },
+    "seed": 1
+  },
+  "response": {
+    "bullets": [
+      {
+        "sources": [
+          "gridlock#1"
+        ],
+        "text": "Developed a distributed rate limiter in Rust using Redis and Lua scripting to ensure atomic updates for token bucket checks."
+      },
+      {
+        "sources": [
+          "gridlock#2"
+        ],
+        "text": "Achieved 41,000 checks per second on a single 4-vCPU VM with a single Redis instance, maintaining 2.1 ms p99 latency at 20,000 checks/s."
+      },
+      {
+        "sources": [
+          "gridlock#3"
+        ],
+        "text": "Maintained a 2% deviation from configured limits across 8 limiter processes sharing one Redis instance during a 10-minute test at 500 requests/s."
+      },
+      {
+        "sources": [
+          "gridlock#4"
+        ],
+        "text": "Implemented a local fallback to per-process limits during Redis outages, validated by 50 simulated Redis failures during load tests."
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 3844,
+    "output_tokens": 217
+  }
+}

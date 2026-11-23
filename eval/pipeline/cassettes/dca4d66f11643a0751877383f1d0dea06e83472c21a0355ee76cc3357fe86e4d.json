@@ -1,0 +1,68 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You tailor resume bullets to a job posting without changing what is true. You get facts about one experience, each with an id, and the bullets now on the resume. Rewrite each bullet for the posting and cite the facts it rests on.\n\nRules. A verifier checks them, and a bullet that breaks one is thrown away and replaced by the original, so do not push against them:\n1. No new numbers. Every number must come from a fact you cite; do not add, combine or compute.\n2. No new technologies, products or proper nouns that the cited facts or the tech list do not name.\n3. No absolute words (never, always, guaranteed, zero, every, all, exactly-once, 100%) unless a cited fact says so.\n4. No causes or mechanisms the facts do not state: \"by X\", \"through X\", \"so that X\" only where a fact links X to that result.\n5. Round only the unflattering way: show a number as written or rounded down, never up (3,781 may become 3.7K+, never 3.8K+).\n6. Use the posting's words only where they describe this work accurately.\nAlso: respect the \"must not claim\" list, keep each bullet to one sentence, start it with a past-tense verb, and put every fact you used in sources.\nReturn exactly as many bullets as you are asked for, in the order given.",
+        "role": "system"
+      },
+      {
+        "content": "Posting: iOS Engineer at Tamarind Fitness\nResponsibilities:\n- Build new features in Swift and SwiftUI for our iPhone and Apple Watch apps.\n- Integrate HealthKit, Core Location and Bluetooth sensors, and handle background execution correctly.\n- Improve launch time, memory use and battery impact using Instruments.\n- Work with designers on animations and accessibility with VoiceOver and Dynamic Type.\n- Write unit and UI tests and keep the release pipeline healthy with Xcode Cloud.\n- Ship every two weeks through TestFlight and the App Store.\nRequirements:\n- Three or more years building iOS apps in Swift, with at least one app in the App Store.\n- Experience with SwiftUI, Combine or Swift concurrency, and Core Data.\n- An eye for detail on animation and interaction.\nKeywords:\n- Swift\n- SwiftUI\n- HealthKit\n- Core Location\n- Bluetooth sensors\n- Instruments\n- animations\n- VoiceOver\n- Dynamic Type\n- unit and UI tests\n- Xcode Cloud\n- TestFlight\n- App Store\n- Combine\n- Swift concurrency\n- Core Data\n- Apple Watch\n- widgets\n- Kotlin\n- Android\n\nExperience: Frontend Developer (Co-op) at Tidewell Health Tech\nTech list: React, TypeScript, Jest, Cypress, REST, Lighthouse\nFacts you may cite:\n[tidewell-coop#1] Rebuilt the patient-intake form in React and TypeScript; form completion rose from 61% to 74% in a 3-week A/B test over 4,800 sessions.\n[tidewell-coop#2] Cut the intake bundle from 612 KB to 238 KB by code-splitting and replacing a charting library, improving median load time on a throttled 4G profile from 5.1 s to 2.4 s.\n[tidewell-coop#3] Wrote 86 Jest unit tests and 14 Cypress end-to-end tests for the intake flow, raising line coverage of the module from 23% to 81%.\n[tidewell-coop#scope] EVIDENCE: A/B results are from the team's experiment dashboard (control 2,410 sessions, variant 2,390, 3 weeks); bundle sizes are from the build output; load times are Lighthouse runs on a throttled 4G profile, median of 5.\nMust not claim:\n- clinical or patient-outcome impact (only form completion was measured)\n- 'HIPAA compliance' (the form stored nothing itself, and another team owned the compliance review)\n- significance beyond what the dashboard reported (p = 0.03, with no correction for multiple tests)\n\nBullets to rewrite (return exactly 2; bullet k is the rewrite of k):\n1. Wrote 86 Jest unit tests and 14 Cypress end-to-end tests for the intake flow, raising line coverage of the module from 23% to 81%.\n2. Rebuilt the patient-intake form in React and TypeScript; form completion rose from 61% to 74% in a 3-week A/B test over 4,800 sessions.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "bullets": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sources": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "sources"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bullets"
+      ],
+      "type": "object"
+    },
+    "seed": 3
+  },
+  "response": {
+    "bullets": [
+      {
+        "sources": [
+          "tidewell-coop#3"
+        ],
+        "text": "Wrote 86 Jest unit tests and 14 Cypress end-to-end tests for the intake flow, raising line coverage of the module from 23% to 81% (tidewell-coop#3)"
+      },
+      {
+        "sources": [
+          "tidewell-coop#1"
+        ],
+        "text": "Rebuilt the patient-intake form, improving form completion from 61% to 74% in a 3-week A/B test over 4,800 sessions (tidewell-coop#1)"
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 4488,
+    "output_tokens": 148
+  }
+}

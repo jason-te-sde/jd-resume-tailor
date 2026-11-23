@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "job": {
+    "source": "jd.txt",
+    "title": "Backend Engineer",
+    "company": "Northwind & Sons",
+    "responsibilities": ["Reduce API latency"],
+    "requirements": [],
+    "nice_to_have": [],
+    "keywords": ["Go", "Redis"]
+  },
+  "profile": "profile.json",
+  "model": {"provider": "openai", "model": "scripted"},
+  "rounding": "conservative",
+  "selection": {"targets": [], "scores": [], "picked": ["acme-swe", "queue-lab"]},
+  "entries": [
+    {
+      "id": "acme-swe",
+      "type": "work",
+      "title": "Software Engineer",
+      "company": "Acme & Co. (100% remote)",
+      "location": "Springfield, ST",
+      "date": "Jul. 2023 \u2013 Present",
+      "tech": "Go, Redis",
+      "link": "",
+      "adaptable": true,
+      "score": 9,
+      "calls": 1,
+      "bullets": [
+        {
+          "text": "Cut p99 latency by 38% -> 138 ms for the #1 endpoint, with a cache_ttl of 5 s.",
+          "sources": ["acme-swe#1"],
+          "verdict": "ok",
+          "outcome": "first_pass",
+          "original": "",
+          "reason": "",
+          "attempts": []
+        },
+        {
+          "text": "Wrote the {retry} policy in C:\\jobs and a ~4 week plan; costs $5 \u2014 \u201cquoted\u201d.",
+          "sources": ["acme-swe#2"],
+          "verdict": "ok",
+          "outcome": "first_pass",
+          "original": "",
+          "reason": "",
+          "attempts": []
+        }
+      ]
+    },
+    {
+      "id": "queue-lab",
+      "type": "project",
+      "title": "Queue Lab: a job queue in Go",
+      "company": "",
+      "location": "",
+      "date": "2025",
+      "tech": "Go, Redis, C++",
+      "link": "https://example.com/code/queue_lab?a=1&b=2#readme",
+      "adaptable": true,
+      "score": 7,
+      "calls": 1,
+      "bullets": [
+        {
+          "text": "Built a queue that handled 5,000 jobs/s on one node.",
+          "sources": ["queue-lab#1"],
+          "verdict": "ok",
+          "outcome": "first_pass",
+          "original": "",
+          "reason": "",
+          "attempts": []
+        }
+      ]
+    }
+  ],
+  "summary": {"bullets": 3, "first_pass": 3, "after_retry": 0, "fallback": 0, "verbatim": 0},
+  "usage": {"calls": 3, "input_tokens": 1, "output_tokens": 1}
+}

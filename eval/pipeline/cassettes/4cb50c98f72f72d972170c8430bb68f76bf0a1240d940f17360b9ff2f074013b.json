@@ -1,0 +1,70 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You tailor resume bullets to a job posting without changing what is true. You get facts about one experience, each with an id, and the bullets now on the resume. Rewrite each bullet for the posting and cite the facts it rests on.\n\nRules. A verifier checks them, and a bullet that breaks one is thrown away and replaced by the original, so do not push against them:\n1. No new numbers. Every number must come from a fact you cite; do not add, combine or compute.\n2. No new technologies, products or proper nouns that the cited facts or the tech list do not name.\n3. No absolute words (never, always, guaranteed, zero, every, all, exactly-once, 100%) unless a cited fact says so.\n4. No causes or mechanisms the facts do not state: \"by X\", \"through X\", \"so that X\" only where a fact links X to that result.\n5. Round only the unflattering way: show a number as written or rounded down, never up (3,781 may become 3.7K+, never 3.8K+).\n6. Use the posting's words only where they describe this work accurately.\nAlso: respect the \"must not claim\" list, keep each bullet to one sentence, start it with a past-tense verb, and put every fact you used in sources.\nReturn exactly as many bullets as you are asked for, in the order given.",
+        "role": "system"
+      },
+      {
+        "content": "Posting: Staff Backend Engineer, Platform Architecture at Ironbark Payments\nResponsibilities:\n- Set the architecture for our payment-processing platform and drive decisions across eight teams.\n- Lead multi-quarter migrations from a monolith to services, including data ownership and rollout plans.\n- Define reliability and consistency standards for money movement: idempotency, reconciliation and exactly-once effects.\n- Write and review design documents, and unblock senior engineers who disagree.\n- Mentor and grow senior engineers, and partner with directors on roadmap and hiring.\n- Represent engineering in conversations with auditors and enterprise customers.\nRequirements:\n- Ten or more years of backend engineering, with five or more years at staff level or equivalent scope.\n- A record of leading technical work across several teams and delivering it in production.\n- Deep experience with distributed transactions, queues and relational databases at scale.\n- Experience with PCI compliance and regulated environments.\n- Experience with Java or Kotlin in a large codebase.\nKeywords:\n- payment-processing platform\n- monolith to services\n- data ownership\n- rollout plans\n- reliability and consistency standards\n- idempotency\n- reconciliation\n- exactly-once effects\n- design documents\n- senior engineers\n- auditors\n- enterprise customers\n- backend engineering\n- staff level\n- distributed transactions\n- queues\n- relational databases\n- PCI compliance\n- regulated environments\n- Java\n- Kotlin\n- large codebase\n- event sourcing\n- ledger systems\n- on-call rotation\n- payments system\n\nExperience: Raftlet: a teaching Raft implementation with a deterministic simulator\nTech list: Rust, Tokio, Protocol Buffers, proptest\nFacts you may cite:\n[raftlet-features] Implements leader election, log replication and snapshots from the Raft paper in Rust; membership changes are not implemented\n[raftlet-simulator] Deterministic simulator that controls the clock, the network and crashes; 10,000 randomized seeds ran with 0 safety violations across 5 invariants checked after every step (numbers: 10,000 seeds; 0 violations; 5 invariants)\n[raftlet-bugs] Found 3 bugs with the simulator, including a stale-term vote that let a deposed leader commit an entry; each fix kept its seed as a regression test (numbers: 3 bugs)\n[raftlet-failover] Median failover of 312 simulated ms over 200 simulated leader crashes in a 5-node cluster (numbers: 312 ms; 200 crashes; 5 nodes)\nMust not claim:\n- production readiness or fault tolerance of real deployments (it runs only inside the simulator and a 5-process local demo)\n- 'linearizable' reads (only leader reads without a read index exist, and they are not linearizable under partitions)\n- membership changes (not implemented)\n- 'Jepsen-tested' (no external test harness was used)\n- failover times in wall-clock milliseconds (312 is simulated time)\n\nBullets to rewrite (return exactly 3; bullet k is the rewrite of k):\n1. Implemented leader election, log replication and snapshots from the Raft paper in Rust, with a deterministic simulator that controls the clock, the network and crashes.\n2. Ran 10,000 randomized simulator seeds covering leader crashes, partitions and message loss with 0 safety violations across 5 invariants checked after every step.\n3. Found 3 bugs with the simulator, including a stale-term vote that let a deposed leader commit an entry, and kept each failing seed as a regression test.",
+        "role": "user"
+      },
+      {
+        "content": "{\"bullets\": [{\"sources\": [\"raftlet-features\", \"raftlet-simulator\"], \"text\": \"Developed a Raft implementation in Rust with leader election, log replication and snapshots, supported by a deterministic simulator controlling the clock, network and crashes.\"}, {\"sources\": [\"raftlet-simulator\"], \"text\": \"Ran 10,000 randomized simulator seeds covering leader crashes and message loss, achieving 0 safety violations across 5 invariants checked after every step.\"}, {\"sources\": [\"raft,bugs\"], \"text\": \"Identified 3 bugs in the Raft implementation, including a stale-term vote allowing a deposed leader to commit entries, and maintained failing seeds as regression tests.\"}]}",
+        "role": "assistant"
+      },
+      {
+        "content": "The verifier rejected these bullets:\nBullet 3 was rejected. You wrote: 'Identified 3 bugs in the Raft implementation, including a stale-term vote allowing a deposed leader to commit entries, and maintained failing seeds as regression tests.'\n  - it cites 'raft,bugs', which is not a fact of this experience\n\nRewrite only these 1 bullets, in the order listed, so that none of the problems remains. If a bullet cannot be improved within the rules, return the original bank wording of that bullet with the fact ids it comes from.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "bullets": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sources": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "sources"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bullets"
+      ],
+      "type": "object"
+    },
+    "seed": 3
+  },
+  "response": {
+    "bullets": [
+      {
+        "sources": [
+          "raftlet-bugs"
+        ],
+        "text": "Found 3 bugs in the Raft implementation, including a stale-term vote that let a deposed leader commit an entry, and retained failing seeds as regression tests."
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 2025,
+    "output_tokens": 52
+  }
+}

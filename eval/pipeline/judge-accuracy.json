@@ -1,0 +1,1907 @@
+{
+  "version": 1,
+  "meta": {
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "ollama_version": "0.23.4",
+    "machine": {
+      "platform": "macOS-27.2.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "cpu": "Apple M2",
+      "memory_gb": 16,
+      "python": "3.12.14"
+    },
+    "seed_applied": true,
+    "temperature": "provider default",
+    "started_at": "2026-11-22T19:20:44Z",
+    "judge_seed": 0,
+    "usage": {
+      "calls": 170,
+      "replayed_calls": 0,
+      "input_tokens": 250417,
+      "output_tokens": 15430
+    },
+    "commit": "78c56e6864dc83601d8dcaf2cca5dd550771f357",
+    "dirty": false
+  },
+  "datasets": {
+    "holdout": {
+      "rows": 84,
+      "errors": 0,
+      "judge": {
+        "rows": 84,
+        "violation_rows": 57,
+        "classes": {
+          "fabricated_number": {
+            "support": 5,
+            "predicted": 3,
+            "precision": 1.0,
+            "recall": 0.6
+          },
+          "number_drift": {
+            "support": 9,
+            "predicted": 17,
+            "precision": 0.5294,
+            "recall": 1.0
+          },
+          "fabricated_entity": {
+            "support": 13,
+            "predicted": 16,
+            "precision": 0.75,
+            "recall": 0.9231
+          },
+          "do_not_claim": {
+            "support": 18,
+            "predicted": 16,
+            "precision": 0.75,
+            "recall": 0.6667
+          },
+          "escalation_absolute": {
+            "support": 10,
+            "predicted": 5,
+            "precision": 1.0,
+            "recall": 0.5
+          },
+          "escalation_causal": {
+            "support": 7,
+            "predicted": 4,
+            "precision": 1.0,
+            "recall": 0.5714
+          }
+        },
+        "ok": {
+          "support": 27,
+          "predicted": 29,
+          "precision": 0.931,
+          "recall": 1.0
+        },
+        "caught_violation_recall": 0.9649,
+        "false_alarm_rate": 0.0,
+        "caught": 55,
+        "false_alarms": 0,
+        "caught_percent": 96.49122807017544,
+        "false_alarm_percent": 0.0
+      },
+      "verifier": {
+        "rows": 84,
+        "violation_rows": 57,
+        "classes": {
+          "fabricated_number": {
+            "support": 5,
+            "predicted": 5,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "number_drift": {
+            "support": 9,
+            "predicted": 9,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "fabricated_entity": {
+            "support": 13,
+            "predicted": 13,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "do_not_claim": {
+            "support": 18,
+            "predicted": 12,
+            "precision": 1.0,
+            "recall": 0.6667
+          },
+          "escalation_absolute": {
+            "support": 10,
+            "predicted": 10,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "escalation_causal": {
+            "support": 7,
+            "predicted": 7,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "ok": {
+          "support": 27,
+          "predicted": 32,
+          "precision": 0.8438,
+          "recall": 1.0
+        },
+        "caught_violation_recall": 0.9123,
+        "false_alarm_rate": 0.0,
+        "caught": 52,
+        "false_alarms": 0,
+        "caught_percent": 91.2280701754386,
+        "false_alarm_percent": 0.0
+      },
+      "records": [
+        {
+          "id": "pattern-compaction-285-02",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds 29.5 seconds down to 29 seconds, presenting a less precise number than the fact states, which is a number drift."
+        },
+        {
+          "id": "pattern-compaction-285-07",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds down the compaction time from 29.5s to 29s (a more favorable number) without justification, violating number_drift."
+        },
+        {
+          "id": "pattern-exactly-once-01",
+          "labels": [
+            "do_not_claim",
+            "escalation_absolute"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'exactly-once' processing, which is explicitly prohibited in the must not claim list (the consumer is actually at-least-once with deduplication)."
+        },
+        {
+          "id": "pattern-exactly-once-02",
+          "labels": [
+            "do_not_claim",
+            "escalation_absolute"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'exactly once' processing, which is explicitly prohibited in the 'must not claim' list as the consumer is actually 'at-least-once' with deduplication."
+        },
+        {
+          "id": "pattern-exactly-once-04",
+          "labels": [
+            "do_not_claim",
+            "escalation_absolute"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'exactly-once' processing, which is explicitly prohibited in the 'must not claim' list as the system is only 'at-least-once' with deduplication."
+        },
+        {
+          "id": "pattern-four-tools-04",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number",
+            "do_not_claim"
+          ],
+          "reason": "The bullet falsely claims '5 custom tools' (fabricated_number) and implies a multi-tool agent ('three tools' or 'multi-tool agent'), which is prohibited (do_not_claim)."
+        },
+        {
+          "id": "pattern-full-load-latency-01",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet attributes a p99 latency of 2.1 ms to 41,000 checks/s, but the fact states this p99 was achieved at 20,000 checks/s (with 41k being the saturation point where p99 was 14 ms)."
+        },
+        {
+          "id": "pattern-full-load-latency-02",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet falsely associates the 2.1 ms p99 (achieved at 20,000 checks/s) with the 41,000 checks/s rate, which is the saturation point with a p99 of 14 ms, creating a number_drift by inflating the latency metric for a higher throughput."
+        },
+        {
+          "id": "pattern-full-load-latency-03",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet claims p99 latency of 2.1 ms at 41,000 checks/s, but the facts state this p99 was achieved at 20,000 checks/s (with 41,000 checks/s being the saturation point where p99 was 14 ms). The bullet improperly attributes the lower-latency metric to a higher throughput than the facts support."
+        },
+        {
+          "id": "pattern-full-load-latency-05",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet attributes the 2.1 ms p99 latency to 41,000 checks/s, but the facts state this p99 was measured at 20,000 checks/s (number_drift)."
+        },
+        {
+          "id": "pattern-full-load-latency-08",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet claims a 2.1 ms p99 at 41,000 checks/s, but the facts state this p99 was measured at 20,000 checks/s (with 41k being the saturation point where p99 was 14 ms), constituting number drift."
+        },
+        {
+          "id": "pattern-group-commit-01",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet attributes throughput gains to 'group-committing concurrent writers,' which is not mentioned in the facts or tech list, and contradicts the stated cause (write buffer size) and scope note (single writer goroutine)."
+        },
+        {
+          "id": "pattern-group-commit-06",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet attributes the throughput improvement to 'batching concurrent writers into group commits,' a causal mechanism not mentioned in the facts, which instead credit the write buffer size increase."
+        },
+        {
+          "id": "pattern-log-8k-05",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states 'more than 8,000' log records, while the fact specifies exactly 8,000 records, creating a number drift by implying a higher value than evidenced."
+        },
+        {
+          "id": "pattern-pass-rate-0775-05",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds the 87.5% pass rate (35/40) up to 88% and presents it as a stable figure, which is more favorable than the exact fact stated."
+        },
+        {
+          "id": "pattern-pass-rate-0775-07",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds 87.5% up to 88% (number_drift) and implies stability without acknowledging it's a single run (must not claim)."
+        },
+        {
+          "id": "pattern-production-model-01",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'production model' which is explicitly forbidden in the must-not-claim list."
+        },
+        {
+          "id": "pattern-production-model-04",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims deployment for a real support team, which is explicitly prohibited in the 'must not claim' list."
+        },
+        {
+          "id": "pattern-production-model-06",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'running in production' which is prohibited by the must-not-claim list as the project is explicitly described as a personal project with no deployment."
+        },
+        {
+          "id": "pattern-production-model-07",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims deployment into production ('put the classifier into production'), which violates the 'must not claim' rule as the facts only describe a personal project with offline evaluation, not real-world deployment."
+        },
+        {
+          "id": "pattern-production-model-08",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims deployment to real users, which is explicitly prohibited in the 'must not claim' list as the project was never deployed and runs only on one laptop."
+        },
+        {
+          "id": "pattern-read-load-05",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [],
+          "reason": "The bullet rewords the fact that a read-only follower was added and implies reads are directed to it (via 'distributing reads away from the leader'), which is consistent with the follower test described in the scope notes."
+        },
+        {
+          "id": "pattern-unused-tool-01",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet falsely claims 'Redis Cluster' and 'Kubernetes autoscaling' which are not mentioned in the facts or tech list, constituting fabricated_entity violations."
+        },
+        {
+          "id": "pattern-unused-tool-07",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'Weights & Biases' and 'TorchServe', which are not listed in the provided tech list, constituting fabricated_entities."
+        },
+        {
+          "id": "pattern-unused-tool-09",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions Dagster and Snowflake, which are not in the provided tech list, constituting fabricated_entities."
+        },
+        {
+          "id": "pattern-up-to-25x-02",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds 3.08x to 3.1x and adds 'up to' which is a more favorable presentation than the exact 3.08x speed-up stated in the facts."
+        },
+        {
+          "id": "pattern-zero-loss-01",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'Guaranteed' (an absolute term) and 'zero data loss' (a categorical claim) which are not present in the facts, which only state 'Lost no acknowledged write' across tests."
+        },
+        {
+          "id": "synth-do-not-claim-08",
+          "labels": [
+            "do_not_claim",
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity",
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'HIPAA-compliant', which is both a fabricated_entity (HIPAA is not a tech listed) and a do_not_claim (explicitly prohibited by the must not claim list)."
+        },
+        {
+          "id": "synth-do-not-claim-12",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'production use' and 'real users', which are explicitly prohibited in the must-not-claim list."
+        },
+        {
+          "id": "synth-do-not-claim-13",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "fabricated_entity",
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'distributed locking' (fabricated_entity) and asserts a prohibited claim (do_not_claim), both violating constraints."
+        },
+        {
+          "id": "synth-do-not-claim-14",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'streaming' and 'real-time' processing, which are explicitly prohibited in the must not claim list since the fact states it was a batch pipeline with one load per day."
+        },
+        {
+          "id": "synth-escalation-absolute-01",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "number_drift",
+            "do_not_claim",
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'Always' (escalation_absolute) and presents 138 ms as a production p99 (do_not_claim), while the facts state it is a staging load test result."
+        },
+        {
+          "id": "synth-escalation-absolute-02",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'completely eliminated' (an absolute term) which the facts do not support; the facts only state that manual scripts were replaced, not that all manual deploys were fully eradicated."
+        },
+        {
+          "id": "synth-escalation-absolute-09",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'unlimited data volumes' which implies big data scale, violating the must not claim restriction that 48 million rows a month fits on one machine and 'big data scale' is not permissible."
+        },
+        {
+          "id": "synth-escalation-absolute-13",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'Guaranteed' (an absolute term) which no fact states, implying a certainty not supported by the test results."
+        },
+        {
+          "id": "synth-escalation-absolute-16",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'all' as an absolute term, which is not supported by the fact stating 'up to 5 hours of data staleness' (escalation_absolute)."
+        },
+        {
+          "id": "synth-escalation-absolute-17",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately describes the routing of low-confidence tickets based on the confidence threshold mentioned in the facts, without overstating or misrepresenting the process."
+        },
+        {
+          "id": "synth-escalation-causal-03",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "fabricated_entity",
+            "escalation_causal"
+          ],
+          "reason": "The bullet falsely attributes the latency reduction to 'sharding the database' (fabricated_entity) and claims a causal mechanism not stated in the facts (escalation_causal)."
+        },
+        {
+          "id": "synth-escalation-causal-04",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet attributes the deploy time reduction to 'parallelizing the test suite,' but the facts state the cause was moving to Terraform/GitHub Actions pipelines, not test suite parallelization."
+        },
+        {
+          "id": "synth-escalation-causal-08",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'lazy-loading images' as the cause, which is not listed in the tech list and is not explicitly tied to the load time improvement in the facts (which attribute the improvement to code-splitting and replacing a charting library)."
+        },
+        {
+          "id": "synth-escalation-causal-09",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet attributes the throughput plateau to 'network bandwidth limits,' but the facts state it was caused by Redis saturation, introducing an unsupported causal mechanism."
+        },
+        {
+          "id": "synth-fabricated-entity-03",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions Kafka and Redis, which are not in the provided tech list, constituting fabricated_entity."
+        },
+        {
+          "id": "synth-fabricated-entity-06",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet claims PostgreSQL and pgvector, which are not mentioned in the facts or tech list (SQLite is explicitly stated)."
+        },
+        {
+          "id": "synth-fabricated-entity-08",
+          "labels": [
+            "fabricated_entity",
+            "do_not_claim"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'AWS Lambda with Kubernetes,' which are not in the provided tech list, constituting fabricated_entity."
+        },
+        {
+          "id": "synth-fabricated-entity-10",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'Weights & Biases' (a technology not in the provided tech list), constituting a fabricated_entity."
+        },
+        {
+          "id": "synth-fabricated-entity-11",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'Envoy rate-limit filters,' which is a fabricated_entity as it is not listed in the provided tech list or facts."
+        },
+        {
+          "id": "synth-fabricated-entity-12",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'Tableau' which is not listed in the provided tech list, constituting a fabricated_entity."
+        },
+        {
+          "id": "synth-fabricated-entity-14",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims comparison with Claude and GPT-4 as judges, which violates 'must not claim' by asserting evaluations against other models not mentioned in the facts or scope notes."
+        },
+        {
+          "id": "synth-fabricated-entity-15",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'Pulsar' which is not listed in the tech list or facts (Kafka is explicitly mentioned), constituting a fabricated_entity."
+        },
+        {
+          "id": "synth-fabricated-entity-16",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'Cockroach-style retries,' which is a fabricated_entity as CockroachDB is not listed in the tech list and no fact references retries or distributed systems."
+        },
+        {
+          "id": "synth-fabricated-number-03",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet claims '12 partitions' which is not stated in any fact (the fact mentions a 6-partition topic), fabricating a number not supported by evidence."
+        },
+        {
+          "id": "synth-fabricated-number-10",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet claims 65,000 checks/s, but the facts only state 41,000 checks/s as the maximum achieved (saturation point with p99 14 ms), making the higher number fabricated."
+        },
+        {
+          "id": "synth-fabricated-number-15",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states a weighted MAPE of 9.8% (rounded down from the fact's 19.8%), which is a more favorable number than the actual result."
+        },
+        {
+          "id": "synth-fabricated-number-16",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states '480 million' instead of the fact's '48 million', representing a rounded-up number that exaggerates the scale."
+        },
+        {
+          "id": "synth-number-drift-03",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet's 10 minutes is a more favorable number than the fact's 11 minutes, rounding down when lower is better."
+        },
+        {
+          "id": "synth-number-drift-05",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet claims 10 upstream schema changes were caught, but the fact states 9, representing a favorable numerical adjustment (number drift)."
+        },
+        {
+          "id": "synth-number-drift-08",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet uses '76+' which implies more than the exact 76 tests stated in the facts, constituting number_drift."
+        },
+        {
+          "id": "synth-ok-04",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the stated numbers (412 ms → 138 ms) and the change (batched query), without fabricating entities, violating claims, or using absolute language."
+        },
+        {
+          "id": "synth-ok-07",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet is faithful: it accurately reflects the fact's 9,200 events/s number, correctly identifies the consumer as at-least-once (matching the fact's technical reality), and avoids prohibited claims like production metrics or ownership."
+        },
+        {
+          "id": "synth-ok-15",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully combines the exact numbers from the facts (31 → 9 pages, 23 alerts/runbooks) without fabrication, drift, or unsupported claims."
+        },
+        {
+          "id": "synth-ok-17",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts without fabrication, drift, or unsupported claims."
+        },
+        {
+          "id": "synth-ok-21",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet is faithful to the facts, accurately reflecting the measured reduction in load time (74 to 29 minutes) and the method (partitioning the 310 GB fact table by date)."
+        },
+        {
+          "id": "synth-ok-23",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions."
+        },
+        {
+          "id": "synth-ok-26",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the stated form completion rate (61% to 74%) and total sessions (4,800) without fabricating numbers, entities, or claims beyond the facts."
+        },
+        {
+          "id": "synth-ok-27",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet is faithful; it accurately reflects the form completion metrics (61% to 74%), timeframe (3 weeks), and session count (4,800) from the facts without fabricating numbers, entities, or claims."
+        },
+        {
+          "id": "synth-ok-29",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the bundle size reduction (612 KB → 238 KB) stated in the facts without adding unverified claims, numbers, or entities."
+        },
+        {
+          "id": "synth-ok-32",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately rewords the fact that the Lua script enables atomic check-and-update operations without introducing claims, numbers, entities, or causal mechanisms not supported by the evidence."
+        },
+        {
+          "id": "synth-ok-37",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully rewords the fact that the fallback was verified by killing Redis 50 times under load, without fabricating numbers, entities, or claims."
+        },
+        {
+          "id": "synth-ok-38",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully describes the action of killing Redis 50 times during a load test, matching the facts without embellishment, fabrication, or prohibited claims."
+        },
+        {
+          "id": "synth-ok-39",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately rewords the facts without fabricating numbers, entities, or claims, and avoids absolute/escalation terms."
+        },
+        {
+          "id": "synth-ok-41",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully summarizes the request rate range and latency metrics without fabricating numbers, entities, or claims, nor does it use absolute language or causal mechanisms not supported by the facts."
+        },
+        {
+          "id": "synth-ok-42",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully reorders and rewords the facts without fabricating numbers, entities, or causal claims. It accurately reflects the Redis CPU usage percentages and throughput plateauing as described in the facts."
+        },
+        {
+          "id": "synth-ok-47",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully rewords the fact about finding 3 bugs, including the stale-term vote issue, and rephrases 'kept its seed as a regression test' as 'kept each failing seed as a regression test' without introducing unverified claims, numbers, or forbidden terms."
+        },
+        {
+          "id": "synth-ok-50",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully restates the fact about 48 million GTFS-realtime positions/month, dbt/DuckDB, and batch processing without embellishment, drift, or prohibited claims."
+        },
+        {
+          "id": "synth-ok-54",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts: 37 dbt tests and a 2% threshold freshness check, without exaggeration, absolute claims, or forbidden terms."
+        },
+        {
+          "id": "synth-ok-55",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts without fabrication, drift, or prohibited claims; it rewords the fact's 'reproducible sample' as 'sample' and specifies the 2 million row count exactly."
+        },
+        {
+          "id": "synth-ok-56",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the exact numbers (8,000 records, 120 ms) and context from the facts without fabrication, drift, or prohibited claims."
+        },
+        {
+          "id": "synth-ok-63",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited statements about production use or multi-tools."
+        },
+        {
+          "id": "synth-ok-68",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts: 58 pytest cases (including 6 replay traces) and 4-minute CI time are explicitly stated in the facts. No numbers are altered, no unsupported entities are claimed, and no prohibited claims (production, multi-tools, etc.) are made."
+        },
+        {
+          "id": "synth-ok-73",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts: '3 categories below 0.75 F1' matches the reported confusion matrix findings, and 'relabelling 420 ambiguous tickets' is directly stated in the facts. No violations occur."
+        },
+        {
+          "id": "synth-ok-74",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts without embellishment or violations."
+        },
+        {
+          "id": "synth-ok-79",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately restates the facts without embellishment, fabrication, or prohibited claims."
+        },
+        {
+          "id": "synth-ok-82",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully restates the exact numbers and scope from the facts without fabrication, drift, or prohibited claims."
+        },
+        {
+          "id": "synth-ok-85",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully reports the 3-store pilot without claiming production deployment, revenue impact, or ownership beyond the author's role, aligning with facts and must-not-claim constraints."
+        }
+      ]
+    },
+    "blind": {
+      "rows": 86,
+      "errors": 0,
+      "judge": {
+        "rows": 86,
+        "violation_rows": 59,
+        "classes": {
+          "fabricated_number": {
+            "support": 12,
+            "predicted": 15,
+            "precision": 0.6,
+            "recall": 0.75
+          },
+          "number_drift": {
+            "support": 9,
+            "predicted": 26,
+            "precision": 0.2692,
+            "recall": 0.7778
+          },
+          "fabricated_entity": {
+            "support": 10,
+            "predicted": 12,
+            "precision": 0.75,
+            "recall": 0.9
+          },
+          "do_not_claim": {
+            "support": 16,
+            "predicted": 15,
+            "precision": 0.7333,
+            "recall": 0.6875
+          },
+          "escalation_absolute": {
+            "support": 13,
+            "predicted": 10,
+            "precision": 0.9,
+            "recall": 0.6923
+          },
+          "escalation_causal": {
+            "support": 11,
+            "predicted": 8,
+            "precision": 0.875,
+            "recall": 0.6364
+          }
+        },
+        "ok": {
+          "support": 27,
+          "predicted": 15,
+          "precision": 0.9333,
+          "recall": 0.5185
+        },
+        "caught_violation_recall": 0.9831,
+        "false_alarm_rate": 0.4815,
+        "caught": 58,
+        "false_alarms": 13,
+        "caught_percent": 98.30508474576271,
+        "false_alarm_percent": 48.148148148148145
+      },
+      "verifier": {
+        "rows": 86,
+        "violation_rows": 59,
+        "classes": {
+          "fabricated_number": {
+            "support": 12,
+            "predicted": 21,
+            "precision": 0.4762,
+            "recall": 0.8333
+          },
+          "number_drift": {
+            "support": 9,
+            "predicted": 9,
+            "precision": 0.8889,
+            "recall": 0.8889
+          },
+          "fabricated_entity": {
+            "support": 10,
+            "predicted": 10,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "do_not_claim": {
+            "support": 16,
+            "predicted": 5,
+            "precision": 1.0,
+            "recall": 0.3125
+          },
+          "escalation_absolute": {
+            "support": 13,
+            "predicted": 15,
+            "precision": 0.7333,
+            "recall": 0.8462
+          },
+          "escalation_causal": {
+            "support": 11,
+            "predicted": 14,
+            "precision": 0.5,
+            "recall": 0.6364
+          }
+        },
+        "ok": {
+          "support": 27,
+          "predicted": 24,
+          "precision": 0.6667,
+          "recall": 0.5926
+        },
+        "caught_violation_recall": 0.8644,
+        "false_alarm_rate": 0.4074,
+        "caught": 51,
+        "false_alarms": 11,
+        "caught_percent": 86.44067796610169,
+        "false_alarm_percent": 40.74074074074074
+      },
+      "records": [
+        {
+          "id": "blind-001",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully rewords the fact about testing Redis fallbacks by killing Redis 50 times under load, without fabricating numbers, entities, or claims, and without using absolute terms or causal claims beyond the facts."
+        },
+        {
+          "id": "blind-002",
+          "labels": [
+            "number_drift",
+            "escalation_causal"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states a fabricated number (64 MB write buffer) not mentioned in the facts, which instead describe reducing the write buffer from 910 to 140."
+        },
+        {
+          "id": "blind-003",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'never' and 'any machine' which are absolute claims not supported by the facts, which only state 58 fps performance in Chrome on a 2021 laptop."
+        },
+        {
+          "id": "blind-004",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet mentions 'p93' which is not stated in the facts (the facts list p50, p99, and p99.9), constituting a fabricated number."
+        },
+        {
+          "id": "blind-005",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet attributes the performance gain to 'running dbt on DuckDB' (escalation_causal), but the fact states the speedup came from partitioning by service date and skipping unchanged partitions, not from dbt/DuckDB specifically."
+        },
+        {
+          "id": "blind-006",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states 25% of held-out tickets are routed to humans, while the fact specifies 18%, representing a number drift (rounded up when higher is better)."
+        },
+        {
+          "id": "blind-007",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'XGBoost' as part of a blended model, but XGBoost is not listed in the provided tech list, constituting a fabricated_entity."
+        },
+        {
+          "id": "blind-008",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'Prometheus' as the tracking tool, but Prometheus is not listed in the tech list (Go, Make, pprof, GitHub Actions), making it a fabricated_entity."
+        },
+        {
+          "id": "blind-009",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states '230 KB' instead of the fact's '238 KB', which is a fabricated number not present in the evidence."
+        },
+        {
+          "id": "blind-011",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states 17,000 writes/s instead of the fact's 18,000 writes/s, rounding down a higher value to appear more modest than the actual result."
+        },
+        {
+          "id": "blind-012",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts: 6 minutes and 41 minutes are exact, the methods (partitioning, skipping partitions) are stated, and no prohibited claims (production, streaming, 'big data') are made."
+        },
+        {
+          "id": "blind-013",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet claims a median deploy time of 6 minutes, which is lower than the fact's 11 minutes, representing a number drift (rounding down when lower is better)."
+        },
+        {
+          "id": "blind-014",
+          "labels": [
+            "escalation_absolute",
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims a production deployment to 'all stores' (implying beyond the 3-store pilot), which violates the 'must not claim' rule against production deployment beyond the pilot."
+        },
+        {
+          "id": "blind-015",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states 'up to 3.1x faster' for a speed-up that was exactly 3.08x in the facts, rounding up the number to appear more favorable."
+        },
+        {
+          "id": "blind-016",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully rewords the fact about removing up to 5 hours of data staleness without adding claims, numbers, or causal mechanisms not supported by the evidence."
+        },
+        {
+          "id": "blind-017",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states '9,000 events per second' instead of the fact's '9,200 events/s', fabricating a lower number not explicitly stated in the facts."
+        },
+        {
+          "id": "blind-018",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet uses 'Playwright' instead of 'Cypress' for end-to-end tests, which is a fabricated_entity since Playwright is not on the tech list."
+        },
+        {
+          "id": "blind-019",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'LangChain' as part of the tech stack, but LangChain is not listed in the provided tech list, constituting a fabricated_entity."
+        },
+        {
+          "id": "blind-020",
+          "labels": [
+            "do_not_claim",
+            "escalation_absolute"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'exactly-once processing' which is explicitly prohibited in the 'must not claim' list, as the consumer is actually at-least-once with deduplication by event ID."
+        },
+        {
+          "id": "blind-021",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet uses '8,000+' which drifts from the exact 8,000 records in the facts, presenting a range rather than the precise value."
+        },
+        {
+          "id": "blind-022",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'never' (an absolute term) to claim Redis outages never interrupt request handling, but the facts only state that the fallback recovered within 10 seconds after 50 Redis kills during a test, not that interruptions are impossible in all scenarios."
+        },
+        {
+          "id": "blind-023",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states 80% line coverage instead of 81%, which is a rounded-down number (number_drift)."
+        },
+        {
+          "id": "blind-024",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [],
+          "reason": "Bullet is faithful; all claims align with facts (23 alerts/runbooks, PagerDuty routing, 31→9 pages reduction) and no prohibited claims are made."
+        },
+        {
+          "id": "blind-026",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the mean macro-F1 of 0.86 (three seeds) and avoids overstating results, claims, or absolutes."
+        },
+        {
+          "id": "blind-027",
+          "labels": [
+            "fabricated_number",
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift",
+            "do_not_claim"
+          ],
+          "reason": "The bullet falsely claims '300 production services' (violating do_not_claim) and misattributes the p99 of 2.1 ms to 41,000 checks/s (number_drift), as the fact states p99 was 14 ms at saturation."
+        },
+        {
+          "id": "blind-028",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet mentions 'p95' latency, which is not stated in the facts (which only mention p50, p99, and p99.9)."
+        },
+        {
+          "id": "blind-029",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states 'over 9,000 sessions' instead of the factual 'over 4,800 sessions', fabricating a number not present in the evidence."
+        },
+        {
+          "id": "blind-030",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet claims 'surfaced all weak categories' and 'every ambiguous ticket' which overstate the facts (3 categories below 0.75 F1 and 420 relabeled tickets)."
+        },
+        {
+          "id": "blind-031",
+          "labels": [
+            "fabricated_number",
+            "escalation_causal"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet claims 'eliminated 60% of timeouts' which is a fabricated number not present in the facts."
+        },
+        {
+          "id": "blind-032",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "number_drift",
+            "fabricated_entity",
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 138 ms as a production p99 (number drift), adds Cloudflare (fabricated_entity), and implies ownership of the tracking platform (do_not_claim)."
+        },
+        {
+          "id": "blind-033",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet uses approximate numbers with 'about' and aligns with the facts without overstating results or introducing unverified claims."
+        },
+        {
+          "id": "blind-034",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'every' (an absolute term) to claim all upstream schema changes are caught, while the facts only state 9 changes were caught."
+        },
+        {
+          "id": "blind-035",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet introduces a causal mechanism ('because the smaller bundle loaded faster') that no fact ties to the result (form completion increase), implying a cause-effect relationship not explicitly stated in the evidence."
+        },
+        {
+          "id": "blind-036",
+          "labels": [
+            "escalation_absolute",
+            "do_not_claim"
+          ],
+          "judge": [
+            "fabricated_entity",
+            "escalation_absolute"
+          ],
+          "reason": "The bullet claims 'every browser' (fabricated_entity) and uses 'guarantees' (escalation_absolute), both unsupported by facts or tech list."
+        },
+        {
+          "id": "blind-037",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet claims the deploy time reduction was caused by 'running Terraform plans in parallel,' but the facts only state the outcome (38 → 11 minutes) without attributing it to this specific mechanism."
+        },
+        {
+          "id": "blind-038",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states 50 ms instead of the actual 45 ms from the facts, fabricating a number not supported by the evidence."
+        },
+        {
+          "id": "blind-039",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift",
+            "do_not_claim"
+          ],
+          "reason": "The bullet falsely claims ownership of the entire shipment-tracking platform (must not claim) and presents the 138 ms p99 as production (number drift, as it is from a staging load test)."
+        },
+        {
+          "id": "blind-040",
+          "labels": [
+            "escalation_causal",
+            "escalation_absolute"
+          ],
+          "judge": [
+            "do_not_claim",
+            "escalation_absolute"
+          ],
+          "reason": "The bullet claims patient-outcome impact (\"no regression ever reaches patients\") which is prohibited, and uses the absolute term \"ever\" (escalation_absolute) not present in the facts."
+        },
+        {
+          "id": "blind-041",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts: it correctly attributes atomicity to the Lua script and avoids prohibited claims (no production use, Redis Cluster, or global limits)."
+        },
+        {
+          "id": "blind-042",
+          "labels": [
+            "escalation_absolute",
+            "do_not_claim"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'Guaranteed' (an absolute term) and claims 'zero data loss across crashes, including sudden power loss' which extends beyond the tested scenarios described in the facts."
+        },
+        {
+          "id": "blind-043",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet falsely attributes the p99 latency improvement to the Lua script implementation, which the facts do not link causally to the latency metric."
+        },
+        {
+          "id": "blind-044",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'Guaranteed' (an absolute term) and 'any concurrency' (unbounded scope), which no fact supports."
+        },
+        {
+          "id": "blind-045",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet falsely attributes the latency reduction to 'moving service calls to gRPC,' while the facts credit replacing per-request fan-out with a batched query and Redis cache as the actual cause."
+        },
+        {
+          "id": "blind-046",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "fabricated_entity",
+            "escalation_causal"
+          ],
+          "reason": "The bullet falsely claims 'locks coordinated across several servers' (fabricated_entity) and attributes the result to this mechanism (escalation_causal), which the facts attribute to a PostgreSQL exclusion constraint, not distributed locks."
+        },
+        {
+          "id": "blind-047",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states a 'fourfold reduction' in latency, but the facts only provide exact values (412 ms → 138 ms) without mentioning any reduction factor. This number is fabricated as it isn't derived from or stated in the facts."
+        },
+        {
+          "id": "blind-048",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts without embellishment, reordering, or violations of constraints."
+        },
+        {
+          "id": "blind-049",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet falsely presents 'date-parsing' and 'currency-formatting' as tools (which are actually plain functions per the scope notes), violating the 'fabricated_entity' rule."
+        },
+        {
+          "id": "blind-050",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts without fabricating numbers, entities, or claims, and avoids prohibited assertions like time savings or ownership."
+        },
+        {
+          "id": "blind-051",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims to 'beat published state-of-the-art classifiers' which is explicitly prohibited in the must-not-claim list, as the facts state no comparison was made with other published models."
+        },
+        {
+          "id": "blind-052",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim",
+            "escalation_absolute"
+          ],
+          "reason": "The bullet claims 'zero downtime' deploys (do_not_claim) and uses 'without any user-visible downtime' (escalation_absolute), both unverified by facts."
+        },
+        {
+          "id": "blind-053",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift",
+            "do_not_claim"
+          ],
+          "reason": "The bullet falsely states a 3-week holdout (number drift from the 12-week fact) and claims waste reduction (do_not_claim), which was never measured."
+        },
+        {
+          "id": "blind-054",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet claims 8 ms latency (lower than the fact's 9 ms) without justification, constituting number_drift by presenting a more favorable numerical result than the stated fact."
+        },
+        {
+          "id": "blind-056",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift",
+            "do_not_claim"
+          ],
+          "reason": "The bullet rounds the time reduction from 29 to 30 minutes (number_drift) and claims a measured time saving (do_not_claim), which is prohibited."
+        },
+        {
+          "id": "blind-057",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet is faithful to the facts, restating the 48 million monthly ingestion and dbt/DuckDB usage without fabrication, drift, or prohibited claims."
+        },
+        {
+          "id": "blind-058",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet faithfully rephrases the facts without fabricating numbers, entities, or claims, and avoids absolute terms or causal attributions not supported by the evidence."
+        },
+        {
+          "id": "blind-059",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number",
+            "number_drift"
+          ],
+          "reason": "The bullet states '0.09 s' (90 ms) for p99, which is not in the facts (138 ms) and presents a lower value than the fact, violating both fabricated_number and number_drift."
+        },
+        {
+          "id": "blind-060",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet changes the 2% threshold to 'any position' (a lower threshold), making the failure condition more favorable than the fact states, which is number drift."
+        },
+        {
+          "id": "blind-061",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet's p99 latency of 2.2 ms at 20,000 checks/s is rounded up from the fact's 2.1 ms, which is a number drift when higher latency is worse."
+        },
+        {
+          "id": "blind-062",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet falsely attributes the reduction in pages to the 'new Terraform deploy pipeline' (escalation_causal), while the facts link the page reduction specifically to adding Prometheus alerts and runbooks, not the Terraform pipeline."
+        },
+        {
+          "id": "blind-063",
+          "labels": [
+            "escalation_causal"
+          ],
+          "judge": [
+            "escalation_causal"
+          ],
+          "reason": "The bullet attributes the improvement in scenario passing to 'recording every model call' (causal mechanism), but the facts only state that recording allowed offline replay, not that it caused the pass rate improvement. The actual cause (use of the retrieval tool) is not tied to the result in the bullet."
+        },
+        {
+          "id": "blind-064",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states a median load time of 2.5 s instead of the fact's 2.4 s, which is a less favorable number when lower is better, constituting number_drift."
+        },
+        {
+          "id": "blind-065",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds down the compaction time from 29.5 s (fact) to 29 s, presenting a more favorable number than the exact fact."
+        },
+        {
+          "id": "blind-067",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states 'killing Redis 500 times' (fabricated_number), while the facts only mention 50 kills in the failure test."
+        },
+        {
+          "id": "blind-068",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet adds 'with Redux' which is not listed in the tech list, constituting a fabricated_entity."
+        },
+        {
+          "id": "blind-069",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts, using 'estimated' to align with the scope note about the 6-hour estimate, and does not claim measured savings, real-time reporting, or ownership."
+        },
+        {
+          "id": "blind-070",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states '10 ms' as the reduced latency, which is higher than the fact's '9 ms' (rounded up for a lower-is-better metric), constituting number_drift."
+        },
+        {
+          "id": "blind-071",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts, rounding 0.875 to 87% (a minor approximation) and correctly notes the 55% baseline, without fabricating numbers, entities, or claims."
+        },
+        {
+          "id": "blind-072",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds 138 ms to 0.14 s (140 ms), presenting the number more favorably than the exact fact."
+        },
+        {
+          "id": "blind-073",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet states 'shortening median deploys from 38 to 12 minutes' instead of the fact's 'cutting median deploy time from 38 -> 11 minutes', rounding up the 11-minute result to 12 minutes (a more favorable number)."
+        },
+        {
+          "id": "blind-074",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "do_not_claim",
+            "escalation_absolute"
+          ],
+          "reason": "The bullet claims 'a client can never exceed its configured limit' (escalation_absolute) and implies strict global limits, which contradicts the facts (Redis downtime fallback allows 8x the rate). It also claims a strict limit without qualifying, violating the must-not-claim list."
+        },
+        {
+          "id": "blind-075",
+          "labels": [
+            "fabricated_number"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet falsely states '12 main views' instead of the fact's '5 main views', fabricating a number not present in the evidence."
+        },
+        {
+          "id": "blind-076",
+          "labels": [
+            "fabricated_entity",
+            "do_not_claim"
+          ],
+          "judge": [
+            "fabricated_entity",
+            "do_not_claim"
+          ],
+          "reason": "The bullet fabricates 'LangChain' (not in the tech list) and claims deployment on Kubernetes and serving live claims, which are prohibited under 'do_not_claim' as the facts state it's a personal project with synthetic data."
+        },
+        {
+          "id": "blind-077",
+          "labels": [
+            "escalation_absolute"
+          ],
+          "judge": [
+            "escalation_absolute"
+          ],
+          "reason": "The bullet uses 'every' (an absolute term) to claim all intake paths were tested, while the facts only mention line coverage increased from 23% to 81% without stating comprehensive path testing."
+        },
+        {
+          "id": "blind-078",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds down the MAPE from 19.8% to 19%, presenting a more favorable number than the fact states."
+        },
+        {
+          "id": "blind-079",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet claims 1.5% deviation (more favorable than the fact's 2% deviation), which is number_drift."
+        },
+        {
+          "id": "blind-080",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'figures refreshed up to the minute' implying real-time reporting, which is explicitly prohibited in the must-not-claim list as the reports remained daily."
+        },
+        {
+          "id": "blind-081",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts: it uses the exact numbers (61% to 74%, 4,800 sessions), corrects 'Rebuilt' to 'Redesigned' (a minor rewording), and avoids prohibited claims."
+        },
+        {
+          "id": "blind-082",
+          "labels": [
+            "ok"
+          ],
+          "judge": [],
+          "reason": "The bullet accurately reflects the facts: 23 Prometheus alerts with runbooks were added, and on-call pages per week fell from 31 to 9 over two quarters. No violations detected."
+        },
+        {
+          "id": "blind-083",
+          "labels": [
+            "number_drift",
+            "do_not_claim"
+          ],
+          "judge": [
+            "number_drift",
+            "do_not_claim"
+          ],
+          "reason": "The bullet falsely claims 'real customer claims' (do_not_claim) and rounds 87.5% to 88% (number_drift)."
+        },
+        {
+          "id": "blind-084",
+          "labels": [
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_entity"
+          ],
+          "reason": "The bullet mentions 'Axum' as a technology, which is not listed in the provided tech list or facts."
+        },
+        {
+          "id": "blind-085",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds the weighted MAPE from 19.8% to 20%, presenting a more favorable number than the exact fact."
+        },
+        {
+          "id": "blind-086",
+          "labels": [
+            "fabricated_number",
+            "do_not_claim"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states 'stockouts by 12% in pilot stores' as a fabricated number not mentioned in the facts, which also lack any causal link between the model and stockout reduction."
+        },
+        {
+          "id": "blind-087",
+          "labels": [
+            "fabricated_number",
+            "fabricated_entity"
+          ],
+          "judge": [
+            "fabricated_number",
+            "fabricated_entity"
+          ],
+          "reason": "The bullet fabricates '60,000 checks/s' (no fact states this number) and 'Envoy' (not in the tech list), while misrepresenting the p99 latency as 2.1 ms at 20,000 checks/s (which is factually accurate but contextually misleading about the performance benchmark)."
+        },
+        {
+          "id": "blind-088",
+          "labels": [
+            "ok"
+          ],
+          "judge": [
+            "fabricated_number"
+          ],
+          "reason": "The bullet states a line coverage of 80% instead of 81% as per the facts, fabricating a number not explicitly stated in the evidence."
+        },
+        {
+          "id": "blind-089",
+          "labels": [
+            "do_not_claim"
+          ],
+          "judge": [
+            "do_not_claim"
+          ],
+          "reason": "The bullet claims 'lowering infrastructure spend' which is explicitly prohibited in the must-not-claim list as no cost data was collected."
+        },
+        {
+          "id": "blind-090",
+          "labels": [
+            "number_drift"
+          ],
+          "judge": [
+            "number_drift"
+          ],
+          "reason": "The bullet rounds 35/40 (87.5%) to 88%, presenting it as a more favorable figure than the exact value in the facts."
+        }
+      ]
+    }
+  }
+}

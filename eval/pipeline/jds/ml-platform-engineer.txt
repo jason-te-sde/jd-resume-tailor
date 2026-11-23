@@ -1,0 +1,23 @@
+Machine Learning Platform Engineer
+Quillfeather Labs (an invented company, written for this evaluation)
+
+About the role
+Quillfeather builds ranking models for an online marketplace, and our data scientists ship faster than our platform can carry them. We need an engineer to build the paved road from notebook to production model.
+
+What you will do
+- Build and maintain the training and evaluation pipelines that data scientists use, including experiment tracking and a model registry.
+- Design a feature store that serves the same features offline for training and online for inference.
+- Package models for serving behind low-latency APIs and set up canary releases and rollbacks.
+- Monitor deployed models for drift, data quality problems and latency regressions.
+- Make evaluation a gate: reproducible metrics, held-out data and a record of what was shipped.
+- Work with data scientists to remove manual steps from their workflow.
+
+What we look for
+- Strong Python and experience with a deep learning framework such as PyTorch.
+- Experience taking a model from a notebook to a service, including containers and CI.
+- Familiarity with orchestration tools such as Airflow or Kubeflow.
+- A working understanding of evaluation: splits, leakage and metric choice.
+
+Nice to have
+- Experience with Kubernetes, Spark or a managed feature store.
+- Experience serving large language models.

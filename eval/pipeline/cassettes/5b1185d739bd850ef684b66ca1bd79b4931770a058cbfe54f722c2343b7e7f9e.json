@@ -1,0 +1,109 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You read a job posting and extract its structure. Rules:\n- Copy or lightly shorten the posting's own wording; add nothing it does not say.\n- responsibilities: what the person will do, one short item each, in the posting's order.\n- requirements: what the posting says is required; nice_to_have: what it calls preferred or a plus.\n- keywords: the technologies, methods and domain terms the posting names, each as written.\n- title and company: as written in the posting; an empty string when it does not say.\n- Leave out benefits, salary, location, and equal-opportunity text.",
+        "role": "system"
+      },
+      {
+        "content": "Job posting:\n\niOS Engineer\nTamarind Fitness (an invented company, written for this evaluation)\n\nAbout the role\nTamarind builds a workout and recovery app for runners and cyclists. Our iOS app is where users spend their day, and we are hiring an engineer to make it faster, more reliable and a pleasure to use.\n\nWhat you will do\n- Build new features in Swift and SwiftUI for our iPhone and Apple Watch apps.\n- Integrate HealthKit, Core Location and Bluetooth sensors, and handle background execution correctly.\n- Improve launch time, memory use and battery impact using Instruments.\n- Work with designers on animations and accessibility with VoiceOver and Dynamic Type.\n- Write unit and UI tests and keep the release pipeline healthy with Xcode Cloud.\n- Ship every two weeks through TestFlight and the App Store.\n\nWhat we look for\n- Three or more years building iOS apps in Swift, with at least one app in the App Store.\n- Experience with SwiftUI, Combine or Swift concurrency, and Core Data.\n- An eye for detail on animation and interaction.\n\nNice to have\n- Experience with Apple Watch or widgets.\n- Some Kotlin or Android experience.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "nice_to_have": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "requirements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "responsibilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "company",
+        "responsibilities",
+        "requirements",
+        "nice_to_have",
+        "keywords"
+      ],
+      "type": "object"
+    },
+    "seed": 1
+  },
+  "response": {
+    "company": "Tamarind Fitness",
+    "keywords": [
+      "Swift",
+      "SwiftUI",
+      "HealthKit",
+      "Core Location",
+      "Bluetooth sensors",
+      "Instruments",
+      "animations",
+      "accessibility",
+      "VoiceOver",
+      "Dynamic Type",
+      "unit and UI tests",
+      "Xcode Cloud",
+      "TestFlight",
+      "App Store",
+      "Combine",
+      "Swift concurrency",
+      "Core Data",
+      "Apple Watch",
+      "widgets",
+      "Kotlin",
+      "Android"
+    ],
+    "nice_to_have": [
+      "Experience with Apple Watch or widgets.",
+      "Some Kotlin or Android experience."
+    ],
+    "requirements": [
+      "Three or more years building iOS apps in Swift, with at least one app in the App Store.",
+      "Experience with SwiftUI, Combine or Swift concurrency, and Core Data.",
+      "An eye for detail on animation and interaction."
+    ],
+    "responsibilities": [
+      "Build new features in Swift and SwiftUI for our iPhone and Apple Watch apps.",
+      "Integrate HealthKit, Core Location and Bluetooth sensors, and handle background execution correctly.",
+      "Improve launch time, memory use and battery impact using Instruments.",
+      "Work with designers on animations and accessibility with VoiceOver and Dynamic Type.",
+      "Write unit and UI tests and keep the release pipeline healthy with Xcode Cloud.",
+      "Ship every two weeks through TestFlight and the App Store."
+    ],
+    "title": "iOS Engineer"
+  },
+  "usage": {
+    "input_tokens": 1170,
+    "output_tokens": 299
+  }
+}

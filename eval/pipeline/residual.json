@@ -1,0 +1,70 @@
+{
+  "confidence_percent": 95,
+  "labelled": {
+    "rows": 94,
+    "violating": 14,
+    "by_class": {
+      "fabricated_number": 0,
+      "number_drift": 0,
+      "fabricated_entity": 1,
+      "do_not_claim": 7,
+      "escalation_absolute": 1,
+      "escalation_causal": 6
+    }
+  },
+  "judgement_calls": 28,
+  "random": {
+    "sampled": 60,
+    "violations": 4,
+    "rate": 0.0667,
+    "interval": [
+      0.0262,
+      0.1593
+    ],
+    "percent": 6.666666666666667,
+    "interval_percent": [
+      2.6228274143,
+      15.925579893799998
+    ]
+  },
+  "census": {
+    "flagged": 34,
+    "unjudged": 0,
+    "confirmed": 10
+  },
+  "residual": {
+    "frame": 325,
+    "extrapolated": 19.4,
+    "estimate": 29.4,
+    "estimate_interval": [
+      17.63,
+      56.34
+    ],
+    "rate": 0.0905,
+    "rate_interval": [
+      0.0543,
+      0.1734
+    ],
+    "percent": 9.046153846153846,
+    "interval_percent": [
+      5.425362392496308,
+      17.336442304910154
+    ],
+    "faithful_percent": 90.95384615384616,
+    "faithful_interval_percent": [
+      82.66355769508985,
+      94.57463760750369
+    ],
+    "final_bullets": 442,
+    "rate_of_final_bullets": 0.0665,
+    "percent_of_final_bullets": 6.65158371040724
+  },
+  "judge_on_pipeline": {
+    "flagged": 34,
+    "confirmed_of_flagged": 10,
+    "precision": 0.2941,
+    "recall_estimate": 0.3401,
+    "precision_percent": 29.41176470588235,
+    "recall_estimate_percent": 34.013605442176875
+  }
+}

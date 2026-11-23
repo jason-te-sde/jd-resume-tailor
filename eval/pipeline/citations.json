@@ -1,0 +1,27 @@
+{
+  "first_rewrites": {
+    "bullets": 76,
+    "by_shape": {
+      "sources_label": 7,
+      "fact_label": 7,
+      "cites_label": 3,
+      "bracketed_id": 38,
+      "parenthesized_id": 21,
+      "bare_id": 0
+    },
+    "passed_by_the_verifier": 4,
+    "fabricated_number_only_id_digits": 65,
+    "flagged_only_for_id_digits": 49
+  },
+  "final_bullets": {
+    "bullets": 4,
+    "by_shape": {
+      "sources_label": 4,
+      "fact_label": 0,
+      "cites_label": 0,
+      "bracketed_id": 0,
+      "parenthesized_id": 0,
+      "bare_id": 0
+    }
+  }
+}

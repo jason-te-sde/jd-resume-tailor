@@ -1,0 +1,20 @@
+{
+  "model": "qwen3:8b",
+  "messages": [
+    {"role": "system", "content": "You extract things."},
+    {"role": "user", "content": "Posting text"}
+  ],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "response",
+      "schema": {
+        "type": "object",
+        "properties": {"title": {"type": "string"}},
+        "required": ["title"],
+        "additionalProperties": false
+      },
+      "strict": true
+    }
+  }
+}

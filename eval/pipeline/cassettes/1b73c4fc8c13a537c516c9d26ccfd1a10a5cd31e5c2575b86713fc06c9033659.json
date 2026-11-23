@@ -1,0 +1,82 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You tailor resume bullets to a job posting without changing what is true. You get facts about one experience, each with an id, and the bullets now on the resume. Rewrite each bullet for the posting and cite the facts it rests on.\n\nRules. A verifier checks them, and a bullet that breaks one is thrown away and replaced by the original, so do not push against them:\n1. No new numbers. Every number must come from a fact you cite; do not add, combine or compute.\n2. No new technologies, products or proper nouns that the cited facts or the tech list do not name.\n3. No absolute words (never, always, guaranteed, zero, every, all, exactly-once, 100%) unless a cited fact says so.\n4. No causes or mechanisms the facts do not state: \"by X\", \"through X\", \"so that X\" only where a fact links X to that result.\n5. Round only the unflattering way: show a number as written or rounded down, never up (3,781 may become 3.7K+, never 3.8K+).\n6. Use the posting's words only where they describe this work accurately.\nAlso: respect the \"must not claim\" list, keep each bullet to one sentence, start it with a past-tense verb, and put every fact you used in sources.\nReturn exactly as many bullets as you are asked for, in the order given.",
+        "role": "system"
+      },
+      {
+        "content": "Posting: Machine Learning Platform Engineer at Quillfeather Labs\nResponsibilities:\n- Build and maintain the training and evaluation pipelines that data scientists use, including experiment tracking and a model registry.\n- Design a feature store that serves the same features offline for training and online for inference.\n- Package models for serving behind low-latency APIs and set up canary releases and rollbacks.\n- Monitor deployed models for drift, data quality problems and latency regressions.\n- Make evaluation a gate: reproducible metrics, held-out data and a record of what was shipped.\n- Work with data scientists to remove manual steps from their workflow.\nRequirements:\n- Strong Python and experience with a deep learning framework such as PyTorch.\n- Experience taking a model from a notebook to a service, including containers and CI.\n- Familiarity with orchestration tools such as Airflow or Kubeflow.\n- A working understanding of evaluation: splits, leakage and metric choice.\nKeywords:\n- training and evaluation pipelines\n- experiment tracking\n- model registry\n- feature store\n- low-latency APIs\n- canary releases\n- rollbacks\n- model drift\n- data quality\n- latency regressions\n- reproducible metrics\n- held-out data\n- manual steps\n- Python\n- deep learning framework\n- PyTorch\n- containers\n- CI\n- orchestration tools\n- Airflow\n- Kubeflow\n- evaluation\n- splits\n- leakage\n- metric choice\n- Kubernetes\n- Spark\n- managed feature store\n- large language models\n\nExperience: Data Engineering Intern at Marlow Data Works\nTech list: Python, Airflow, dbt, SQL, Snowflake, Docker\nFacts you may cite:\n[marlow-intern#1] Built 12 dbt models and an Airflow DAG that replaced a manual weekly spreadsheet report, saving about 6 analyst-hours a week.\n[marlow-intern#2] Cut the nightly warehouse load from 74 to 29 minutes by partitioning a 310 GB fact table by date and loading only the changed partitions.\n[marlow-intern#3] Added 41 data-quality tests (not null, uniqueness, referential integrity) that caught 9 upstream schema changes before they reached dashboards.\n[marlow-intern#4] Reduced the time from a source-table change to a refreshed dashboard by 40.6%, measured as the median over 8 weeks of scheduled runs.\n[marlow-intern#5] Ended with 28.3% fewer failed Airflow runs over the same 8 weeks after adding retries with backoff and the data-quality tests.\n[marlow-intern#scope] EVIDENCE: load times are the median of 30 Airflow runs before and after the change; the 9 caught changes come from the test-failure log over 8 weeks; the 6 hours is the two analysts' own estimate from a one-question survey.\nMust not claim:\n- measured time savings (the 6 hours a week is an estimate, not a measurement)\n- 'real-time' reporting (the reports stayed daily)\n- any dollar savings\n- ownership of the warehouse (the intern worked in one team's models)\n\nBullets to rewrite (return exactly 3; bullet k is the rewrite of k):\n1. Cut the nightly warehouse load from 74 to 29 minutes by partitioning a 310 GB fact table by date and loading only the changed partitions.\n2. Added 41 data-quality tests (not null, uniqueness, referential integrity) that caught 9 upstream schema changes before they reached dashboards.\n3. Reduced the time from a source-table change to a refreshed dashboard by 40.6%, measured as the median over 8 weeks of scheduled runs.",
+        "role": "user"
+      },
+      {
+        "content": "{\"bullets\": [{\"sources\": [\"marlow-intern#2\"], \"text\": \"Optimized the nightly warehouse load by partitioning a 310 GB fact table by date, reducing the median load time across 30 Airflow runs.\"}, {\"sources\": [\"marlow-intern#3\"], \"text\": \"Implemented 41 data-quality tests for not null, uniqueness, and referential integrity, which identified upstream schema changes before they impacted dashboards.\"}, {\"sources\": [\"marlow-intern#4\"], \"text\": \"Improved the time from a source-table change to a refreshed dashboard by using the median of scheduled runs over 8 weeks.\"}]}",
+        "role": "assistant"
+      },
+      {
+        "content": "The verifier rejected these bullets:\nBullet 1 was rejected. You wrote: 'Optimized the nightly warehouse load by partitioning a 310 GB fact table by date, reducing the median load time across 30 Airflow runs.'\n  - fabricated_number: '30' - the sources have no count quantity, so '30' has no source\n\nRewrite only these 1 bullets, in the order listed, so that none of the problems remains. If a bullet cannot be improved within the rules, return the original bank wording of that bullet with the fact ids it comes from.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "bullets": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sources": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "sources"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bullets"
+      ],
+      "type": "object"
+    },
+    "seed": 2
+  },
+  "response": {
+    "bullets": [
+      {
+        "sources": [
+          "marlow-intern#2"
+        ],
+        "text": "Reduced the nightly warehouse load from 74 to 29 minutes by partitioning a 310 GB fact table by date and loading only the changed partitions."
+      },
+      {
+        "sources": [
+          "marlow-intern#3"
+        ],
+        "text": "Implemented 41 data-quality tests for not null, uniqueness, and referential integrity, which identified upstream schema changes before they impacted dashboards."
+      },
+      {
+        "sources": [
+          "marlow-intern#4"
+        ],
+        "text": "Improved the time from a source-table change to a refreshed dashboard by using the median of scheduled runs over 8 weeks."
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 1812,
+    "output_tokens": 141
+  }
+}

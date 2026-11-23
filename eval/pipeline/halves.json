@@ -1,0 +1,241 @@
+{
+  "split_after": 21,
+  "first": {
+    "runs": {
+      "total": 21,
+      "ok": 21,
+      "failed": 0
+    },
+    "bullets": {
+      "planned": 245,
+      "rewritten": 245,
+      "verbatim": 0
+    },
+    "gate_off": {
+      "flagged": 123,
+      "rate": 0.502,
+      "percent": 50.204081632653065,
+      "by_class": {
+        "fabricated_number": {
+          "bullets": 47,
+          "rate": 0.1918,
+          "percent": 19.183673469387756
+        },
+        "number_drift": {
+          "bullets": 0,
+          "rate": 0.0,
+          "percent": 0.0
+        },
+        "fabricated_entity": {
+          "bullets": 5,
+          "rate": 0.0204,
+          "percent": 2.0408163265306123
+        },
+        "do_not_claim": {
+          "bullets": 0,
+          "rate": 0.0,
+          "percent": 0.0
+        },
+        "escalation_absolute": {
+          "bullets": 3,
+          "rate": 0.0122,
+          "percent": 1.2244897959183674
+        },
+        "escalation_causal": {
+          "bullets": 83,
+          "rate": 0.3388,
+          "percent": 33.87755102040816
+        }
+      },
+      "structural": 0,
+      "copied_citation": 0
+    },
+    "gate_on": {
+      "first_pass": {
+        "bullets": 122,
+        "rate": 0.498,
+        "percent": 49.795918367346935
+      },
+      "after_retry": {
+        "bullets": 68,
+        "rate": 0.2776,
+        "percent": 27.755102040816325
+      },
+      "fallback": {
+        "bullets": 55,
+        "rate": 0.2245,
+        "percent": 22.448979591836736
+      }
+    },
+    "per_resume": {
+      "seconds": {
+        "median": 1999.07,
+        "min": 933.09,
+        "max": 3851.07
+      },
+      "input_tokens": {
+        "median": 25022,
+        "min": 17286,
+        "max": 34087
+      },
+      "output_tokens": {
+        "median": 2026,
+        "min": 1578,
+        "max": 2392
+      },
+      "calls": {
+        "median": 10,
+        "min": 7,
+        "max": 11
+      },
+      "load_average_1m": {
+        "median": 2.52,
+        "min": 0.86,
+        "max": 9.13
+      }
+    },
+    "by_load": {
+      "threshold": 2.0,
+      "below": {
+        "runs": 10,
+        "seconds": {
+          "median": 1687.24,
+          "min": 933.09,
+          "max": 2482.31
+        }
+      },
+      "at_or_above": {
+        "runs": 11,
+        "seconds": {
+          "median": 2013.92,
+          "min": 1551.01,
+          "max": 3851.07
+        }
+      }
+    },
+    "totals": {
+      "calls": 202,
+      "input_tokens": 547361,
+      "output_tokens": 42137
+    }
+  },
+  "second": {
+    "runs": {
+      "total": 15,
+      "ok": 15,
+      "failed": 0
+    },
+    "bullets": {
+      "planned": 197,
+      "rewritten": 197,
+      "verbatim": 0
+    },
+    "gate_off": {
+      "flagged": 115,
+      "rate": 0.5838,
+      "percent": 58.3756345177665,
+      "by_class": {
+        "fabricated_number": {
+          "bullets": 60,
+          "rate": 0.3046,
+          "percent": 30.456852791878173
+        },
+        "number_drift": {
+          "bullets": 1,
+          "rate": 0.0051,
+          "percent": 0.5076142131979695
+        },
+        "fabricated_entity": {
+          "bullets": 7,
+          "rate": 0.0355,
+          "percent": 3.553299492385787
+        },
+        "do_not_claim": {
+          "bullets": 3,
+          "rate": 0.0152,
+          "percent": 1.5228426395939085
+        },
+        "escalation_absolute": {
+          "bullets": 5,
+          "rate": 0.0254,
+          "percent": 2.5380710659898478
+        },
+        "escalation_causal": {
+          "bullets": 69,
+          "rate": 0.3503,
+          "percent": 35.025380710659896
+        }
+      },
+      "structural": 1,
+      "copied_citation": 0
+    },
+    "gate_on": {
+      "first_pass": {
+        "bullets": 81,
+        "rate": 0.4112,
+        "percent": 41.11675126903553
+      },
+      "after_retry": {
+        "bullets": 54,
+        "rate": 0.2741,
+        "percent": 27.411167512690355
+      },
+      "fallback": {
+        "bullets": 62,
+        "rate": 0.3147,
+        "percent": 31.472081218274113
+      }
+    },
+    "per_resume": {
+      "seconds": {
+        "median": 1931.8,
+        "min": 1155.76,
+        "max": 3044.04
+      },
+      "input_tokens": {
+        "median": 28628,
+        "min": 20293,
+        "max": 38002
+      },
+      "output_tokens": {
+        "median": 2227,
+        "min": 1743,
+        "max": 3105
+      },
+      "calls": {
+        "median": 10,
+        "min": 8,
+        "max": 13
+      },
+      "load_average_1m": {
+        "median": 1.09,
+        "min": 0.9,
+        "max": 19.94
+      }
+    },
+    "by_load": {
+      "threshold": 2.0,
+      "below": {
+        "runs": 12,
+        "seconds": {
+          "median": 1835.34,
+          "min": 1155.76,
+          "max": 2610.58
+        }
+      },
+      "at_or_above": {
+        "runs": 3,
+        "seconds": {
+          "median": 3024.95,
+          "min": 1832.4,
+          "max": 3044.04
+        }
+      }
+    },
+    "totals": {
+      "calls": 157,
+      "input_tokens": 441249,
+      "output_tokens": 34987
+    }
+  }
+}

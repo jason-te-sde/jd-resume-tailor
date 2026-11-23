@@ -1,0 +1,88 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You tailor resume bullets to a job posting without changing what is true. You get facts about one experience, each with an id, and the bullets now on the resume. Rewrite each bullet for the posting and cite the facts it rests on.\n\nRules. A verifier checks them, and a bullet that breaks one is thrown away and replaced by the original, so do not push against them:\n1. No new numbers. Every number must come from a fact you cite; do not add, combine or compute.\n2. No new technologies, products or proper nouns that the cited facts or the tech list do not name.\n3. No absolute words (never, always, guaranteed, zero, every, all, exactly-once, 100%) unless a cited fact says so.\n4. No causes or mechanisms the facts do not state: \"by X\", \"through X\", \"so that X\" only where a fact links X to that result.\n5. Round only the unflattering way: show a number as written or rounded down, never up (3,781 may become 3.7K+, never 3.8K+).\n6. Use the posting's words only where they describe this work accurately.\nAlso: respect the \"must not claim\" list, keep each bullet to one sentence, start it with a past-tense verb, and put every fact you used in sources.\nReturn exactly as many bullets as you are asked for, in the order given.",
+        "role": "system"
+      },
+      {
+        "content": "Posting: Staff Backend Engineer, Platform Architecture at Ironbark Payments\nResponsibilities:\n- Set the architecture for our payment-processing platform and drive decisions across eight teams.\n- Lead multi-quarter migrations from a monolith to services, including data ownership and rollout plans.\n- Define reliability and consistency standards for money movement: idempotency, reconciliation and exactly-once effects.\n- Write and review design documents, and unblock senior engineers who disagree.\n- Mentor and grow senior engineers, and partner with directors on roadmap and hiring.\n- Represent engineering in conversations with auditors and enterprise customers.\nRequirements:\n- Ten or more years of backend engineering, with five or more years at staff level or equivalent scope.\n- A record of leading technical work across several teams and delivering it in production.\n- Deep experience with distributed transactions, queues and relational databases at scale.\n- Experience with PCI compliance and regulated environments.\n- Experience with Java or Kotlin in a large codebase.\nKeywords:\n- payment-processing platform\n- monolith to services\n- data ownership\n- rollout plans\n- idempotency\n- reconciliation\n- exactly-once effects\n- design documents\n- on-call rotation\n- backend engineering\n- staff level\n- distributed transactions\n- queues\n- relational databases\n- PCI compliance\n- regulated environments\n- Java\n- Kotlin\n- large codebase\n- event sourcing\n- ledger systems\n\nExperience: Software Engineer at Lantern Freight Systems\nTech list: Go, PostgreSQL, Kafka, Redis, gRPC, Terraform, GitHub Actions, Prometheus, Grafana, AWS (ECS, RDS)\nFacts you may cite:\n[lantern-swe#1] Cut p99 latency of the shipment-tracking API from 412 ms to 138 ms by replacing a per-request fan-out of 7 queries with one batched query and adding a Redis read-through cache.\n[lantern-swe#2] Built an idempotent Kafka consumer for carrier status events that deduplicates by event id and sustained 9,200 events/s on a 6-partition topic in staging load tests.\n[lantern-swe#3] Moved 14 services from hand-written deploy scripts to one shared Terraform and GitHub Actions pipeline, cutting median deploy time from 38 -> 11 minutes.\n[lantern-swe#4] Added 23 Prometheus alerts and runbooks for the dispatch service; pages per on-call week fell from 31 to 9 over two quarters.\n[lantern-swe#5] Led a 4-person effort to replace the nightly billing-export cron job with an event-driven job, removing up to 5 hours of data staleness each day.\n[lantern-swe#scope] ORIGIN: written from my own deploy notes, dashboards and pager export. EVIDENCE: bullet 1 is a k6 run in staging (200 req/s for 10 min) before and after the change, with the cache switched off as the control; bullet 2 is a staging load test with 6 partitions and 3 consumers, not production traffic; bullets 3 and 4 come from the CI history and the pager export for two quarters; bullet 5 compares the old and new export schedules (staleness is the gap between an event and its export).\nMust not claim:\n- ownership of the tracking platform (a team of 6 owned it; the author owned the API and the cache layer)\n- 'exactly-once' processing (the consumer is at-least-once with deduplication by event id)\n- 138 ms as a production p99 (it is a staging load test)\n- any cost savings (no cost data was collected)\n- 'zero downtime' deploys (the pipeline does rolling deploys, and one deploy in the period caused 4 minutes of elevated errors)\n\nBullets to rewrite (return exactly 4; bullet k is the rewrite of k):\n1. Led a 4-person effort to replace the nightly billing-export cron job with an event-driven job, removing up to 5 hours of data staleness each day.\n2. Built an idempotent Kafka consumer for carrier status events that deduplicates by event id and sustained 9,200 events/s on a 6-partition topic in staging load tests.\n3. Moved 14 services from hand-written deploy scripts to one shared Terraform and GitHub Actions pipeline, cutting median deploy time from 38 -> 11 minutes.\n4. Added 23 Prometheus alerts and runbooks for the dispatch service; pages per on-call week fell from 31 to 9 over two quarters.",
+        "role": "user"
+      },
+      {
+        "content": "{\"bullets\": [{\"sources\": [\"lantern-swe#5\"], \"text\": \"Led a 4-person effort to replace the nightly billing-export cron job with an event-driven job, reducing data staleness by up to 5 hours daily [lantern-swe#5].\"}, {\"sources\": [\"lantern-swe#2\"], \"text\": \"Built an idempotent Kafka consumer for carrier status events, deduplicating by event id and handling 9,200 events/s on a 6-partition topic during staging load tests [lantern-swe#2].\"}, {\"sources\": [\"lantern-swe#3\"], \"text\": \"Moved 14 services from hand-written deploy scripts to a shared Terraform and GitHub Actions pipeline, reducing median deploy time from 38 to 11 minutes [lantern-swe#3].\"}, {\"sources\": [\"lantern-swe#4\"], \"text\": \"Added 23 Prometheus alerts and runbooks for the dispatch service, decreasing on-call pages per week from 31 to 9 over two quarters [lantern-swe#4].\"}]}",
+        "role": "assistant"
+      },
+      {
+        "content": "The verifier rejected these bullets:\nBullet 1 was rejected. You wrote: 'Led a 4-person effort to replace the nightly billing-export cron job with an event-driven job, reducing data staleness by up to 5 hours daily [lantern-swe#5].'\n  - fabricated_number: '5' - no count in the sources equals '5'; the sources have 4\nBullet 2 was rejected. You wrote: 'Built an idempotent Kafka consumer for carrier status events, deduplicating by event id and handling 9,200 events/s on a 6-partition topic during staging load tests [lantern-swe#2].'\n  - fabricated_number: '2' - no count in the sources equals '2'; the sources have 6\nBullet 3 was rejected. You wrote: 'Moved 14 services from hand-written deploy scripts to a shared Terraform and GitHub Actions pipeline, reducing median deploy time from 38 to 11 minutes [lantern-swe#3].'\n  - fabricated_number: '3' - no count in the sources equals '3'; the sources have 14\nBullet 4 was rejected. You wrote: 'Added 23 Prometheus alerts and runbooks for the dispatch service, decreasing on-call pages per week from 31 to 9 over two quarters [lantern-swe#4].'\n  - fabricated_number: '4' - no count in the sources equals '4'; the sources have 9, 23, 31\n\nRewrite only these 4 bullets, in the order listed, so that none of the problems remains. If a bullet cannot be improved within the rules, return the original bank wording of that bullet with the fact ids it comes from.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "bullets": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sources": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "sources"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bullets"
+      ],
+      "type": "object"
+    },
+    "seed": 1
+  },
+  "response": {
+    "bullets": [
+      {
+        "sources": [
+          "lantern-swe#5"
+        ],
+        "text": "Led a 4-person effort to replace the nightly billing-export cron job with an event-driven job, removing up to 5 hours of data staleness each day [lantern-swe#5]."
+      },
+      {
+        "sources": [
+          "lantern-swe#2"
+        ],
+        "text": "Built an idempotent Kafka consumer for carrier status events, deduplicating by event id and handling 9,200 events/s on a 6-partition topic in staging load tests [lantern-swe#2]."
+      },
+      {
+        "sources": [
+          "lantern-swe#3"
+        ],
+        "text": "Moved 14 services from hand-written deploy scripts to a shared Terraform and GitHub Actions pipeline, reducing median deploy time from 38 to 11 minutes [lantern-swe#3]."
+      },
+      {
+        "sources": [
+          "lantern-swe#4"
+        ],
+        "text": "Added 23 Prometheus alerts and runbooks for the dispatch service, reducing on-call pages per week from 31 to 9 over two quarters [lantern-swe#4]."
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 5478,
+    "output_tokens": 265
+  }
+}

@@ -1,0 +1,23 @@
+Applied AI Engineer, Agents
+Fernhollow Systems (an invented company, written for this evaluation)
+
+About the role
+Fernhollow builds an assistant that triages and answers questions for insurance claims teams. We need an engineer who can make a tool-using language model agent dependable, measurable and cheap enough to run.
+
+What you will do
+- Design and build agents that call tools, query databases and escalate to people when they should.
+- Build evaluation harnesses for agent behaviour: labelled scenarios, regression suites and failure analysis.
+- Run open-weight models locally and in the cloud, and choose models by measured quality and cost.
+- Add guardrails that stop the agent from stating things its sources do not support.
+- Instrument the system for latency, tool-call errors and token cost.
+- Write the tests and tooling that let the team change a prompt with confidence.
+
+What we look for
+- Strong Python and experience shipping a system built on language models.
+- A habit of measuring: you can show an evaluation and say what it does not show.
+- Experience with a vector database or retrieval-augmented generation.
+- Experience with LangChain or a similar orchestration framework.
+
+Nice to have
+- Experience fine-tuning models.
+- Experience with GPU serving stacks such as vLLM.

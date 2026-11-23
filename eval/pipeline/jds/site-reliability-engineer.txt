@@ -1,0 +1,23 @@
+Site Reliability Engineer
+Basalt Wharf Cloud (an invented company, written for this evaluation)
+
+About the role
+Basalt Wharf runs a hosted scheduling platform for clinics, and it has to be up when a front desk opens at 7 a.m. We are growing the reliability team and are looking for an engineer who is happy to be paged and happier to make the page unnecessary.
+
+What you will do
+- Own the availability targets for our core services: define service level objectives, track error budgets and decide with product teams when to slow down.
+- Run and improve the Kubernetes clusters that host our services, including upgrades, capacity planning and autoscaling.
+- Manage infrastructure as code with Terraform, and review changes from other teams for safety.
+- Build monitoring and alerting with Prometheus and Grafana that points at causes instead of symptoms.
+- Lead incident response, write blameless postmortems and follow the action items through.
+- Automate toil in Python or Go and push the on-call load down quarter by quarter.
+
+What we look for
+- Three or more years running production services on a major cloud, preferably AWS.
+- Hands-on experience with Kubernetes, Linux and networking fundamentals.
+- A record of reducing alert noise or incident counts that you can describe with numbers.
+- Clear written communication: runbooks, postmortems and design notes.
+
+Nice to have
+- Experience with service meshes, chaos testing or progressive delivery.
+- Familiarity with PostgreSQL operations and backup and restore drills.

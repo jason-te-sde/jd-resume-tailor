@@ -1,0 +1,71 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You tailor resume bullets to a job posting without changing what is true. You get facts about one experience, each with an id, and the bullets now on the resume. Rewrite each bullet for the posting and cite the facts it rests on.\n\nRules. A verifier checks them, and a bullet that breaks one is thrown away and replaced by the original, so do not push against them:\n1. No new numbers. Every number must come from a fact you cite; do not add, combine or compute.\n2. No new technologies, products or proper nouns that the cited facts or the tech list do not name.\n3. No absolute words (never, always, guaranteed, zero, every, all, exactly-once, 100%) unless a cited fact says so.\n4. No causes or mechanisms the facts do not state: \"by X\", \"through X\", \"so that X\" only where a fact links X to that result.\n5. Round only the unflattering way: show a number as written or rounded down, never up (3,781 may become 3.7K+, never 3.8K+).\n6. Use the posting's words only where they describe this work accurately.\nAlso: respect the \"must not claim\" list, keep each bullet to one sentence, start it with a past-tense verb, and put every fact you used in sources.\nReturn exactly as many bullets as you are asked for, in the order given.",
+        "role": "system"
+      },
+      {
+        "content": "Posting: Applied AI Engineer, Agents at Fernhollow Systems\nResponsibilities:\n- Design and build agents that call tools, query databases and escalate to people when they should.\n- Build evaluation harnesses for agent behaviour: labelled scenarios, regression suites and failure analysis.\n- Run open-weight models locally and in the cloud, and choose models by measured quality and cost.\n- Add guardrails that stop the agent from stating things its sources do not support.\n- Instrument the system for latency, tool-call errors and token cost.\n- Write the tests and tooling that let the team change a prompt with confidence.\nRequirements:\n- Strong Python and experience shipping a system built on language models.\n- A habit of measuring: you can show an evaluation and say what it does not show.\n- Experience with a vector database or retrieval-augmented generation.\n- Experience with LangChain or a similar orchestration framework.\nKeywords:\n- AI Engineer, Agents\n- Language models\n- Tools, databases, escalate\n- Evaluation harnesses, labelled scenarios, regression suites, failure analysis\n- Open-weight models, local/cloud, measured quality, cost\n- Guardrails, sources, latency, tool-call errors, token cost\n- Tests, tooling, prompts\n- Python, system built on language models\n- Measuring, evaluation\n- Vector database, retrieval-augmented generation\n- LangChain, orchestmentation framework\n- Fine-tuning models, GPU serving stacks, vLLM\n\nExperience: Software Engineer at Lantern Freight Systems\nTech list: Go, PostgreSQL, Kafka, Redis, gRPC, Terraform, GitHub Actions, Prometheus, Grafana, AWS (ECS, RDS)\nFacts you may cite:\n[lantern-swe#1] Cut p99 latency of the shipment-tracking API from 412 ms to 138 ms by replacing a per-request fan-out of 7 queries with one batched query and adding a Redis read-through cache.\n[lantern-swe#2] Built an idempotent Kafka consumer for carrier status events that deduplicates by event id and sustained 9,200 events/s on a 6-partition topic in staging load tests.\n[lantern-swe#3] Moved 14 services from hand-written deploy scripts to one shared Terraform and GitHub Actions pipeline, cutting median deploy time from 38 -> 11 minutes.\n[lantern-swe#4] Added 23 Prometheus alerts and runbooks for the dispatch service; pages per on-call week fell from 31 to 9 over two quarters.\n[lantern-swe#5] Led a 4-person effort to replace the nightly billing-export cron job with an event-driven job, removing up to 5 hours of data staleness each day.\n[lantern-swe#scope] ORIGIN: written from my own deploy notes, dashboards and pager export. EVIDENCE: bullet 1 is a k6 run in staging (200 req/s for 10 min) before and after the change, with the cache switched off as the control; bullet 2 is a staging load test with 6 partitions and 3 consumers, not production traffic; bullets 3 and 4 come from the CI history and the pager export for two quarters; bullet 5 compares the old and new export schedules (staleness is the gap between an event and its export).\nMust not claim:\n- ownership of the tracking platform (a team of 6 owned it; the author owned the API and the cache layer)\n- 'exactly-once' processing (the consumer is at-least-once with deduplication by event id)\n- 138 ms as a production p99 (it is a staging load test)\n- any cost savings (no cost data was collected)\n- 'zero downtime' deploys (the pipeline does rolling deploys, and one deploy in the period caused 4 minutes of elevated errors)\n\nBullets to rewrite (return exactly 2; bullet k is the rewrite of k):\n1. Cut p99 latency of the shipment-tracking API from 412 ms to 138 ms by replacing a per-request fan-out of 7 queries with one batched query and adding a Redis read-through cache.\n2. Added 23 Prometheus alerts and runbooks for the dispatch service; pages per on-call week fell from 31 to 9 over two quarters.",
+        "role": "user"
+      },
+      {
+        "content": "{\"bullets\": [{\"sources\": [\"lantern-swe#1\", \"lantern-swe#scope\"], \"text\": \"Reduced p99 latency in staging from 412 ms to 138 ms by optimizing the shipment-tracking API with a batched query and Redis read-through cache, based on staging load test results.\"}, {\"sources\": [\"lantern-swe#4\", \"lantern-swe#scope\"], \"text\": \"Implemented 23 Prometheus alerts and runbooks for the dispatch service, reducing on-call incident frequency from 31 to 9 per week over two quarters, using pager export data.\"}]}",
+        "role": "assistant"
+      },
+      {
+        "content": "The verifier rejected these bullets:\nBullet 2 was rejected. You wrote: 'Implemented 23 Prometheus alerts and runbooks for the dispatch service, reducing on-call incident frequency from 31 to 9 per week over two quarters, using pager export data.'\n  - fabricated_number: '31' - the sources have no rate quantity, so '31' has no source\n  - fabricated_number: '9 per week' - the sources have no rate quantity, so '9 per week' has no source\n\nRewrite only these 1 bullets, in the order listed, so that none of the problems remains. If a bullet cannot be improved within the rules, return the original bank wording of that bullet with the fact ids it comes from.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "bullets": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sources": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "sources"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bullets"
+      ],
+      "type": "object"
+    },
+    "seed": 2
+  },
+  "response": {
+    "bullets": [
+      {
+        "sources": [
+          "lantern-swe#4",
+          "lantern-swe#scope"
+        ],
+        "text": "Implemented 23 Prometheus alerts and runbooks for the dispatch service, using pager export data."
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 4183,
+    "output_tokens": 48
+  }
+}

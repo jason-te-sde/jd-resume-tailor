@@ -1,0 +1,78 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You tailor resume bullets to a job posting without changing what is true. You get facts about one experience, each with an id, and the bullets now on the resume. Rewrite each bullet for the posting and cite the facts it rests on.\n\nRules. A verifier checks them, and a bullet that breaks one is thrown away and replaced by the original, so do not push against them:\n1. No new numbers. Every number must come from a fact you cite; do not add, combine or compute.\n2. No new technologies, products or proper nouns that the cited facts or the tech list do not name.\n3. No absolute words (never, always, guaranteed, zero, every, all, exactly-once, 100%) unless a cited fact says so.\n4. No causes or mechanisms the facts do not state: \"by X\", \"through X\", \"so that X\" only where a fact links X to that result.\n5. Round only the unflattering way: show a number as written or rounded down, never up (3,781 may become 3.7K+, never 3.8K+).\n6. Use the posting's words only where they describe this work accurately.\nAlso: respect the \"must not claim\" list, keep each bullet to one sentence, start it with a past-tense verb, and put every fact you used in sources.\nReturn exactly as many bullets as you are asked for, in the order given.",
+        "role": "system"
+      },
+      {
+        "content": "Posting: iOS Engineer at Tamarind Fitness\nResponsibilities:\n- Build new features in Swift and SwiftUI for our iPhone and Apple Watch apps.\n- Integrate HealthKit, Core Location and Bluetooth sensors, and handle background execution correctly.\n- Improve launch time, memory use and battery impact using Instruments.\n- Work with designers on animations and accessibility with VoiceOver and Dynamic Type.\n- Write unit and UI tests and keep the release pipeline healthy with Xcode Cloud.\n- Ship every two weeks through TestFlight and the App Store.\nRequirements:\n- Three or more years building iOS apps in Swift, with at least one app in the App Store.\n- Experience with SwiftUI, Combine or Swift concurrency, and Core Data.\n- An eye for detail on animation and interaction.\nKeywords:\n- Swift\n- SwiftUI\n- HealthKit\n- Core Location\n- Bluetooth sensors\n- Instruments\n- animations\n- accessibility\n- VoiceOver\n- Dynamic Type\n- unit tests\n- UI tests\n- Xcode Cloud\n- TestFlight\n- App Store\n- Combine\n- Swift concurrency\n- Core Data\n- Kotlin\n- Android\n- Apple Watch\n- widgets\n\nExperience: Dispatch Desk: a tool-using claim-triage agent\nTech list: Python, Ollama, SQLite, pytest, Docker\nFacts you may cite:\n[dispatch-desk#1] Built a tool-using agent in Python that triages freight-damage claims with an 8B open-weights model served locally by Ollama and one retrieval tool over a SQLite table of 3,200 past claims.\n[dispatch-desk#2] Passed 35 of 40 hand-written claim scenarios (0.875), against 22 of 40 (0.55) for the same model without the retrieval tool.\n[dispatch-desk#3] Recorded every model call and tool call in a SQLite trace, so that a failing scenario replays offline in under 2 s.\n[dispatch-desk#4] Wrote 58 pytest cases, 6 of them replaying recorded traces, and ran them in CI in 4 minutes.\n[dispatch-desk#scope] ORIGIN: personal project, built to learn how tool calling fails. EVIDENCE: eval/results.json (40 scenarios written by the author, one run at temperature 0 with seed 9; a second run gave 34 of 40, 0.85); the agent called the retrieval tool in 37 of the 40 scenarios and no other model tool (the date parser and the currency formatter are plain functions that the model cannot call); the 3,200 past claims are synthetic; the replay time is the median of 20 replays on one laptop; CI time is from the last 10 runs.\nMust not claim:\n- a production model, a deployment or real users (it runs on one laptop and nothing was deployed)\n- a multi-tool agent or 'three tools' (the retrieval tool is the only tool the model can call)\n- 0.875 as a stable figure (a single run; a second run gave 0.85)\n- accuracy on real claims (the claims are synthetic and the scenarios were written by the author)\n- any comparison with other models (one 8B model only)\n\nBullets to rewrite (return exactly 2; bullet k is the rewrite of k):\n1. Built a tool-using agent in Python that triages freight-damage claims with an 8B open-weights model served locally by Ollama and one retrieval tool over a SQLite table of 3,200 past claims.\n2. Passed 35 of 40 hand-written claim scenarios (0.875), against 22 of 40 (0.55) for the same model without the retrieval tool.",
+        "role": "user"
+      },
+      {
+        "content": "{\"bullets\": [{\"sources\": [\"dispatch-desk#1\", \"dispatch-desk#scope\"], \"text\": \"Designed a data retrieval system using a local SQLite database to power a claim-triage agent, enabling efficient query handling for synthetic freight-damage scenarios.\"}, {\"sources\": [\"dispatch-desk#2\", \"dispatch-desk#scope\"], \"text\": \"Ran 35 of 40 hand-written claim scenarios successfully in a controlled test environment, demonstrating improved scenario handling with a dedicated retrieval tool.\"}]}",
+        "role": "assistant"
+      },
+      {
+        "content": "The verifier rejected these bullets:\nBullet 1 was rejected. You wrote: 'Designed a data retrieval system using a local SQLite database to power a claim-triage agent, enabling efficient query handling for synthetic freight-damage scenarios.'\n  - escalation_causal: 'enabling efficient query handling for synthetic freight-damage scenarios' - the cited sources do not link 'enabling efficient query handling for synthetic freight-damage scenarios' to the result in one statement\nBullet 2 was rejected. You wrote: 'Ran 35 of 40 hand-written claim scenarios successfully in a controlled test environment, demonstrating improved scenario handling with a dedicated retrieval tool.'\n  - escalation_causal: 'with a dedicated retrieval tool' - the cited sources do not link 'with a dedicated retrieval tool' to the result in one statement\n\nRewrite only these 2 bullets, in the order listed, so that none of the problems remains. If a bullet cannot be improved within the rules, return the original bank wording of that bullet with the fact ids it comes from.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "bullets": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "sources": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "sources"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bullets"
+      ],
+      "type": "object"
+    },
+    "seed": 2
+  },
+  "response": {
+    "bullets": [
+      {
+        "sources": [
+          "dispatch-desk#1",
+          "dispatch-desk#scope"
+        ],
+        "text": "Implemented a retrieval tool over a SQLite table of 3,200 synthetic claims to support claim-triage scenarios."
+      },
+      {
+        "sources": [
+          "dispatch-desk#2",
+          "dispatch-desk#scope"
+        ],
+        "text": "Executed 35 of 40 hand-written claim scenarios using a retrieval tool, with 37 of the 40 scenarios invoking the tool."
+      }
+    ]
+  },
+  "usage": {
+    "input_tokens": 2174,
+    "output_tokens": 105
+  }
+}

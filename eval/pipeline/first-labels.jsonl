@@ -1,0 +1,60 @@
+{"id": "f-001", "labels": ["do_not_claim"]}
+{"id": "f-002", "labels": ["ok"]}
+{"id": "f-003", "labels": ["ok"]}
+{"id": "f-004", "labels": ["ok"]}
+{"id": "f-005", "labels": ["ok"]}
+{"id": "f-006", "labels": ["ok"]}
+{"id": "f-007", "labels": ["escalation_causal"]}
+{"id": "f-008", "labels": ["do_not_claim"]}
+{"id": "f-009", "labels": ["fabricated_number", "escalation_causal"]}
+{"id": "f-010", "labels": ["ok"]}
+{"id": "f-011", "labels": ["fabricated_number"]}
+{"id": "f-012", "labels": ["ok"]}
+{"id": "f-013", "labels": ["escalation_absolute", "escalation_causal"]}
+{"id": "f-014", "labels": ["ok"]}
+{"id": "f-015", "labels": ["ok"]}
+{"id": "f-016", "labels": ["fabricated_entity"]}
+{"id": "f-017", "labels": ["ok"]}
+{"id": "f-018", "labels": ["fabricated_entity", "do_not_claim"]}
+{"id": "f-019", "labels": ["ok"]}
+{"id": "f-020", "labels": ["ok"]}
+{"id": "f-021", "labels": ["ok"]}
+{"id": "f-022", "labels": ["ok"]}
+{"id": "f-023", "labels": ["escalation_causal"]}
+{"id": "f-024", "labels": ["fabricated_number", "escalation_causal"]}
+{"id": "f-025", "labels": ["escalation_absolute"]}
+{"id": "f-026", "labels": ["ok"]}
+{"id": "f-027", "labels": ["ok"]}
+{"id": "f-028", "labels": ["ok"]}
+{"id": "f-029", "labels": ["ok"]}
+{"id": "f-030", "labels": ["ok"]}
+{"id": "f-031", "labels": ["ok"]}
+{"id": "f-032", "labels": ["ok"]}
+{"id": "f-033", "labels": ["ok"]}
+{"id": "f-034", "labels": ["ok"]}
+{"id": "f-035", "labels": ["ok"]}
+{"id": "f-036", "labels": ["fabricated_entity", "escalation_causal"]}
+{"id": "f-037", "labels": ["ok"]}
+{"id": "f-038", "labels": ["do_not_claim", "escalation_causal"]}
+{"id": "f-039", "labels": ["ok"]}
+{"id": "f-040", "labels": ["ok"]}
+{"id": "f-041", "labels": ["ok"]}
+{"id": "f-042", "labels": ["ok"]}
+{"id": "f-043", "labels": ["escalation_causal"]}
+{"id": "f-044", "labels": ["ok"]}
+{"id": "f-045", "labels": ["ok"]}
+{"id": "f-046", "labels": ["ok"]}
+{"id": "f-047", "labels": ["ok"]}
+{"id": "f-048", "labels": ["ok"]}
+{"id": "f-049", "labels": ["ok"]}
+{"id": "f-050", "labels": ["ok"]}
+{"id": "f-051", "labels": ["ok"]}
+{"id": "f-052", "labels": ["ok"]}
+{"id": "f-053", "labels": ["fabricated_number"]}
+{"id": "f-054", "labels": ["escalation_causal"]}
+{"id": "f-055", "labels": ["escalation_causal"]}
+{"id": "f-056", "labels": ["fabricated_number"]}
+{"id": "f-057", "labels": ["fabricated_entity"]}
+{"id": "f-058", "labels": ["ok"]}
+{"id": "f-059", "labels": ["ok"]}
+{"id": "f-060", "labels": ["ok"]}

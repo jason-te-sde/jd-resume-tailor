@@ -1,0 +1,185 @@
+{
+  "confidence_percent": 95,
+  "seed": 20261122,
+  "frame": 441,
+  "sampled": 60,
+  "labelled": {
+    "rows": 60,
+    "violating": 19,
+    "by_class": {
+      "fabricated_number": 5,
+      "number_drift": 0,
+      "fabricated_entity": 4,
+      "do_not_claim": 4,
+      "escalation_absolute": 2,
+      "escalation_causal": 10
+    }
+  },
+  "judgement_calls": 27,
+  "violation_rate": {
+    "violating": 19,
+    "rows": 60,
+    "rate": 0.3167,
+    "interval": [
+      0.2131,
+      0.4423
+    ],
+    "percent": 31.666666666666668,
+    "interval_percent": [
+      21.3057058412,
+      44.234004943
+    ]
+  },
+  "gate_off_flag": {
+    "flagged": 28,
+    "flagged_violating": 16,
+    "precision": 0.5714,
+    "violating": 19,
+    "recall": 0.8421,
+    "unflagged": 32,
+    "unflagged_violating": 3,
+    "ok": 41,
+    "false_alarms": 12,
+    "false_alarm_rate": 0.2927,
+    "precision_percent": 57.142857142857146,
+    "recall_percent": 84.21052631578948,
+    "false_alarm_percent": 29.26829268292683
+  },
+  "verifier": {
+    "rows": 60,
+    "violation_rows": 19,
+    "classes": {
+      "fabricated_number": {
+        "support": 5,
+        "predicted": 12,
+        "precision": 0.4167,
+        "recall": 1.0
+      },
+      "number_drift": {
+        "support": 0,
+        "predicted": 1,
+        "precision": 0.0,
+        "recall": null
+      },
+      "fabricated_entity": {
+        "support": 4,
+        "predicted": 3,
+        "precision": 1.0,
+        "recall": 0.75
+      },
+      "do_not_claim": {
+        "support": 4,
+        "predicted": 1,
+        "precision": 1.0,
+        "recall": 0.25
+      },
+      "escalation_absolute": {
+        "support": 2,
+        "predicted": 1,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "escalation_causal": {
+        "support": 10,
+        "predicted": 17,
+        "precision": 0.2353,
+        "recall": 0.4
+      }
+    },
+    "ok": {
+      "support": 41,
+      "predicted": 32,
+      "precision": 0.9062,
+      "recall": 0.7073
+    },
+    "caught_violation_recall": 0.8421,
+    "false_alarm_rate": 0.2927,
+    "caught": 16,
+    "false_alarms": 12,
+    "caught_percent": 84.21052631578948,
+    "false_alarm_percent": 29.26829268292683,
+    "class_right": {
+      "rows": 13,
+      "precision": 0.4643,
+      "recall": 0.6842,
+      "precision_percent": 46.42857142857143,
+      "recall_percent": 68.42105263157895
+    }
+  },
+  "overlap_with_passed_sample": {
+    "rows": 13,
+    "same_labels": 13,
+    "ok": 12,
+    "violating": 1,
+    "pairs": {
+      "f-003": [
+        "s-048"
+      ],
+      "f-017": [
+        "s-041"
+      ],
+      "f-020": [
+        "s-074"
+      ],
+      "f-026": [
+        "s-056"
+      ],
+      "f-029": [
+        "s-069"
+      ],
+      "f-034": [
+        "s-006"
+      ],
+      "f-035": [
+        "s-023"
+      ],
+      "f-038": [
+        "s-007"
+      ],
+      "f-040": [
+        "s-051"
+      ],
+      "f-042": [
+        "s-024"
+      ],
+      "f-044": [
+        "s-080"
+      ],
+      "f-059": [
+        "s-020"
+      ],
+      "f-060": [
+        "s-088"
+      ]
+    }
+  },
+  "without_overlap": {
+    "violating": 18,
+    "rows": 47,
+    "rate": 0.383,
+    "interval": [
+      0.2579,
+      0.5257
+    ],
+    "percent": 38.297872340425535,
+    "interval_percent": [
+      25.790482663499997,
+      52.573691556
+    ],
+    "gate_off_flag": {
+      "flagged": 28,
+      "flagged_violating": 16,
+      "precision": 0.5714,
+      "violating": 18,
+      "recall": 0.8889,
+      "unflagged": 19,
+      "unflagged_violating": 2,
+      "ok": 29,
+      "false_alarms": 12,
+      "false_alarm_rate": 0.4138,
+      "precision_percent": 57.142857142857146,
+      "recall_percent": 88.88888888888889,
+      "false_alarm_percent": 41.37931034482759
+    }
+  }
+}

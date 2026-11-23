@@ -1,0 +1,672 @@
+{
+  "seed": 20261121,
+  "size": 60,
+  "frame": 325,
+  "final_bullets": 442,
+  "strata": {
+    "flagged": 34,
+    "unjudged": 0,
+    "unflagged": 291,
+    "sampled": 60
+  },
+  "rows": {
+    "s-001": {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-002": {
+      "jd": "ml-platform-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "dispatch-desk",
+      "stratum": "random"
+    },
+    "s-003": {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "lantern-swe",
+      "stratum": "flagged"
+    },
+    "s-004": {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 10,
+      "entry": "ticket-triage",
+      "stratum": "random"
+    },
+    "s-005": {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "ticket-triage",
+      "stratum": "flagged"
+    },
+    "s-006": {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 5,
+      "entry": "dispatch-desk",
+      "stratum": "flagged"
+    },
+    "s-007": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 14,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-008": {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "ticket-triage",
+      "stratum": "flagged"
+    },
+    "s-009": {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-010": {
+      "jd": "frontend-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "tidewell-coop",
+      "stratum": "random"
+    },
+    "s-011": {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "tidekv",
+      "stratum": "flagged"
+    },
+    "s-012": {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "raftlet",
+      "stratum": "random"
+    },
+    "s-013": {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 5,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-014": {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 15,
+      "entry": "transit-lake",
+      "stratum": "random"
+    },
+    "s-015": {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-016": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "dispatch-desk",
+      "stratum": "random"
+    },
+    "s-017": {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "stratum": "flagged"
+    },
+    "s-018": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 13,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-019": {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 9,
+      "entry": "ticket-triage",
+      "stratum": "random"
+    },
+    "s-020": {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "tidekv",
+      "stratum": "random"
+    },
+    "s-021": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "dispatch-desk",
+      "stratum": "flagged"
+    },
+    "s-022": {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 8,
+      "entry": "gridlock-bench",
+      "stratum": "flagged"
+    },
+    "s-023": {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 13,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-024": {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 8,
+      "entry": "ticket-triage",
+      "stratum": "random"
+    },
+    "s-025": {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-026": {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-027": {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 17,
+      "entry": "raftlet",
+      "stratum": "flagged"
+    },
+    "s-028": {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-029": {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "raftlet",
+      "stratum": "flagged"
+    },
+    "s-030": {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-031": {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-032": {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 4,
+      "entry": "tidekv",
+      "stratum": "random"
+    },
+    "s-033": {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "transit-lake",
+      "stratum": "random"
+    },
+    "s-034": {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 10,
+      "entry": "transit-lake",
+      "stratum": "random"
+    },
+    "s-035": {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 12,
+      "entry": "gridlock",
+      "stratum": "random"
+    },
+    "s-036": {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 4,
+      "entry": "gridlock",
+      "stratum": "random"
+    },
+    "s-037": {
+      "jd": "database-internals-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-038": {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "lantern-swe",
+      "stratum": "flagged"
+    },
+    "s-039": {
+      "jd": "ios-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-040": {
+      "jd": "engineering-manager",
+      "seed": 2,
+      "index": 0,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-041": {
+      "jd": "site-reliability-engineer",
+      "seed": 1,
+      "index": 3,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-042": {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 4,
+      "entry": "gridlock",
+      "stratum": "random"
+    },
+    "s-043": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "tidewell-coop",
+      "stratum": "flagged"
+    },
+    "s-044": {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "raftlet",
+      "stratum": "random"
+    },
+    "s-045": {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 2,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-046": {
+      "jd": "staff-backend-engineer",
+      "seed": 1,
+      "index": 6,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-047": {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "stratum": "flagged"
+    },
+    "s-048": {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "raftlet",
+      "stratum": "flagged"
+    },
+    "s-049": {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 14,
+      "entry": "transit-lake",
+      "stratum": "random"
+    },
+    "s-050": {
+      "jd": "engineering-manager",
+      "seed": 3,
+      "index": 4,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-051": {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "raftlet",
+      "stratum": "random"
+    },
+    "s-052": {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-053": {
+      "jd": "database-internals-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "tidekv",
+      "stratum": "random"
+    },
+    "s-054": {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 13,
+      "entry": "tidekv",
+      "stratum": "random"
+    },
+    "s-055": {
+      "jd": "site-reliability-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "gridlock",
+      "stratum": "random"
+    },
+    "s-056": {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 6,
+      "entry": "ticket-triage",
+      "stratum": "random"
+    },
+    "s-057": {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 7,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-058": {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 5,
+      "entry": "dispatch-desk",
+      "stratum": "flagged"
+    },
+    "s-059": {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-060": {
+      "jd": "data-platform-engineer",
+      "seed": 1,
+      "index": 10,
+      "entry": "transit-lake",
+      "stratum": "flagged"
+    },
+    "s-061": {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 1,
+      "entry": "tidewell-coop",
+      "stratum": "random"
+    },
+    "s-062": {
+      "jd": "backend-engineer",
+      "seed": 3,
+      "index": 12,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-063": {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 2,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-064": {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 7,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-065": {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-066": {
+      "jd": "data-platform-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-067": {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 4,
+      "entry": "pulse-dashboard",
+      "stratum": "random"
+    },
+    "s-068": {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "marlow-intern",
+      "stratum": "flagged"
+    },
+    "s-069": {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 3,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-070": {
+      "jd": "engineering-manager",
+      "seed": 1,
+      "index": 6,
+      "entry": "dispatch-desk",
+      "stratum": "flagged"
+    },
+    "s-071": {
+      "jd": "llm-applications-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "ticket-triage",
+      "stratum": "random"
+    },
+    "s-072": {
+      "jd": "staff-backend-engineer",
+      "seed": 2,
+      "index": 6,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-073": {
+      "jd": "llm-applications-engineer",
+      "seed": 3,
+      "index": 0,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-074": {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "ticket-triage",
+      "stratum": "random"
+    },
+    "s-075": {
+      "jd": "distributed-systems-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "tidekv",
+      "stratum": "random"
+    },
+    "s-076": {
+      "jd": "backend-engineer",
+      "seed": 2,
+      "index": 5,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-077": {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-078": {
+      "jd": "llm-applications-engineer",
+      "seed": 2,
+      "index": 1,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-079": {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 0,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-080": {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "raftlet",
+      "stratum": "random"
+    },
+    "s-081": {
+      "jd": "embedded-firmware-engineer",
+      "seed": 2,
+      "index": 3,
+      "entry": "marlow-intern",
+      "stratum": "random"
+    },
+    "s-082": {
+      "jd": "ios-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "pulse-dashboard",
+      "stratum": "flagged"
+    },
+    "s-083": {
+      "jd": "database-internals-engineer",
+      "seed": 3,
+      "index": 2,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-084": {
+      "jd": "embedded-firmware-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-085": {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 12,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    },
+    "s-086": {
+      "jd": "data-platform-engineer",
+      "seed": 2,
+      "index": 11,
+      "entry": "gridlock",
+      "stratum": "random"
+    },
+    "s-087": {
+      "jd": "frontend-engineer",
+      "seed": 3,
+      "index": 8,
+      "entry": "pulse-dashboard",
+      "stratum": "random"
+    },
+    "s-088": {
+      "jd": "distributed-systems-engineer",
+      "seed": 3,
+      "index": 5,
+      "entry": "tidekv",
+      "stratum": "random"
+    },
+    "s-089": {
+      "jd": "distributed-systems-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "gridlock-bench",
+      "stratum": "random"
+    },
+    "s-090": {
+      "jd": "ios-engineer",
+      "seed": 1,
+      "index": 1,
+      "entry": "lantern-swe",
+      "stratum": "random"
+    },
+    "s-091": {
+      "jd": "ml-platform-engineer",
+      "seed": 1,
+      "index": 9,
+      "entry": "ticket-triage",
+      "stratum": "random"
+    },
+    "s-092": {
+      "jd": "backend-engineer",
+      "seed": 1,
+      "index": 7,
+      "entry": "tidekv",
+      "stratum": "flagged"
+    },
+    "s-093": {
+      "jd": "staff-backend-engineer",
+      "seed": 3,
+      "index": 11,
+      "entry": "tidekv",
+      "stratum": "flagged"
+    },
+    "s-094": {
+      "jd": "ml-platform-engineer",
+      "seed": 3,
+      "index": 13,
+      "entry": "gridlock",
+      "stratum": "flagged"
+    }
+  }
+}

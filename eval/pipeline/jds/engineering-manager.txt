@@ -1,0 +1,23 @@
+Engineering Manager, Data Services
+Sorrel Ridge Software (an invented company, written for this evaluation)
+
+About the role
+Sorrel Ridge sells inventory software to small manufacturers. The data services team of seven engineers owns our integrations and reporting. We are looking for a manager who can grow the team and keep delivery steady.
+
+What you will do
+- Manage and develop a team of seven engineers: hiring, onboarding, one-on-ones, feedback and promotions.
+- Own the team's roadmap and delivery with product management, and report progress to the director.
+- Set the team's engineering practices: code review, on-call, incident follow-up and planning.
+- Handle performance concerns with care and clarity.
+- Work with customers' technical staff on integration problems.
+- Stay close enough to the code to review designs and ask good questions.
+
+What we look for
+- Three or more years managing engineers and five or more years as an engineer.
+- A track record of building a team and keeping it healthy through change.
+- Experience with data integrations, APIs and relational databases.
+- Strong communication with executives and customers.
+
+Nice to have
+- Experience managing a team through a platform migration.
+- Experience with budgeting and vendor selection.

@@ -1,0 +1,104 @@
+{
+  "request": {
+    "messages": [
+      {
+        "content": "You read a job posting and extract its structure. Rules:\n- Copy or lightly shorten the posting's own wording; add nothing it does not say.\n- responsibilities: what the person will do, one short item each, in the posting's order.\n- requirements: what the posting says is required; nice_to_have: what it calls preferred or a plus.\n- keywords: the technologies, methods and domain terms the posting names, each as written.\n- title and company: as written in the posting; an empty string when it does not say.\n- Leave out benefits, salary, location, and equal-opportunity text.",
+        "role": "system"
+      },
+      {
+        "content": "Job posting:\n\nApplied AI Engineer, Agents\nFernhollow Systems (an invented company, written for this evaluation)\n\nAbout the role\nFernhollow builds an assistant that triages and answers questions for insurance claims teams. We need an engineer who can make a tool-using language model agent dependable, measurable and cheap enough to run.\n\nWhat you will do\n- Design and build agents that call tools, query databases and escalate to people when they should.\n- Build evaluation harnesses for agent behaviour: labelled scenarios, regression suites and failure analysis.\n- Run open-weight models locally and in the cloud, and choose models by measured quality and cost.\n- Add guardrails that stop the agent from stating things its sources do not support.\n- Instrument the system for latency, tool-call errors and token cost.\n- Write the tests and tooling that let the team change a prompt with confidence.\n\nWhat we look for\n- Strong Python and experience shipping a system built on language models.\n- A habit of measuring: you can show an evaluation and say what it does not show.\n- Experience with a vector database or retrieval-augmented generation.\n- Experience with LangChain or a similar orchestration framework.\n\nNice to have\n- Experience fine-tuning models.\n- Experience with GPU serving stacks such as vLLM.",
+        "role": "user"
+      }
+    ],
+    "model": "qwen3:8b",
+    "provider": "openai",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "nice_to_have": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "requirements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "responsibilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "company",
+        "responsibilities",
+        "requirements",
+        "nice_to_have",
+        "keywords"
+      ],
+      "type": "object"
+    },
+    "seed": 1
+  },
+  "response": {
+    "company": "Fernhollow Systems",
+    "keywords": [
+      "language model agent",
+      "tool-using",
+      "evaluation harnesses",
+      "open-weight models",
+      "vector database",
+      "retrieval-augmented generation",
+      "LangChain",
+      "guardrails",
+      "instrumentation",
+      "latency",
+      "tool-call errors",
+      "token cost",
+      "prompt",
+      "tests",
+      "tooling"
+    ],
+    "nice_to_have": [
+      "Experience fine-tuning models.",
+      "Experience with GPU serving stacks such as vLLM."
+    ],
+    "requirements": [
+      "Strong Python and experience shipping a system built on language models.",
+      "A habit of measuring: you can show an evaluation and say what it does not show.",
+      "Experience with a vector database or retrieval-augmented generation.",
+      "Experience with LangChain or a similar orchestration framework."
+    ],
+    "responsibilities": [
+      "Design and build agents that call tools, query databases and escalate to people when they should.",
+      "Build evaluation harnesses for agent behaviour: labelled scenarios, regression suites and failure analysis.",
+      "Run open-weight models locally and in the cloud, and choose models by measured quality and cost.",
+      "Add guardrails that stop the agent from stating things its sources do not support.",
+      "Instrument the system for latency, tool-call errors and token cost.",
+      "Write the tests and tooling that let the team change a prompt with confidence."
+    ],
+    "title": "Applied AI Engineer, Agents"
+  },
+  "usage": {
+    "input_tokens": 839,
+    "output_tokens": 331
+  }
+}

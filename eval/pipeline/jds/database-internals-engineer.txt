@@ -1,0 +1,23 @@
+Storage Engine Engineer
+Granite Reach Data (an invented company, written for this evaluation)
+
+About the role
+Granite Reach builds a time-series database for industrial telemetry. The storage engine decides how fast we write, how quickly we recover and how much disk we use, and we are hiring a second engineer to work on it.
+
+What you will do
+- Improve the write path of our log-structured storage engine: memtables, write-ahead logging, flushing and compaction.
+- Make crash recovery fast and correct, and prove it with fault-injection tests.
+- Benchmark rigorously and explain performance changes, with profiles instead of guesses.
+- Design the on-disk format and its upgrade path.
+- Contribute to replication between nodes and the consistency guarantees we document.
+- Review code from other engineers with an eye for concurrency and durability bugs.
+
+What we look for
+- Experience writing systems code in Go, Rust or C++.
+- Understanding of LSM trees, B-trees, fsync semantics and page caches.
+- Experience with concurrency, profiling and benchmarking.
+- Experience with distributed consensus protocols such as Raft or Paxos.
+
+Nice to have
+- Experience with columnar formats or vectorised execution.
+- Contributions to an open-source database.

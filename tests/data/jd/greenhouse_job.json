@@ -1,0 +1,7 @@
+{
+  "id": 4001234,
+  "title": "Backend Engineer",
+  "company_name": "Northwind Freight",
+  "content": "&lt;h2&gt;About the role&lt;/h2&gt;&lt;p&gt;Northwind Freight builds routing software.&lt;/p&gt;&lt;h3&gt;What you will do&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Design and run Go services that track shipments&lt;/li&gt;&lt;li&gt;Own on-call for the tracking API&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;What we look for&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;3+ years with PostgreSQL &amp;amp; Kafka&lt;/li&gt;&lt;/ul&gt;&lt;script&gt;var x=1;&lt;/script&gt;",
+  "absolute_url": "https://example.com/x"
+}

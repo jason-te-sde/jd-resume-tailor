@@ -1,0 +1,19 @@
+{
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "system": "You extract things.",
+  "messages": [{"role": "user", "content": "Posting text"}],
+  "tools": [
+    {
+      "name": "respond",
+      "description": "Return the answer as this tool's input.",
+      "input_schema": {
+        "type": "object",
+        "properties": {"title": {"type": "string"}},
+        "required": ["title"],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "tool_choice": {"type": "tool", "name": "respond"}
+}

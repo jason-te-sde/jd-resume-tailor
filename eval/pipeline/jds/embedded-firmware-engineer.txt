@@ -1,0 +1,23 @@
+Embedded Firmware Engineer
+Pelican Rock Devices (an invented company, written for this evaluation)
+
+About the role
+Pelican Rock designs battery-powered soil sensors that run for three years on a cell. The firmware is small, careful and has to work without anyone ever touching the device. We are looking for an engineer to join the three-person firmware team.
+
+What you will do
+- Write firmware in C for ARM Cortex-M microcontrollers and bring up new boards.
+- Implement low-power sleep states, interrupts and drivers for I2C, SPI and UART sensors.
+- Build the over-the-air update path and the bootloader, with rollback when an update fails.
+- Work with hardware engineers to debug with oscilloscopes, logic analysers and JTAG.
+- Write unit tests and hardware-in-the-loop tests for the firmware.
+- Profile power draw and bring it down milliamp by milliamp.
+
+What we look for
+- Three or more years of embedded C or C++ on microcontrollers.
+- Experience with an RTOS such as FreeRTOS or Zephyr.
+- Comfort reading schematics and datasheets.
+- Experience with BLE or LoRa radio stacks.
+
+Nice to have
+- Experience with Rust on embedded targets.
+- Experience with functional safety or medical device standards.

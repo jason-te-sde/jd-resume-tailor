@@ -1,0 +1,470 @@
+{
+  "version": 1,
+  "job": {
+    "source": "examples/alex-rivera/jds/backend-engineer.txt",
+    "title": "Backend Engineer, Shipment Tracking",
+    "company": "Harbor & Pine Logistics",
+    "responsibilities": [
+      "Build and operate Go services behind the shipment-tracking API, backed by PostgreSQL and Kafka.",
+      "Find and fix latency problems, using load tests and dashboards to show the change.",
+      "Design event-driven pipelines that keep tracking data consistent across services.",
+      "Carry the pager for the services you own and improve their alerts and runbooks."
+    ],
+    "requirements": [
+      "Experience writing production services in Go or a similar language.",
+      "Solid SQL and an understanding of indexing and caching.",
+      "Comfort with Docker, CI pipelines and infrastructure as code."
+    ],
+    "nice_to_have": [
+      "Experience with Redis, gRPC or Terraform."
+    ],
+    "keywords": [
+      "Go",
+      "PostgreSQL",
+      "Kafka",
+      "shipment-tracking API",
+      "load tests",
+      "dashboards",
+      "event-driven pipelines",
+      "tracking data",
+      "services",
+      "SQL",
+      "indexing",
+      "caching",
+      "Docker",
+      "CI pipelines",
+      "infrastructure as code",
+      "Redis",
+      "gRPC",
+      "Terraform",
+      "tracking API"
+    ]
+  },
+  "profile": "profile.json",
+  "model": {
+    "provider": "openai",
+    "model": "qwen3:8b"
+  },
+  "rounding": "conservative",
+  "selection": {
+    "targets": [
+      "Build and operate Go services behind the shipment-tracking API, backed by PostgreSQL and Kafka.",
+      "Find and fix latency problems, using load tests and dashboards to show the change.",
+      "Design event-driven pipelines that keep tracking data consistent across services.",
+      "Carry the pager for the services you own and improve their alerts and runbooks."
+    ],
+    "scores": [
+      {
+        "entry": "lantern-swe",
+        "score": 10,
+        "covers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "reason": "Candidates directly addressed all responsibilities with Go, Kafka, PostgreSQL, and latency optimization.",
+        "bullet_priority": [
+          1,
+          2,
+          4,
+          5
+        ]
+      },
+      {
+        "entry": "marlow-intern",
+        "score": 0,
+        "covers": [],
+        "reason": "Experienced in Python/data engineering tools, not backend Go/Kafka.",
+        "bullet_priority": []
+      },
+      {
+        "entry": "tidewell-coop",
+        "score": 0,
+        "covers": [],
+        "reason": "Frontend-focused with React/TypeScript, no backend tech mentioned.",
+        "bullet_priority": []
+      },
+      {
+        "entry": "gridlock",
+        "score": 0,
+        "covers": [],
+        "reason": "Uses Rust/Redis, lacks Go expertise required for API backend.",
+        "bullet_priority": []
+      },
+      {
+        "entry": "gridlock-bench",
+        "score": 0,
+        "covers": [],
+        "reason": "not scored by the model",
+        "bullet_priority": []
+      },
+      {
+        "entry": "raftlet",
+        "score": 0,
+        "covers": [],
+        "reason": "not scored by the model",
+        "bullet_priority": []
+      },
+      {
+        "entry": "transit-lake",
+        "score": 0,
+        "covers": [],
+        "reason": "not scored by the model",
+        "bullet_priority": []
+      },
+      {
+        "entry": "tidekv",
+        "score": 0,
+        "covers": [],
+        "reason": "not scored by the model",
+        "bullet_priority": []
+      },
+      {
+        "entry": "ticket-triage",
+        "score": 0,
+        "covers": [],
+        "reason": "Python-centric with ML tools, no Go/Kafka/backend experience.",
+        "bullet_priority": []
+      },
+      {
+        "entry": "dispatch-desk",
+        "score": 0,
+        "covers": [],
+        "reason": "Python and lightweight tools, lacks Go/Kafka backend stack.",
+        "bullet_priority": []
+      },
+      {
+        "entry": "pulse-dashboard",
+        "score": 0,
+        "covers": [],
+        "reason": "Frontend development with React, no backend/backend tools expertise.",
+        "bullet_priority": []
+      }
+    ],
+    "picked": [
+      "lantern-swe",
+      "marlow-intern",
+      "dispatch-desk",
+      "gridlock"
+    ]
+  },
+  "entries": [
+    {
+      "id": "lantern-swe",
+      "type": "work",
+      "title": "Software Engineer",
+      "company": "Lantern Freight Systems",
+      "location": "Remote",
+      "date": "Jul. 2023 – Present",
+      "tech": "Go, PostgreSQL, Kafka, Redis, gRPC, Terraform, GitHub Actions, Prometheus, Grafana, AWS (ECS, RDS)",
+      "link": "",
+      "adaptable": true,
+      "score": 10,
+      "calls": 2,
+      "bullets": [
+        {
+          "text": "Reduced the p99 latency of the shipment-tracking API in staging load tests from 412 ms to 138 ms by replacing a per-request fan-out of 7 queries with a single batched query and implementing a Redis read-through cache.",
+          "sources": [
+            "lantern-swe#1"
+          ],
+          "verdict": "ok",
+          "outcome": "first_pass",
+          "original": "Cut p99 latency of the shipment-tracking API from 412 ms to 138 ms by replacing a per-request fan-out of 7 queries with one batched query and adding a Redis read-through cache.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Reduced the p99 latency of the shipment-tracking API in staging load tests from 412 ms to 138 ms by replacing a per-request fan-out of 7 queries with a single batched query and implementing a Redis read-through cache.",
+              "sources": [
+                "lantern-swe#1"
+              ],
+              "problems": []
+            }
+          ]
+        },
+        {
+          "text": "Designed an idempotent Kafka consumer for carrier status events that deduplicates by event ID, achieving 9,200 events/s throughput in staging load tests on a 6-partition topic.",
+          "sources": [
+            "lantern-swe#2"
+          ],
+          "verdict": "ok",
+          "outcome": "first_pass",
+          "original": "Built an idempotent Kafka consumer for carrier status events that deduplicates by event id and sustained 9,200 events/s on a 6-partition topic in staging load tests.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Designed an idempotent Kafka consumer for carrier status events that deduplicates by event ID, achieving 9,200 events/s throughput in staging load tests on a 6-partition topic.",
+              "sources": [
+                "lantern-swe#2"
+              ],
+              "problems": []
+            }
+          ]
+        },
+        {
+          "text": "Added 23 Prometheus alerts and runbooks for the dispatch service; pages per on-call week fell from 31 to 9 over two quarters.",
+          "sources": [
+            "lantern-swe#4"
+          ],
+          "verdict": "bank_original",
+          "outcome": "fallback",
+          "original": "Added 23 Prometheus alerts and runbooks for the dispatch service; pages per on-call week fell from 31 to 9 over two quarters.",
+          "reason": "first attempt: escalation_causal: 'reducing on-call pages per week from 31 to 9 over two quarters' - the cited sources do not link 'reducing on-call pages per week from 31 to 9 over two quarters' to the result in one statement. second attempt: escalation_causal: 'with pages per on-call week decreasing from 31 to 9 over two quarters' - the cited sources do not link 'with pages per on-call week decreasing from 31 to 9 over two quarters' to the result in one statement",
+          "attempts": [
+            {
+              "text": "Implemented 23 Prometheus alerts and runbooks for the dispatch service, reducing on-call pages per week from 31 to 9 over two quarters.",
+              "sources": [
+                "lantern-swe#4"
+              ],
+              "problems": [
+                "escalation_causal: 'reducing on-call pages per week from 31 to 9 over two quarters' - the cited sources do not link 'reducing on-call pages per week from 31 to 9 over two quarters' to the result in one statement"
+              ]
+            },
+            {
+              "text": "Added 23 Prometheus alerts and runbooks for the dispatch service, with pages per on-call week decreasing from 31 to 9 over two quarters.",
+              "sources": [
+                "lantern-swe#4"
+              ],
+              "problems": [
+                "escalation_causal: 'with pages per on-call week decreasing from 31 to 9 over two quarters' - the cited sources do not link 'with pages per on-call week decreasing from 31 to 9 over two quarters' to the result in one statement"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Led a team to replace the nightly billing-export cron job with an event-driven pipeline, removing up to 5 hours of data staleness daily between events and exports.",
+          "sources": [
+            "lantern-swe#5"
+          ],
+          "verdict": "ok",
+          "outcome": "after_retry",
+          "original": "Led a 4-person effort to replace the nightly billing-export cron job with an event-driven job, removing up to 5 hours of data staleness each day.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Led a team to replace the nightly billing-export cron job with an event-driven pipeline, eliminating up to 5 hours of data staleness daily between events and exports.",
+              "sources": [
+                "lantern-swe#5"
+              ],
+              "problems": [
+                "escalation_absolute: 'eliminating' - 'eliminating' is an absolute; none of the cited sources says it",
+                "escalation_causal: 'eliminating up to 5 hours of data staleness daily between events and exports' - the cited sources do not link 'eliminating up to 5 hours of data staleness daily between events and exports' to the result in one statement"
+              ]
+            },
+            {
+              "text": "Led a team to replace the nightly billing-export cron job with an event-driven pipeline, removing up to 5 hours of data staleness daily between events and exports.",
+              "sources": [
+                "lantern-swe#5"
+              ],
+              "problems": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marlow-intern",
+      "type": "work",
+      "title": "Data Engineering Intern",
+      "company": "Marlow Data Works",
+      "location": "Remote",
+      "date": "Jun. 2022 – Aug. 2022",
+      "tech": "Python, Airflow, dbt, SQL, Snowflake, Docker",
+      "link": "",
+      "adaptable": true,
+      "score": 0,
+      "calls": 2,
+      "bullets": [
+        {
+          "text": "Designed event-driven data pipelines using Airflow and dbt to automate report generation, replacing manual processes and ensuring data consistency for tracking dashboards.",
+          "sources": [
+            "marlow-intern#1",
+            "marlow-intern#scope"
+          ],
+          "verdict": "ok",
+          "outcome": "first_pass",
+          "original": "Built 12 dbt models and an Airflow DAG that replaced a manual weekly spreadsheet report, saving about 6 analyst-hours a week.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Designed event-driven data pipelines using Airflow and dbt to automate report generation, replacing manual processes and ensuring data consistency for tracking dashboards.",
+              "sources": [
+                "marlow-intern#1",
+                "marlow-intern#scope"
+              ],
+              "problems": []
+            }
+          ]
+        },
+        {
+          "text": "Reduced the nightly warehouse load time from 74 to 29 minutes by partitioning a 310 GB fact table and loading only the changed partitions.",
+          "sources": [
+            "marlow-intern#2"
+          ],
+          "verdict": "ok",
+          "outcome": "after_retry",
+          "original": "Cut the nightly warehouse load from 74 to 29 minutes by partitioning a 310 GB fact table by date and loading only the changed partitions.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Optimized PostgreSQL data loading by partitioning a 310 GB fact table, reducing the nightly warehouse load time to 29 minutes.",
+              "sources": [
+                "marlow-intern#2"
+              ],
+              "problems": [
+                "fabricated_entity: 'PostgreSQL' - the technology 'PostgreSQL' appears in none of the cited facts and not in the entry's tech stack",
+                "escalation_causal: 'by partitioning a 310 GB fact table' - the cited sources do not link 'by partitioning a 310 GB fact table' to the result in one statement"
+              ]
+            },
+            {
+              "text": "Reduced the nightly warehouse load time from 74 to 29 minutes by partitioning a 310 GB fact table and loading only the changed partitions.",
+              "sources": [
+                "marlow-intern#2"
+              ],
+              "problems": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dispatch-desk",
+      "type": "project",
+      "title": "Dispatch Desk: a tool-using claim-triage agent",
+      "company": "",
+      "location": "",
+      "date": "2025",
+      "tech": "Python, Ollama, SQLite, pytest, Docker",
+      "link": "https://example.com/code/dispatch-desk",
+      "adaptable": true,
+      "score": 0,
+      "calls": 2,
+      "bullets": [
+        {
+          "text": "Developed a Python-based tool that triages freight-damage claims using an Ollama model served locally and a retrieval tool querying a SQLite table of past claims.",
+          "sources": [
+            "dispatch-desk#1"
+          ],
+          "verdict": "ok",
+          "outcome": "first_pass",
+          "original": "Built a tool-using agent in Python that triages freight-damage claims with an 8B open-weights model served locally by Ollama and one retrieval tool over a SQLite table of 3,200 past claims.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Developed a Python-based tool that triages freight-damage claims using an Ollama model served locally and a retrieval tool querying a SQLite table of past claims.",
+              "sources": [
+                "dispatch-desk#1"
+              ],
+              "problems": []
+            }
+          ]
+        },
+        {
+          "text": "Achieved 35 successful passes out of 40 hand-written scenarios with a retrieval tool, compared to 22 of 40 without it, using pytest cases and CI pipeline runs.",
+          "sources": [
+            "dispatch-desk#2",
+            "dispatch-desk#4"
+          ],
+          "verdict": "ok",
+          "outcome": "after_retry",
+          "original": "Passed 35 of 40 hand-written claim scenarios (0.875), against 22 of 40 (0.55) for the same model without the retrieval tool.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Achieved 35 successful passes out of 40 hand-written scenarios with a retrieval tool, compared to 22 of 40 without it, through structured testing.",
+              "sources": [
+                "dispatch-desk#2"
+              ],
+              "problems": [
+                "escalation_causal: 'through structured testing' - the cited sources do not link 'through structured testing' to the result in one statement"
+              ]
+            },
+            {
+              "text": "Achieved 35 successful passes out of 40 hand-written scenarios with a retrieval tool, compared to 22 of 40 without it, using pytest cases and CI pipeline runs.",
+              "sources": [
+                "dispatch-desk#2",
+                "dispatch-desk#4"
+              ],
+              "problems": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gridlock",
+      "type": "project",
+      "title": "Gridlock: a distributed rate limiter in Rust and Redis",
+      "company": "",
+      "location": "",
+      "date": "2025",
+      "tech": "Rust, Redis, Lua, Tokio, Docker, GitHub Actions",
+      "link": "https://example.com/code/gridlock",
+      "adaptable": true,
+      "score": 0,
+      "calls": 2,
+      "bullets": [
+        {
+          "text": "Built a rate limiter in Rust that uses Redis and a Lua script to perform a single atomic step for checking and updating token buckets.",
+          "sources": [
+            "gridlock#1"
+          ],
+          "verdict": "ok",
+          "outcome": "after_retry",
+          "original": "Built a rate limiter in Rust that keeps token buckets in Redis and updates them with one Lua script, so a check and its update are a single atomic step.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Implemented a rate limiter in Rust using Redis and Lua scripting to atomically update token buckets, ensuring consistent checks and updates.",
+              "sources": [
+                "gridlock#1"
+              ],
+              "problems": [
+                "escalation_causal: 'ensuring consistent checks and updates' - the cited sources do not link 'ensuring consistent checks and updates' to the result in one statement"
+              ]
+            },
+            {
+              "text": "Built a rate limiter in Rust that uses Redis and a Lua script to perform a single atomic step for checking and updating token buckets.",
+              "sources": [
+                "gridlock#1"
+              ],
+              "problems": []
+            }
+          ]
+        },
+        {
+          "text": "Achieved 41,000 checks per second on a 4-vCPU VM with a p99 latency of 2.1 ms at 20,000 checks/s, using a single Redis instance.",
+          "sources": [
+            "gridlock#2"
+          ],
+          "verdict": "ok",
+          "outcome": "first_pass",
+          "original": "Handled 41,000 checks/s on one 4-vCPU VM against a single Redis instance, with a p99 of 2.1 ms at 20,000 checks/s.",
+          "reason": "",
+          "attempts": [
+            {
+              "text": "Achieved 41,000 checks per second on a 4-vCPU VM with a p99 latency of 2.1 ms at 20,000 checks/s, using a single Redis instance.",
+              "sources": [
+                "gridlock#2"
+              ],
+              "problems": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "bullets": 10,
+    "first_pass": 5,
+    "after_retry": 4,
+    "fallback": 1,
+    "verbatim": 0
+  },
+  "usage": {
+    "calls": 10,
+    "replayed_calls": 0,
+    "input_tokens": 24406,
+    "output_tokens": 1470
+  }
+}

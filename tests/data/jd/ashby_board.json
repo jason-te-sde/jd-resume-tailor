@@ -1,0 +1,16 @@
+{
+  "apiVersion": "1",
+  "jobs": [
+    {
+      "id": "aaaaaaaa-0000-0000-0000-000000000001",
+      "title": "Other Role",
+      "descriptionPlain": "Not this one"
+    },
+    {
+      "id": "1f2e3d4c-5555-6666-7777-888899990000",
+      "title": "Data Engineer",
+      "descriptionPlain": "Fabrikam Analytics needs a data engineer.\n- Build batch pipelines\n- Own data quality checks",
+      "descriptionHtml": "<p>ignored</p>"
+    }
+  ]
+}
