@@ -5,7 +5,7 @@ All notable changes to this project are documented here. The format follows
 [semantic versioning](https://semver.org/); before 1.0, the fact-bank format may change between
 minor versions.
 
-## Unreleased
+## 0.1.0 - 2026-11-23
 
 ### Added
 
