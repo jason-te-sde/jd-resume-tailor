@@ -23,7 +23,6 @@ at-least-once becomes exactly-once), so the checker is the point of the project.
   eval/pipeline/first-rewrites.json#violation_rate.interval_percent
   eval/pipeline/residual.json#residual.percent
   eval/pipeline/residual.json#residual.interval_percent
-  eval/usage.json
 -->
 The tool runs end to end, from a job description to a one-page PDF, and every bullet it puts on a
 resume either passed the verifier or is the bank's own sentence. Measured on a local model
@@ -33,8 +32,8 @@ rewrites carried a violation (95% interval 21.3% to 44.2%), and about 9% of the 
 that passed the gate do (95% interval 5.4% to 17.3%). Of the 442 first rewrites, 203 passed the
 verifier and it stopped 238 before they could reach a resume (1 more cited no fact of its entry); a
 retry rescued 122 of those, and the other 117 went back to the bank's own wording. A resume costs a
-median of 27,885 input and 2,114 output tokens, which is nothing on a local model. Its private
-predecessor has produced 542 resumes (2026-03 to 2026-11).
+median of 27,885 input and 2,114 output tokens, which is nothing on a local model. The private
+workflow it grew out of now checks every resume with `tailor verify` before compiling it.
 
 | What works |
 | --- |
